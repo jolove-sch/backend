@@ -26,4 +26,4 @@ Coding convention
 + 파일을 1개의 클래스로 export 하는 경우, 파일명은 클래스명과 완전히 일치시킨다
 
 - 추가적인 스타일 가이드는 아래 링크 참고
-https://www.notion.so/de978d1215834e50ab5aede9c883a65f#e376aad2b86a44b1b66293b7b71f545c
+https://github.com/naver/eslint-config-naver/blob/master/STYLE_GUIDE.md#classes--constructors
