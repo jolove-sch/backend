@@ -1,9 +1,6 @@
 # Backend repository  
 
----
-#Coding convention
-
-### General
+## Coding convention
 
 + 네임스페이스, 오브젝트, 함수, 그리고 인스턴스에는 camelCase 사용
 + 클래스나 constructor에는 PascalCase 사용
