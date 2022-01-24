@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "front": "cd ../frontend",
+    "front": "cd frontend && npm start",
     "server": "node ./bin/www",
     "dev": "concurrently --kill-others-on-fail \"npm run front\" \"npm run server\""
   },
   "dependencies": {
+    "concurrently": "^7.0.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
