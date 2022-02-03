@@ -38,9 +38,11 @@ public class Member{
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "member_id")
+    @Builder.Default
     private List<Band> bandList = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "member_id")
+    @Builder.Default
     private List<Mobile> mobileList = new ArrayList<>();
 }
