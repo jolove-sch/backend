@@ -8,7 +8,7 @@ import { FaKey } from 'react-icons/fa';
 const Container = styled.div`
   height: 800px;
   width: 460px;
-  background-color: #80d8ff;
+  background-color: #bcddce;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19,14 +19,14 @@ const Title = styled.div`
   font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
-  color: #ff6f00;
+  color: #3dbefa;
   position: absolute;
   top: 30%;
-  left: 55%;
+  left: 52%;
   transform: translate(-50%, -50%);
 `;
 
-const UpperContainer = styled.div`
+const LogoContainer = styled.div`
   font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
@@ -35,7 +35,7 @@ const UpperContainer = styled.div`
   top: 60%;
   left: 50%;
   transform: translate(-50%, -400%);
-  margin-left: 4.5%;
+  margin-left: 3%;
 
   .logo {
     font-size: 40px;
@@ -49,7 +49,7 @@ const UnderContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-left: 4%;
+  margin-left: 2%;
 
   .logo2 {
     font-size: 20px;
@@ -67,27 +67,27 @@ const ButtonContainer = styled.div`
   top: 60%;
   left: 82%;
   transform: translate(-50%, -50%);
-  margin-left: 4%;
+  margin-left: 2%;
 `;
 
 const LoginButton = styled.button`
   position: center;
   font-size: 0.9em;
   margin-left: 0%;
-  padding: 0.25em 4.7em; //세로 가로
+  padding: 0.25em 4.75em; //세로 가로
   border-radius: 3px;
   color: white;
-  background: #ff6f00;
+  background: #3dbefa;
 `;
 
 const RegisterButton = styled.button`
   position: center;
   font-size: 0.9em;
   margin-left: 0%;
-  padding: 0.25em 4.25em; // 세로 가로
+  padding: 0.25em 4.35em; // 세로 가로
   border-radius: 3px; // 테두리
   color: white;
-  background: #ff6f00;
+  background: #3dbefa;
 `;
 
 const IdInputBox = styled.input`
@@ -109,9 +109,9 @@ export default function LoginPage() {
     // <Form>
       <Container>
         <Title>SIGN IN</Title>
-       <UpperContainer>
+       <LogoContainer>
          <FaBaby className="logo" />
-       </UpperContainer>
+       </LogoContainer>
         <UnderContainer>
          <FaUser className="logo2" />
          <IdInputBox type="text" placeholder='아이디' />
@@ -126,7 +126,9 @@ export default function LoginPage() {
           <LoginButton>로그인</LoginButton>
          </Link>
          <br />
-         <RegisterButton>회원가입</RegisterButton>
+         <Link to='/register'>
+          <RegisterButton>회원가입</RegisterButton>
+         </Link>
         </ButtonContainer>
       </Container>
     // </Form>

@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUser } from 'react-icons/fa';
-import { AiOutlinePlusSquare } from 'react-icons/ai';
+// import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
+import { MdLogout } from 'react-icons/md';
 
 const TopBar = styled.nav`
    height: 40px;
@@ -24,11 +25,18 @@ const Title = styled.div`
     font-weight: normal;
     font-size: 20px;
     width: 170px;
-    /* margin: auto; */
-    margin-left: 160px;
+    margin-left: 130px;
     margin-bottom: 4px;
-    /* margin-left: 3%;
-    margin-top: -1%; */
+`;
+
+const Logout = styled.div`
+  height: 30px;
+  width: 30px;
+
+  .logout {
+    font-size: 25px;
+    color: black;
+  }
 `;
 
 const LogoBox = styled.div`
@@ -49,13 +57,14 @@ const MiddleBar = styled.nav`
     justify-content: space-between;
     align-items: center;
 `;
+
 const Container = styled.div``;
 
 const RegisterForm = styled.div`
     width: 370px;
     height: 170px;
     margin-left: 7%;
-    margin-top: 10%;
+    margin-top: 15%;
     border-radius: 10px;
     background-color: white;
     font-size: 20px;
@@ -65,7 +74,7 @@ const RegisterForm = styled.div`
 const InsideForm = styled.div`
     width: 200px;
     height: 170px;
-    margin-top: -45%;
+    margin-top: -39%;
     margin-left: 35%;
 `;
 
@@ -73,7 +82,9 @@ const InsideLogo = styled.div`
     width: 100px;
     height: 170px;
     margin-right: 0;
+    margin-left: 1%;
     background-color: yellow;
+    border-radius: 10px;
 
     .logo3 {
         margin-left: 30%;
@@ -85,8 +96,8 @@ const InsideLogo = styled.div`
 const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
-    margin-left: 10%;
-    margin-top: 10%;
+    margin-left: 22%;
+    margin-top: 5%;
     background-color: white;
     border-color: white;
     color: #11dbca;
@@ -96,12 +107,27 @@ const RegisterButton = styled.button`
     font-weight: normal;
 `;
 
-const LogoContainer = styled.div`
-    .logo4 {
-        color: black;
-        font-size: 30px;
-        margin-left: 48%;
-    }
+// const LogoContainer = styled.div`
+//     .logo4 {
+//         color: black;
+//         font-size: 30px;
+//         margin-left: 48%;
+//     }
+// `;
+
+const InsideTitle = styled.div`
+    width: 170px;
+    color: black;
+    font-size: 17px;
+    margin-top: -5%;
+    margin-left: 25%;
+`;
+
+const GetSerial = styled.input`
+    width: 150px;
+    margin-left: 17px;
+    margin-top: -5px;
+    text-align: center;
 `;
 
 const BottomBar = styled.nav`
@@ -116,15 +142,19 @@ const BottomBar = styled.nav`
   bottom: 0;
   left: 0;
   right: 0; 
-  margin-top: 62%;
+  margin-top: 20%;
 `;
 
 export default function BandRegisterPage() {
 
   return (
     <>
-
     <TopBar>
+        <Link to="/">
+          <Logout>
+            <MdLogout className="logout" />
+          </Logout>
+        </Link>
         <Title>밴드 등록</Title>
         <LogoBox>
              <BsSmartwatch className="logo" />
@@ -148,18 +178,25 @@ export default function BandRegisterPage() {
         </InsideLogo>
         <InsideForm>
             <br />
-            기기 일련번호
-            <br />
-            <input type="text" placeholder="Serial Number Here" />
-            <br />
+            <InsideTitle>기기 일련번호</InsideTitle>
+            <GetSerial type="text" placeholder="Serial Number Here" />
             <RegisterButton>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    <br />
-    <br />
-    <LogoContainer>
+    <RegisterForm>
+        <InsideLogo>
+            <BsSmartwatch className="logo3" size="45" />
+        </InsideLogo>
+        <InsideForm>
+            <br />
+            <InsideTitle>기기 일련번호</InsideTitle>
+            <GetSerial type="text" placeholder="Serial Number Here" />
+            <RegisterButton>등록</RegisterButton>
+        </InsideForm>
+    </RegisterForm>
+    {/* <LogoContainer>
         <AiOutlinePlusSquare className="logo4" />
-    </LogoContainer>
+    </LogoContainer> */}
     </Container>
     <BottomBar>
         <Link to="/mainpage">

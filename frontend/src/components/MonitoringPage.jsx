@@ -4,12 +4,13 @@ import { FiMonitor } from 'react-icons/fi';
 import { FaUser } from 'react-icons/fa';
 import { FaBaby } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { MdLogout } from 'react-icons/md';
 
 const TopBar = styled.nav`
    height: 40px;
    padding: 1rem;
    color: black;
-   background: #e574f0;
+   background: #13daf5;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -21,11 +22,18 @@ const Title = styled.div`
     font-weight: normal;
     font-size: 20px;
     width: 170px;
-    /* margin: auto; */
-    margin-left: 140px;
+    margin-left: 110px;
     margin-bottom: 4px;
-    /* margin-left: 3%;
-    margin-top: -1%; */
+`;
+
+const Logout = styled.div`
+  height: 30px;
+  width: 30px;
+
+  .logout {
+    font-size: 25px;
+    color: black;
+  }
 `;
 
 const LogoBox = styled.div`
@@ -89,7 +97,7 @@ const BottomBar = styled.nav`
   height: 28px;
   padding: 1rem;
   color: black;
-  background: #e574f0;
+  background: #13daf5;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -97,14 +105,18 @@ const BottomBar = styled.nav`
   bottom: 0;
   left: 0;
   right: 0; 
-  margin-top: 36%;
+  margin-top: 34%;
 `;
 
 export default function MonitoringPage() {
   return (
       <>
-      {/* <Navbar /> */}
       <TopBar>
+        <Link to="/">
+          <Logout>
+            <MdLogout className="logout" />
+          </Logout>
+        </Link>
          <Title>아이 모니터링</Title>
          <LogoBox>
              <FiMonitor className="logo" />
@@ -121,7 +133,7 @@ export default function MonitoringPage() {
         <Link to="/monitoringpage">
           <FiMonitor size="30" color="black"/>
         </Link>
-        <Link to="/registerpage">
+        <Link to="/bandregisterpage">
           <FaUser size="30" color="black"/>
         </Link>
       </BottomBar>
