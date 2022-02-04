@@ -18,8 +18,11 @@ dependencies {
     implementation('junit:junit:4.13.1')
     implementation('com.fasterxml.jackson.core:jackson-databind')
 
-//    validator
-    implementation('org.hibernate:hibernate-validator:6.1.0.Final')
+//    JWT
+    implementation('com.auth0:java-jwt:3.18.3')
+
+//    security
+    implementation('org.springframework.boot:spring-boot-starter-security')
 
 //    Lombok
     compileOnly('org.projectlombok:lombok')
@@ -31,12 +34,8 @@ dependencies {
     annotationProcessor('org.mapstruct:mapstruct-processor:1.4.2.Final')
     testAnnotationProcessor('org.mapstruct:mapstruct-processor:1.4.2.Final')
 
-    //    Security
-    implementation('org.springframework.boot:spring-boot-starter-security')
-
     // testing
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation("org.springframework.security:spring-security-test")
 }
 
 test {
