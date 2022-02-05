@@ -115,7 +115,8 @@ dist
 
 # Jetbrain
 
-/.idea
+/.idea/
+.idea/
 
 # backend
 
