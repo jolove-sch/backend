@@ -169,7 +169,7 @@ const BottomBar = styled.nav`
   bottom: 0;
   left: 0;
   right: 0; 
-  margin-top: 16%;
+  margin-top: 80%;
 `;
 
 export default function MainPage() {
@@ -186,37 +186,6 @@ export default function MainPage() {
           <FaBaby className="logo" />
         </LogoBox>
       </TopBar>
-      <Container>
-      <StatusForm>
-        <InsideLogo>
-          <FaBaby className="logo2" />
-        </InsideLogo>
-        <HeartBeat> 
-          <FaHeartbeat className="Heartbeat" />
-          <HearBeatRate>심장박동수</HearBeatRate>
-        </HeartBeat>
-        <br />
-        <Oxygen>
-          <SiOxygen className="Oxygen" />
-          <OxygenRate>산소포화도</OxygenRate>
-        </Oxygen>
-        <br />
-        <Temperature>
-          <RiCelsiusFill className="Temperature" />
-          <TemperatureRate>체온</TemperatureRate>
-        </Temperature>
-        <br />
-        <Crying>
-          <ImCrying className="Crying" />
-          <DetectCrying>울음감지</DetectCrying>
-        </Crying>
-        <br />
-        <Overturn>
-          <MdBabyChangingStation className="Overturn" />
-          <DetectingOverturn>뒤집힘감지</DetectingOverturn>
-        </Overturn>
-      </StatusForm>
-      </Container>
       <Container>
       <StatusForm>
         <InsideLogo>

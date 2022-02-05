@@ -145,7 +145,7 @@ const BottomBar = styled.nav`
   bottom: 0;
   left: 0;
   right: 0; 
-  margin-top: 20%;
+  margin-top: 74%;
 `;
 
 export default function BandRegisterPage() {
@@ -173,18 +173,6 @@ export default function BandRegisterPage() {
             <FaUser size="27" color="red" />
         </Link>
     </MiddleBar>
-    <RegisterForm>
-        <InsideLogo>
-            <FaUser className="logo3" size="45" />
-        </InsideLogo>
-        <InsideForm>
-            <br />
-            <InsideTitle>사용자 아이디, 비밀번호</InsideTitle>
-            <GetId type="text" placeholder="User Id Here" />
-            <GetPassword type="password" placeholder="User Password Here" />
-            <RegisterButton>등록</RegisterButton>
-        </InsideForm>
-    </RegisterForm>
     <RegisterForm>
         <InsideLogo>
             <FaUser className="logo3" size="45" />

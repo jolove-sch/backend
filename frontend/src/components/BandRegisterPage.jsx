@@ -142,7 +142,7 @@ const BottomBar = styled.nav`
   bottom: 0;
   left: 0;
   right: 0; 
-  margin-top: 20%;
+  margin-top: 74%;
 `;
 
 export default function BandRegisterPage() {
@@ -172,17 +172,6 @@ export default function BandRegisterPage() {
         </Link>
     </MiddleBar>
     <Container>
-    <RegisterForm>
-        <InsideLogo>
-            <BsSmartwatch className="logo3" size="45" />
-        </InsideLogo>
-        <InsideForm>
-            <br />
-            <InsideTitle>기기 일련번호</InsideTitle>
-            <GetSerial type="text" placeholder="Serial Number Here" />
-            <RegisterButton>등록</RegisterButton>
-        </InsideForm>
-    </RegisterForm>
     <RegisterForm>
         <InsideLogo>
             <BsSmartwatch className="logo3" size="45" />
