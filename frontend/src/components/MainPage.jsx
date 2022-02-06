@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
-import { FaUser } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 import { FaHeartbeat } from 'react-icons/fa';
 import { RiCelsiusFill } from 'react-icons/ri';
 import { SiOxygen } from 'react-icons/si';
@@ -17,7 +17,7 @@ const TopBar = styled.nav`
    height: 40px;
    padding: 1rem;
    color: black;
-   background: #13daf5;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -25,8 +25,8 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    color: white;
-    font-weight: normal;
+    color: #EF564D;
+    font-weight: bold;
     font-size: 20px;
     width: 170px;
     margin-left: 105px;
@@ -46,7 +46,8 @@ const Logout = styled.div`
 
 const LogoBox = styled.div`
   margin-right: 100px;
-  .logo {
+
+  .baby {
         font-size: 25px;
         color: #FFD3C3;
     }
@@ -65,10 +66,10 @@ const InsideLogo = styled.div`
     width: 100px;
     height: 230px;
     margin-right: 0;
-    background-color: #30e4e4;
+    background-color: #FAF427;
     border-radius: 10px;
 
-    .logo2 {
+    .insidebaby {
         margin-left: 25%;
         margin-top: 90%;
         font-size: 50px;
@@ -80,6 +81,7 @@ const HeartBeat = styled.div`
   width: 30px;
   margin-left: 110px;
   margin-top: -58%;
+
   .Heartbeat {
     color: #f56464;
     font-size: 25px;
@@ -96,6 +98,7 @@ const Oxygen = styled.div`
   width: 250px;
   margin-left: 110px;
   margin-top: 0%;
+
   .Oxygen {
     color: #220bf5;
     font-size: 25px;
@@ -112,6 +115,7 @@ const Temperature = styled.div`
   width: 250px;
   margin-left: 110px;
   margin-top: 0%;
+
   .Temperature {
     color: #0c0000;
     font-size: 25px;
@@ -129,6 +133,7 @@ const Crying = styled.div`
   width: 250px;
   margin-left: 110px;
   margin-top: 0%;
+
   .Crying {
     color: #0c0000;
     font-size: 25px;
@@ -145,6 +150,7 @@ const Overturn = styled.div`
   width: 250px;
   margin-left: 110px;
   margin-top: 0%;
+
   .Overturn {
     color: #0c0000;
     font-size: 25px;
@@ -161,7 +167,7 @@ const BottomBar = styled.nav`
   height: 28px;
   padding: 1rem;
   color: black;
-  background: #13daf5;
+  background: #4EED8E;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -170,6 +176,10 @@ const BottomBar = styled.nav`
   left: 0;
   right: 0; 
   margin-top: 80%;
+
+  .monitor {
+    margin-left: 5%;
+  }
 `;
 
 export default function MainPage() {
@@ -183,13 +193,13 @@ export default function MainPage() {
         </Link>
         <Title>실시간 아이정보</Title>
         <LogoBox>
-          <FaBaby className="logo" />
+          <FaBaby className="baby" />
         </LogoBox>
       </TopBar>
       <Container>
       <StatusForm>
         <InsideLogo>
-          <FaBaby className="logo2" />
+          <FaBaby className="insidebaby" />
         </InsideLogo>
         <HeartBeat> 
           <FaHeartbeat className="Heartbeat" />
@@ -222,10 +232,10 @@ export default function MainPage() {
           <FaBaby size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor size="30" color="black"/>
+          <FiMonitor className="monitor" size="30" color="black"/>
         </Link>
         <Link to="/bandregisterpage">
-          <FaUser size="30" color="black"/>
+          <FaUserCircle size="35" color="black"/>
         </Link>
       </BottomBar>
     </>

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
-import { FaUser } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 // import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const TopBar = styled.nav`
    height: 40px;
    padding: 1rem;
    color: black;
-   background: #13daf5;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -21,8 +21,8 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    color: white;
-    font-weight: normal;
+    color: #EF564D;
+    font-weight: bold;
     font-size: 20px;
     width: 170px;
     margin-left: 130px;
@@ -41,6 +41,7 @@ const Logout = styled.div`
 
 const LogoBox = styled.div`
   margin-right: 130px;
+
   .logo {
         font-size: 25px;
         color: black;
@@ -51,7 +52,7 @@ const MiddleBar = styled.nav`
     height: 30px;
     padding: 1rem;
     color: black;
-    background: #13daf5;
+    background: #4EED8E;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -100,11 +101,11 @@ const RegisterButton = styled.button`
     margin-top: 5%;
     background-color: white;
     border-color: white;
-    color: #11dbca;
+    color: #4EED8E;
     text-align: center;
     line-height: 35px;
     font-size: 17px;
-    font-weight: normal;
+    font-weight: bold;
 `;
 
 // const LogoContainer = styled.div`
@@ -119,6 +120,7 @@ const InsideTitle = styled.div`
     width: 170px;
     color: black;
     font-size: 17px;
+    font-weight: bold;
     margin-top: -5%;
     margin-left: 25%;
 `;
@@ -134,7 +136,7 @@ const BottomBar = styled.nav`
   height: 28px;
   padding: 1rem;
   color: black;
-  background: #13daf5;
+  background: #4EED8E;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -143,6 +145,10 @@ const BottomBar = styled.nav`
   left: 0;
   right: 0; 
   margin-top: 74%;
+  
+  .monitor {
+    margin-left: 5px;
+  }
 `;
 
 export default function BandRegisterPage() {
@@ -168,7 +174,7 @@ export default function BandRegisterPage() {
             <MdToys size="30" color="black" />
         </Link>
         <Link to="/userregisterpage">
-            <FaUser size="27"color="black" />
+            <FaUserCircle size="28"color="black" />
         </Link>
     </MiddleBar>
     <Container>
@@ -192,10 +198,10 @@ export default function BandRegisterPage() {
           <FaBaby size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor size="30" color="black"/>
+          <FiMonitor className="monitor" size="30" color="black"/>
         </Link>
         <Link to="/registerpage">
-          <FaUser size="30" color="black"/>
+          <FaUserCircle size="35" color="black"/>
         </Link>
     </BottomBar>
   </>

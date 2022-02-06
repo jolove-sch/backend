@@ -1,7 +1,7 @@
 import React  from 'react';
 import styled from 'styled-components';
 import { FiMonitor } from 'react-icons/fi';
-import { FaUser } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 import { FaBaby } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
@@ -10,7 +10,7 @@ const TopBar = styled.nav`
    height: 40px;
    padding: 1rem;
    color: black;
-   background: #13daf5;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -18,8 +18,8 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    color: white;
-    font-weight: normal;
+    color: #EF564D;
+    font-weight: bold;
     font-size: 20px;
     width: 170px;
     margin-left: 110px;
@@ -59,10 +59,12 @@ const ControlBox = styled.div`
   margin-left: 35%;
   margin-top: 20%;
   border-radius: 20px;
-  background-color: #ff6f00;
-  color: white;
+  background-color: #f7f709;
+  color: black;
   text-align: center;
   line-height: 35px;
+  font-weight: bold;
+  font-size: 20px;
 `;
 
 const OnButton = styled.button`
@@ -71,12 +73,12 @@ const OnButton = styled.button`
     margin-left: 25%;
     margin-top: 5%;
     border-radius: 20px;
-    background-color: #5ff15f;
+    background-color: #0068FA;
     color: black;
     text-align: center;
     line-height: 35px;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
 `;
 
 const OffButton = styled.button`
@@ -85,19 +87,19 @@ const OffButton = styled.button`
     margin-left: 3%;
     margin-top: 5%;
     border-radius: 20px;
-    background-color: #80d8ff;
+    background-color: #FA1201;
     color: black;
     text-align: center;
     line-height: 35px;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
 `;
 
 const BottomBar = styled.nav`
   height: 28px;
   padding: 1rem;
   color: black;
-  background: #13daf5;
+  background: #4EED8E;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -106,6 +108,10 @@ const BottomBar = styled.nav`
   left: 0;
   right: 0; 
   margin-top: 34%;
+
+  .monitor {
+    margin-left: 5px;
+  }
 `;
 
 export default function MonitoringPage() {
@@ -131,10 +137,10 @@ export default function MonitoringPage() {
           <FaBaby size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor size="30" color="black"/>
+          <FiMonitor className="monitor" size="30" color="black"/>
         </Link>
         <Link to="/bandregisterpage">
-          <FaUser size="30" color="black"/>
+          <FaUserCircle size="35" color="black"/>
         </Link>
       </BottomBar>
     </>
