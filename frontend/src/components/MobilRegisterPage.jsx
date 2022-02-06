@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
-import { FaUser } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 // import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { FaBaby } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const TopBar = styled.nav`
    height: 40px;
    padding: 1rem;
    color: black;
-   background: #13daf5;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -21,8 +21,8 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    color: white;
-    font-weight: normal;
+    color: #EF564D;
+    font-weight: bold;
     font-size: 20px;
     width: 170px;
     margin-left: 130px;
@@ -51,7 +51,7 @@ const MiddleBar = styled.nav`
     height: 30px;
     padding: 1rem;
     color: black;
-    background: #13daf5;
+    background: #4EED8E;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -98,11 +98,11 @@ const RegisterButton = styled.button`
     margin-top: 5%;
     background-color: white;
     border-color: white;
-    color: #11dbca;
+    color: #4EED8E;
     text-align: center;
     line-height: 35px;
     font-size: 17px;
-    font-weight: normal;
+    font-weight: bold;
 `;
 
 // const LogoContainer = styled.div`
@@ -117,6 +117,7 @@ const InsideTitle = styled.div`
     width: 170px;
     color: black;
     font-size: 17px;
+    font-weight: bold;
     margin-top: -5%;
     margin-left: 25%;
 `;
@@ -132,7 +133,7 @@ const BottomBar = styled.nav`
   height: 28px;
   padding: 1rem;
   color: black;
-  background: #13daf5;
+  background: #4EED8E;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -140,7 +141,11 @@ const BottomBar = styled.nav`
   bottom: 0;
   left: 0;
   right: 0; 
-  margin-top: 20%;
+  margin-top: 74%;
+
+  .monitor {
+    margin-left: 5px;
+  }
 `;
 
 
@@ -166,20 +171,9 @@ export default function BandRegisterPage() {
             <MdToys size="30" color="red" />
         </Link>
         <Link to="/userregisterpage">
-            <FaUser size="27" color="black" />
+            <FaUserCircle size="28" color="black" />
         </Link>
     </MiddleBar>
-    <RegisterForm>
-        <InsideLogo>
-            <MdToys className="logo3" size="45" />
-        </InsideLogo>
-        <InsideForm>
-            <br />
-            <InsideTitle>기기 일련번호</InsideTitle>
-            <GetSerial type="text" placeholder="Serial Number Here" />
-            <RegisterButton>등록</RegisterButton>
-        </InsideForm>
-    </RegisterForm>
     <RegisterForm>
         <InsideLogo>
             <MdToys className="logo3" size="45" />
@@ -199,10 +193,10 @@ export default function BandRegisterPage() {
           <FaBaby size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor size="30" color="black"/>
+          <FiMonitor className="monitor" size="30" color="black"/>
         </Link>
         <Link to="/registerpage">
-          <FaUser size="30" color="black"/>
+          <FaUserCircle size="35" color="black"/>
         </Link>
     </BottomBar>
   </>

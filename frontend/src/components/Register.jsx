@@ -179,7 +179,7 @@ const InputSample = () => {
           <br />
           <br />
           <Link to="/">
-            <RegisterButton onClick={() => {alert("환영합니다!")}}>등록</RegisterButton>
+            <RegisterButton onClick={() => {alert("가입을 환영합니다!")}}>등록</RegisterButton>
           </Link>
           <br />
           <br />
