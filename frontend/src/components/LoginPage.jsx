@@ -6,24 +6,40 @@ import { Link } from 'react-router-dom';
 import { FaKey } from 'react-icons/fa';
 
 const Container = styled.div`
-  height: 800px;
-  width: 460px;
-  background-color: #bcddce;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: default;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #bcddce;
+  /* height: 800px;
+  width: 460px; */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
 `;
 
 const Title = styled.div`
+  display: flex;
+  margin-top: 50%;
   font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
   color: #3dbefa;
-  position: absolute;
+  /* position: absolute;
   top: 30%;
   left: 52%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  /* display: flex;
+  top: 0;
+  left: 0; */
+  /* justify-content: center;
+  align-items: center; */
 `;
 
 const LogoContainer = styled.div`
@@ -31,11 +47,11 @@ const LogoContainer = styled.div`
   font-family: sans-serif;
   font-weight: bold;
   color: black;
-  position: absolute;
+  /* position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -400%);
-  margin-left: 3%;
+  margin-left: 3%; */
 
   .logo {
     font-size: 40px;
@@ -44,36 +60,45 @@ const LogoContainer = styled.div`
 `;
 
 const UnderContainer = styled.div`
+  /* top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
   position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: default;
+  align-items: center; */
+  /* flex-direction: column; */
+  position: flex;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: 2%;
+  /* transform: translate(-50%, -50%); */
+  /* margin-left: 2%; */
 
   .logo2 {
     font-size: 20px;
     color: gray;
     position: absolute;
-    margin: 4px;
-    margin-left: 33%;
+    margin: 5px;
+    margin-left: 3%;
   }
 `;
 
 const ButtonContainer = styled.div`
 
-  width: 100%;
-  position: absolute;
-  top: 60%;
-  left: 82%;
-  transform: translate(-50%, -50%);
-  margin-left: 2%;
+  /* width: 100%; */
+  position: flex;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%);
+  margin-left: 2%; */
 `;
 
 const LoginButton = styled.button`
-  position: center;
+  /* position: center; */
   font-size: 0.9em;
-  margin-left: 0%;
+  /* margin-left: 0%; */
   padding: 0.25em 4.75em; //세로 가로
   border-radius: 3px;
   color: white;
@@ -81,9 +106,9 @@ const LoginButton = styled.button`
 `;
 
 const RegisterButton = styled.button`
-  position: center;
+  /* position: center; */
   font-size: 0.9em;
-  margin-left: 0%;
+  /* margin-left: 0%; */
   padding: 0.25em 4.35em; // 세로 가로
   border-radius: 3px; // 테두리
   color: white;
@@ -91,14 +116,14 @@ const RegisterButton = styled.button`
 `;
 
 const IdInputBox = styled.input`
-  margin-left: 32%;
+  /* margin-left: 32%; */
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
 
 `;
 
-const NameInputBox = styled.input`
-  margin-left: 32%;
+const PasswordInputBox = styled.input`
+  /* margin-left: 32%; */
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
 `;
@@ -113,14 +138,14 @@ export default function LoginPage() {
          <FaBaby className="logo" />
        </LogoContainer>
         <UnderContainer>
-         <FaUser className="logo2" />
+         <FaUser className="logo2"/>
          <IdInputBox type="text" placeholder='아이디' />
           <br />
-          <br />
-         <FaKey className="logo2" />
-         <NameInputBox type="password" placeholder='비밀번호' />
+         <FaKey className="logo2"/>
+         <PasswordInputBox type="password" placeholder='비밀번호' />
           <br />
         </UnderContainer>
+        <br />
         <ButtonContainer>
          <Link to="/mainpage">
           <LoginButton>로그인</LoginButton>

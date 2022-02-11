@@ -4,28 +4,45 @@ import { GoSignIn } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-  height: 900px;
+  /* height: 900px;
   width: 500px;
   background-color: #bcddce;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: default;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #bcddce;
 `;
 
 const Title = styled.div`
-  font-size: 2em;
+  /* font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
   color: #3dbefa;
   position: absolute;
   top: 15%;
   left: 52%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  display: flex;
+  margin-top: 50%;
+  font-size: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #3dbefa;
 `;
 
 const LogoContainer = styled.div`
-  font-size: 2em;
+  /* font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
   color: black;
@@ -33,7 +50,11 @@ const LogoContainer = styled.div`
   top: 43%;
   left: 49%;
   transform: translate(-50%, -400%);
-  margin-left: 3%;
+  margin-left: 3%; */
+  font-size: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: black;
 
   .logo {
     font-size: 40px;
@@ -42,26 +63,29 @@ const LogoContainer = styled.div`
 `;
 
 const UnderContainer = styled.div`
-  width: 100%;
+  /* width: 100%;
   height: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin-left: -1%;
-  margin-top: 35%;
+  margin-top: 35%; */
+  position: flex;
+  top: 50%;
+  left: 50%;
 
   .logo2 {
     font-size: 20px;
     color: gray;
     position: absolute;
-    margin: 4px;
-    margin-left: 33%;
+    margin: 5px;
+    margin-left: 3%;
   }
 `;
 
 const InputId = styled.input`
-  margin-left: 36%;
+  /* margin-left: 36%; */
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
 `;
@@ -69,11 +93,11 @@ const InputId = styled.input`
 const IdLabel = styled.label`
   color: black;
   font-size: 17px;
-  margin-left: 36%;
+  /* margin-left: 36%; */
 `;
 
 const InputPassword = styled.input`
-  margin-left: 36%;
+  /* margin-left: 36%; */
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
 `;
@@ -81,7 +105,7 @@ const InputPassword = styled.input`
 const PasswordLabel = styled.label`
   color: black;
   font-size: 17px;
-  margin-left: 36%;
+  /* margin-left: 36%; */
 `;
 
 const InputName = styled.input`
