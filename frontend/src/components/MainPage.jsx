@@ -11,10 +11,18 @@ import { MdBabyChangingStation } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-left: -40px;
+`;
 
 const TopBar = styled.nav`
-   height: 40px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 30px;
+   width: 100%;
    padding: 1rem;
    color: black;
    background: #4EED8E;
@@ -25,16 +33,33 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    /* align-items: center; */
     color: #EF564D;
     font-weight: bold;
     font-size: 20px;
-    width: 170px;
-    margin-left: 105px;
-    margin-bottom: 4px;
-   
+    width: 100%;
+    margin-right: 5%;
+
+   .baby {
+     font-size: 25px;
+     color: #FFD3C3;
+   }
 `;
 
+// const LogoBox = styled.div`
+//    /* margin-right: 100px; */
+
+//   .baby {
+//         font-size: 25px;
+//         color: #FFD3C3;
+//     }
+// `;
+
 const Logout = styled.div`
+  margin-left: -10px;
   height: 30px;
   width: 30px;
 
@@ -44,20 +69,12 @@ const Logout = styled.div`
   }
 `;
 
-const LogoBox = styled.div`
-  margin-right: 100px;
-
-  .baby {
-        font-size: 25px;
-        color: #FFD3C3;
-    }
-`;
-
 const StatusForm = styled.div`
-    width: 370px;
-    height: 230px;
-    margin-left: 7%;
-    margin-top: 10%;
+
+    width: 350px;
+    height: 230px; 
+    margin-left: 9%;
+    margin-top: 30%;
     border-radius: 10px;
     background-color: #f8f1f1;
 `;
@@ -80,7 +97,7 @@ const InsideLogo = styled.div`
 const HeartBeat = styled.div`
   width: 30px;
   margin-left: 110px;
-  margin-top: -58%;
+  margin-top: -60%;
 
   .Heartbeat {
     color: #f56464;
@@ -90,7 +107,7 @@ const HeartBeat = styled.div`
 
 const HearBeatRate = styled.div` // 서버에서 심장박동수 받아올 부분
   width: 220px;
-  margin-top: -90%;
+  margin-top: -100%;
   margin-left: 110%;
 `;
 
@@ -165,6 +182,7 @@ const DetectingOverturn = styled.div` // 서버에서 뒤집힘을 감지할 부
 
 const BottomBar = styled.nav`
   height: 28px;
+  width: 100%;
   padding: 1rem;
   color: black;
   background: #4EED8E;
@@ -172,13 +190,16 @@ const BottomBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 0;
+  /* bottom: 0;
   left: 0;
-  right: 0; 
-  margin-top: 80%;
+  right: 0;  */
+  margin-top: 74%;
 
   .monitor {
-    margin-left: 5%;
+    margin-left: -50%;
+  }
+  .user {
+    margin-left: -80%;
   }
 `;
 
@@ -191,13 +212,15 @@ export default function MainPage() {
             <MdLogout className="logout" />
           </Logout>
         </Link>
-        <Title>실시간 아이정보</Title>
-        <LogoBox>
-          <FaBaby className="baby" />
-        </LogoBox>
+          <Title>실시간 아이정보
+            <FaBaby className="baby" />
+          </Title>
+          {/* <LogoBox>
+            <FaBaby className="baby" />
+          </LogoBox> */}
       </TopBar>
       <Container>
-      <StatusForm>
+        <StatusForm>
         <InsideLogo>
           <FaBaby className="insidebaby" />
         </InsideLogo>
@@ -205,7 +228,7 @@ export default function MainPage() {
           <FaHeartbeat className="Heartbeat" />
           <HearBeatRate>심장박동수</HearBeatRate>
         </HeartBeat>
-        <br />
+         <br />
         <Oxygen>
           <SiOxygen className="Oxygen" />
           <OxygenRate>산소포화도</OxygenRate>
@@ -235,7 +258,7 @@ export default function MainPage() {
           <FiMonitor className="monitor" size="30" color="black"/>
         </Link>
         <Link to="/bandregisterpage">
-          <FaUserCircle size="35" color="black"/>
+          <FaUserCircle className="user" size="35" color="black"/>
         </Link>
       </BottomBar>
     </>

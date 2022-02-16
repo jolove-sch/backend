@@ -86,7 +86,7 @@ const UnderContainer = styled.div`
 
 const InputId = styled.input`
   /* margin-left: 36%; */
-  padding: 0.5em 1.5em; // 세로길이, 가로길이
+  padding: 0.5em 2.5em; // 세로길이, 가로길이
   text-align: center;
 `;
 
@@ -98,7 +98,7 @@ const IdLabel = styled.label`
 
 const InputPassword = styled.input`
   /* margin-left: 36%; */
-  padding: 0.5em 1.5em; // 세로길이, 가로길이
+  padding: 0.5em 2.5em; // 세로길이, 가로길이
   text-align: center;
 `;
 
@@ -109,22 +109,22 @@ const PasswordLabel = styled.label`
 `;
 
 const InputName = styled.input`
-  margin-left: 36%;
-  padding: 0.5em 1.5em; // 세로길이, 가로길이
+  /* margin-left: 36%; */
+  padding: 0.5em 2.5em; // 세로길이, 가로길이
   text-align: center;
 `;
 
 const NameLabel = styled.label`
   color: black;
   font-size: 17px;
-  margin-left: 36%;
+  /* margin-left: 36%; */
 `;
 
 const RegisterButton = styled.button`
   position: center;
   font-size: 0.9em;
-  margin-left: 36%;
-  padding: 0.25em 5.25em; //세로 가로
+  /* margin-left: 36%; */
+  padding: 0.25em 6.2em; //세로 가로
   border-radius: 3px;
   color: white;
   background: #3dbefa;
@@ -133,8 +133,8 @@ const RegisterButton = styled.button`
 const ResetButton = styled.button`
   position: center;
   font-size: 0.9em;
-  margin-left: 36%;
-  padding: 0.25em 4.9em; //세로 가로
+  /* margin-left: 36%; */
+  padding: 0.25em 5.9em; //세로 가로
   border-radius: 3px;
   color: white;
   background: #3dbefa;
@@ -163,7 +163,7 @@ const InputSample = () => {
   return (
     <>
       <Container>
-         <Title>회원가입</Title>
+        <Title>회원가입</Title>
          <LogoContainer>
              <GoSignIn className="logo" />
          </LogoContainer>

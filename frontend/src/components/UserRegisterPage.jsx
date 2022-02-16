@@ -9,8 +9,26 @@ import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
 
+const Container1 = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-left: -40px;
+`;
+
 const TopBar = styled.nav`
-   height: 40px;
+   /* height: 40px;
+   padding: 1rem;
+   color: black;
+   background: #4EED8E;
+   font-weight: bold;
+   display: flex;
+   justify-content: space-between;
+   align-items: center; */
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 30px;
+   width: 100%;
    padding: 1rem;
    color: black;
    background: #4EED8E;
@@ -21,12 +39,27 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    color: #EF564D;
+    /* color: #EF564D;
     font-weight: bold;
     font-size: 20px;
     width: 180px;
     margin-left: 120px;
-    margin-bottom: 4px;
+    margin-bottom: 4px; */
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    color: #EF564D;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    margin-right: 10%;
+
+    .user1 {
+      font-size: 25px;
+      color: black;
+      margin-left: 1%;
+    }
 `;
 
 const Logout = styled.div`
@@ -39,15 +72,16 @@ const Logout = styled.div`
   }
 `;
 
-const LogoBox = styled.div`
-  margin-right: 120px;
-  .logo {
-        font-size: 25px;
-        color: black;
-    }
-`;
+// const LogoBox = styled.div`
+//   margin-right: 120px;
+//   .logo {
+//         font-size: 25px;
+//         color: black;
+//     }
+// `;
 
 const MiddleBar = styled.nav`
+    width: 100%;
     height: 30px;
     padding: 1rem;
     color: black;
@@ -56,6 +90,14 @@ const MiddleBar = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 14%;
+
+    .user {
+      margin-left: -90%;
+    }
+    .mobil {
+      margin-left: -50%;
+    }
 `;
 
 const RegisterForm = styled.div`
@@ -95,7 +137,7 @@ const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
     margin-left: 20%;
-    margin-top: 5%;
+    margin-top: 1%;
     background-color: white;
     border-color: white;
     color: #4EED8E;
@@ -135,7 +177,7 @@ const GetPassword = styled.input`
 `;
 
 const BottomBar = styled.nav`
-  height: 28px;
+  /* height: 28px;
   padding: 1rem;
   color: black;
   background: #4EED8E;
@@ -150,6 +192,30 @@ const BottomBar = styled.nav`
 
   .monitor {
       margin-left: 5px;
+  } */
+  height: 28px;
+  width: 100%;
+  padding: 1rem;
+  color: black;
+  background: #4EED8E;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* bottom: 0;
+  left: 0;
+  right: 0;  */
+  margin-top: 76%;
+
+  .monitor2 {
+    margin-bottom: 1px;
+    margin-left: -50%;
+  }
+  .user {
+    margin-left: -80%;
+  }
+  .baby {
+    margin-bottom: 1px;
   }
 `;
 
@@ -162,22 +228,22 @@ export default function BandRegisterPage() {
             <MdLogout className="logout" />
           </Logout>
         </Link>
-        <Title>사용자 등록</Title>
-        <LogoBox>
-            <FaUserCircle className="logo" />
-        </LogoBox>
+        <Title>사용자 등록
+            <FaUserCircle className="user1" />
+        </Title>
     </TopBar>
     <MiddleBar>
         <Link to="/bandregisterpage">
             <BsSmartwatch size="27" color="black" />
         </Link>
         <Link to="/mobilregisterpage">
-            <MdToys size="30" color="black" />
+            <MdToys className="mobil" size="30" color="black" />
         </Link>
         <Link to="/userregisterpage">
-            <FaUserCircle size="27" color="red" />
+            <FaUserCircle className="user" size="28" color="red" />
         </Link>
     </MiddleBar>
+    <Container1>
     <RegisterForm>
         <InsideLogo>
             <FaUserCircle className="logo3" size="45" />
@@ -190,18 +256,19 @@ export default function BandRegisterPage() {
             <RegisterButton>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
+    </Container1>
     {/* <LogoContainer>
         <AiOutlinePlusSquare className="logo4" />
     </LogoContainer> */}
     <BottomBar>
     <Link to="/mainpage">
-          <FaBaby size="30" color="#FFD3C3"/>
+          <FaBaby className="baby" size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor className="monitor" size="30" color="black"/>
+          <FiMonitor className="monitor2" size="30" color="black"/>
         </Link>
         <Link to="/registerpage">
-          <FaUserCircle size="35" color="black"/>
+          <FaUserCircle className="user" size="35" color="black"/>
         </Link>
     </BottomBar>
   </>

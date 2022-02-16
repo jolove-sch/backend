@@ -26,7 +26,7 @@ const Container = styled.div`
 
 const Title = styled.div`
   display: flex;
-  margin-top: 50%;
+  margin-top: 55%;
   font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
