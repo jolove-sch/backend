@@ -1,6 +1,6 @@
 package com.backend.domain.service;
 
-import com.backend.domain.model.ResponseDto;
+import com.backend.domain.model.dto.ResponseDto;
 import com.backend.domain.util.SuccessCode;
 import org.springframework.http.ResponseEntity;
 
