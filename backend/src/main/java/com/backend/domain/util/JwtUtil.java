@@ -8,7 +8,7 @@ import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.backend.domain.error.exception.ErrorCode;
-import com.backend.domain.service.MemberService;
+import com.backend.domain.service.implement.MemberServiceImpl;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import lombok.Getter;
@@ -23,7 +23,7 @@ public class JwtUtil {
     private final String secretKey = "key-DND-team10";
     private final Algorithm ALGORITHM = Algorithm.HMAC512(secretKey);
     private final long AUTH_TIME = 1000 * 60 * 30; // 30min
-    private final MemberService memberService;
+    private final MemberServiceImpl memberServiceImpl;
 
     public String createAuthToken(String email) {
         Date now = new Date();

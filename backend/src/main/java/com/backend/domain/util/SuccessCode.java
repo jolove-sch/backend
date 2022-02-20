@@ -12,6 +12,9 @@ public enum SuccessCode {
     LOGIN_SUCCESS("login success", 200),
     LOGOUT_SUCCESS("logout success", 200),
     REISSUE_SUCCESS("reissue access token success", 200),
+
+    // Band
+    GET_BAND_STATUS_SUCCESS("밴드 상태 가져오기 성공", 200),
     ;
 
     private final String message;

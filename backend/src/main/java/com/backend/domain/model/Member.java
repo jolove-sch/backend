@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,13 +37,11 @@ public class Member{
     @Column(nullable = false)
     private String phoneNumber;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "member_id")
+    @OneToMany(mappedBy = "bandOwner", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<Band> bandList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "member_id")
+    @OneToMany(mappedBy = "mobileOwner", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<Mobile> mobileList = new ArrayList<>();
 }
