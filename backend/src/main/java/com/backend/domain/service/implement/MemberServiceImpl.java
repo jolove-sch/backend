@@ -14,7 +14,14 @@ public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 
     @Override
-    public Member loadUserByUserEmail(String username) {
+    public Member findMemberById(Long id) {
+        return memberRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        ErrorCode.ENTITY_NOT_FOUND));
+    }
+
+    @Override
+    public Member findMemberByEmail(String username) {
         return memberRepository.findMemberByEmail(username)
                 .orElseThrow(() -> new EntityNotFoundException(
                         ErrorCode.ENTITY_NOT_FOUND));

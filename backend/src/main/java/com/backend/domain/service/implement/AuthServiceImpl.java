@@ -34,7 +34,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public ResponseEntity<? extends ResponseDto> login(LoginDto loginDto) {
-        Member member = memberService.loadUserByUserEmail(loginDto.getEmail());
+        Member member = memberService.findMemberByEmail(loginDto.getEmail());
 
         if (!passwordEncoder.matches(loginDto.getPassword(), member.getPassword())) {
             throw new InvalidValueException(ErrorCode.LOGIN_INPUT_INVALID.getMessage(),
