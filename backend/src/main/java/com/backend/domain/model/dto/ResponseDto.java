@@ -1,4 +1,4 @@
-package com.backend.domain.model;
+package com.backend.domain.model.dto;
 
 import java.util.ArrayList;
 import lombok.AllArgsConstructor;

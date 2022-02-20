@@ -24,6 +24,8 @@ public enum ErrorCode {
     SIGNATURE_INVALID_JWT(403, "JOO3", "Signature Invalid Jwt"),
     JWT_NOT_FOUND(403, "J004", "Jwt Not Found"),
 
+
+
     ;
     private final String code;
     private final String message;
