@@ -21,6 +21,9 @@ dependencies {
 //    JWT
     implementation('com.auth0:java-jwt:3.18.3')
 
+//    validator
+    implementation('org.hibernate:hibernate-validator:6.1.0.Final')
+
 //    security
     implementation('org.springframework.boot:spring-boot-starter-security')
 
