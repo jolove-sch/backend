@@ -1,4 +1,4 @@
-package com.backend.domain.model.dto;
+package com.backend.domain.model.dto.band;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
