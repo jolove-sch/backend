@@ -6,40 +6,17 @@ import { FaBaby } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 
-const Container = styled.div`
+const Container1 = styled.div`
   display: flex;
-  justify-content: center;
-  margin-left: -40px;
-`;
-
-const Container2 = styled.div`
-  /* display: flex;
-  justify-content: center;
-  margin-top: 35%; */
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-`;
-
-const Container3 = styled.div`
-  /* display: flex;
-  justify-content: center;
-  margin-bottom: -30%; */
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
+  /* justify-content: center; */
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const TopBar = styled.nav`
-   /* height: 40px;
-   padding: 1rem;
-   color: black;
-   background: #4EED8E;
-   font-weight: bold;
-   display: flex;
-   justify-content: space-between;
-   align-items: center; */
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
    height: 30px;
@@ -54,12 +31,6 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    /* color: #EF564D;
-    font-weight: bold;
-    font-size: 20px;
-    width: 170px;
-    margin-left: 110px;
-    margin-bottom: 4px; */
     display: flex;
     justify-content: center;
     /* justify-content: space-between; */
@@ -68,12 +39,11 @@ const Title = styled.div`
     font-weight: bold;
     font-size: 20px;
     width: 100%;
-    margin-right: 10%;
 
     .monitor {
+      margin-left: 0.3rem;
       font-size: 25px;
       color: black;
-      margin-left: 1%;
     }
 `;
 
@@ -82,7 +52,6 @@ const Logout = styled.div`
   width: 30px;
 
   .logout {
-    margin-left: -35%;
     font-size: 25px;
     color: black;
   }
@@ -96,26 +65,48 @@ const Logout = styled.div`
 //     }
 // `;
 
+const VideoBoxContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
 const VideoBox = styled.div`
     width: 370px;
     height: 250px;
-    margin-left: 9%;
-    margin-top: 20%;
     border-radius: 10px;
     background-color: #d1cccc;
+`;
+
+const ControlBoxContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
 `;
 
 const ControlBox = styled.div`
   width: 130px;
   height: 35px;
-  margin-top: 10%;
   border-radius: 20px;
   background-color: #f7f709;
   color: black;
   text-align: center;
-  line-height: 35px;
   font-weight: bold;
   font-size: 20px;
+  line-height: 35px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
 `;
 
 const OnButton = styled.button`
@@ -127,7 +118,8 @@ const OnButton = styled.button`
     background-color: #0068FA;
     color: black;
     text-align: center;
-    line-height: 35px;
+    vertical-align: center;
+    /* line-height: 35px; */
     font-size: 20px;
     font-weight: bold;
 `;
@@ -141,7 +133,8 @@ const OffButton = styled.button`
     background-color: #FA1201;
     color: black;
     text-align: center;
-    line-height: 35px;
+    vertical-align: center;
+    /* line-height: 35px; */
     font-size: 20px;
     font-weight: bold;
 `;
@@ -171,23 +164,13 @@ const BottomBar = styled.nav`
   /* bottom: 0;
   left: 0;
   right: 0;  */
-  margin-top: 34%;
-
-  .monitor2 {
-    margin-bottom: 1px;
-    margin-left: -50%;
-  }
-  .user {
-    margin-left: -80%;
-  }
-  .baby {
-    margin-bottom: 1px;
-  }
+  position: fixed;
+  bottom: 0;
 `;
 
 export default function MonitoringPage() {
   return (
-      <>
+      <Container1>
       <TopBar>
         <Link to="/">
           <Logout>
@@ -198,27 +181,30 @@ export default function MonitoringPage() {
            <FiMonitor className="monitor" />
          </Title>
       </TopBar>
-      <Container>
+      <VideoBoxContainer>
       <VideoBox />
-      </Container>
-      <Container2>
+      {/* <ControlBoxContainer> */}
+      {/* <ControlBox>모빌</ControlBox> */}
+      <ControlBoxContainer>
       <ControlBox>모빌</ControlBox>
-      </Container2>
-      <Container3>
+      </ControlBoxContainer>
+      <ButtonContainer>
       <OnButton>ON</OnButton>
       <OffButton>OFF</OffButton>
-      </Container3>
+      </ButtonContainer>
+      {/* </ControlBoxContainer> */}
+      </VideoBoxContainer>
       <BottomBar>
         <Link to="/mainpage">
-          <FaBaby className="baby" size="30" color="#FFD3C3"/>
+          <FaBaby size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor className="monitor2" size="30" color="black"/>
+          <FiMonitor size="30" color="black"/>
         </Link>
         <Link to="/bandregisterpage">
-          <FaUserCircle className="user" size="35" color="black"/>
+          <FaUserCircle size="35" color="black"/>
         </Link>
       </BottomBar>
-    </>
+      </Container1>
   );
 }

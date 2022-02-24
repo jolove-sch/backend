@@ -11,10 +11,18 @@ import { MdBabyChangingStation } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 
-const Container = styled.div`
+// const Container = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   margin-left: -40px;
+// `;
+
+const Container1 = styled.div`
   display: flex;
-  justify-content: center;
-  margin-left: -40px;
+  /* justify-content: center; */
+  width: 100%;
+  height: 100%;
+  align-items: center;
 `;
 
 const TopBar = styled.nav`
@@ -41,7 +49,7 @@ const Title = styled.div`
     font-weight: bold;
     font-size: 20px;
     width: 100%;
-    margin-right: 5%;
+    /* margin-right: 5%; */
 
    .baby {
      font-size: 25px;
@@ -59,7 +67,7 @@ const Title = styled.div`
 // `;
 
 const Logout = styled.div`
-  margin-left: -10px;
+  /* margin-left: -10px; */
   height: 30px;
   width: 30px;
 
@@ -69,35 +77,61 @@ const Logout = styled.div`
   }
 `;
 
-const StatusForm = styled.div`
+const StatusContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-    width: 350px;
-    height: 230px; 
-    margin-left: 9%;
-    margin-top: 30%;
+const StatusForm = styled.div`
+    /* overflow: scroll; */
+    width: 600px;
+    height: 300px; 
+    /* margin-left: 9%;
+    margin-top: 30%; */
     border-radius: 10px;
     background-color: #f8f1f1;
+    
 `;
 
 const InsideLogo = styled.div`
-    width: 100px;
-    height: 230px;
-    margin-right: 0;
+    width: 5rem;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 0; */
     background-color: #FAF427;
     border-radius: 10px;
+    float: left;
 
     .insidebaby {
-        margin-left: 25%;
-        margin-top: 90%;
+        /* margin-left: 25%;
+        margin-top: 90%; */
         font-size: 50px;
         color: #FFD3C3;
     }
 `;
 
-const HeartBeat = styled.div`
+const Insidestatus = styled.div`
+  margin-top: 2rem;
+  float: right;
+  width: 30rem;
+  height: 30rem;
+`;
+
+const HeartBeatContainer = styled.div`
+  width: 250px;
+  height: 50px;
+`;
+
+const HeartBeat = styled.span`
   width: 30px;
-  margin-left: 110px;
-  margin-top: -60%;
+  height: 30px;
+  /* margin-left: 110px;
+  margin-top: -60%; */
 
   .Heartbeat {
     color: #f56464;
@@ -105,16 +139,22 @@ const HeartBeat = styled.div`
   }
 `;
 
-const HearBeatRate = styled.div` // 서버에서 심장박동수 받아올 부분
+const HearBeatRate = styled.span` // 서버에서 심장박동수 받아올 부분
   width: 220px;
-  margin-top: -100%;
-  margin-left: 110%;
+  height: 20px;
+  /* margin-top: -100%;
+  margin-left: 110%; */
 `;
 
-const Oxygen = styled.div`
+const OxygenContainer = styled.div`
   width: 250px;
-  margin-left: 110px;
-  margin-top: 0%;
+  height: 50px;
+`;
+
+const Oxygen = styled.span`
+  width: 250px;
+  /* margin-left: 110px;
+  margin-top: 0%; */
 
   .Oxygen {
     color: #220bf5;
@@ -122,16 +162,21 @@ const Oxygen = styled.div`
   }
 `;
 
-const OxygenRate = styled.div` // 서버에서 산소포화도 받아올 부분
+const OxygenRate = styled.span` // 서버에서 산소포화도 받아올 부분
   width: 220px;
-  margin-top: -10%;
-  margin-left: 14%;
+  /* margin-top: -10%;
+  margin-left: 14%; */
 `;
 
-const Temperature = styled.div`
+const TemperaturetContainer = styled.div`
   width: 250px;
-  margin-left: 110px;
-  margin-top: 0%;
+  height: 50px;
+`;
+
+const Temperature = styled.span`
+  width: 250px;
+  /* margin-left: 110px;
+  margin-top: 0%; */
 
   .Temperature {
     color: #0c0000;
@@ -139,17 +184,21 @@ const Temperature = styled.div`
   }
 `;
 
-const TemperatureRate = styled.div` // 서버에서 체온 받아올 부분
+const TemperatureRate = styled.span` // 서버에서 체온 받아올 부분
   width: 220px;
-  margin-top: -10%;
-  margin-left: 14%;
+  /* margin-top: -10%;
+  margin-left: 14%; */
 `;
 
-
-const Crying = styled.div`
+const CryingContainer = styled.div`
   width: 250px;
-  margin-left: 110px;
-  margin-top: 0%;
+  height: 50px;
+`;
+
+const Crying = styled.span`
+  width: 250px;
+  /* margin-left: 110px;
+  margin-top: 0%; */
 
   .Crying {
     color: #0c0000;
@@ -157,16 +206,21 @@ const Crying = styled.div`
   }
 `;
 
-const DetectCrying = styled.div` // 서버에서 울음을 감지할 부분
+const DetectCrying = styled.span` // 서버에서 울음을 감지할 부분
   width: 220px;
-  margin-top: -10%;
-  margin-left: 14%;
+  /* margin-top: -10%;
+  margin-left: 14%; */
 `;
 
-const Overturn = styled.div`
+const OverturnContainer = styled.div`
   width: 250px;
-  margin-left: 110px;
-  margin-top: 0%;
+  height: 50px;
+`;
+
+const Overturn = styled.span`
+  width: 250px;
+  /* margin-left: 110px;
+  margin-top: 0%; */
 
   .Overturn {
     color: #0c0000;
@@ -174,10 +228,10 @@ const Overturn = styled.div`
   }
 `;
 
-const DetectingOverturn = styled.div` // 서버에서 뒤집힘을 감지할 부분
+const DetectingOverturn = styled.span` // 서버에서 뒤집힘을 감지할 부분
   width: 220px;
-  margin-top: -10%;
-  margin-left: 14%;
+  /* margin-top: -10%;
+  margin-left: 14%; */
 `;
 
 const BottomBar = styled.nav`
@@ -187,25 +241,42 @@ const BottomBar = styled.nav`
   color: black;
   background: #4EED8E;
   font-weight: bold;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  position: fixed;
+  bottom: 0;
   /* bottom: 0;
   left: 0;
   right: 0;  */
-  margin-top: 74%;
+  /* margin-top: 74%; */
+`;
 
-  .monitor {
-    margin-left: -50%;
-  }
-  .user {
-    margin-left: -80%;
-  }
+const BottomLogoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const BottomBaby = styled.div`
+  width: 50px;
+  height: 50px;
+`;
+
+const BottomMonitor = styled.div`
+  width: 50px;
+  height: 50px;
+`;
+
+const BottomUser = styled.div`
+  width: 50px;
+  height: 50px;
 `;
 
 export default function MainPage() {
   return ( 
-    <>
+    // <>
+    <Container1>
       <TopBar>
         <Link to="/">
           <Logout>
@@ -215,53 +286,67 @@ export default function MainPage() {
           <Title>실시간 아이정보
             <FaBaby className="baby" />
           </Title>
-          {/* <LogoBox>
-            <FaBaby className="baby" />
-          </LogoBox> */}
       </TopBar>
-      <Container>
+      <StatusContainer>
         <StatusForm>
         <InsideLogo>
           <FaBaby className="insidebaby" />
         </InsideLogo>
+        <Insidestatus>
+        <HeartBeatContainer>
         <HeartBeat> 
           <FaHeartbeat className="Heartbeat" />
           <HearBeatRate>심장박동수</HearBeatRate>
         </HeartBeat>
-         <br />
+        </HeartBeatContainer>
+        <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
           <OxygenRate>산소포화도</OxygenRate>
         </Oxygen>
-        <br />
+        </OxygenContainer>
+        <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
           <TemperatureRate>체온</TemperatureRate>
         </Temperature>
-        <br />
+        </TemperaturetContainer>
+        <CryingContainer>
         <Crying>
           <ImCrying className="Crying" />
           <DetectCrying>울음감지</DetectCrying>
         </Crying>
-        <br />
+        </CryingContainer>
+        <OverturnContainer>
         <Overturn>
           <MdBabyChangingStation className="Overturn" />
           <DetectingOverturn>뒤집힘감지</DetectingOverturn>
         </Overturn>
+        </OverturnContainer>
+        </Insidestatus>
       </StatusForm>
-      </Container>
+      </StatusContainer>
       <BottomBar>
-      <Link to="/mainpage">
+        <BottomLogoContainer>
+        <BottomBaby>
+        <Link to="/mainpage">
           <FaBaby size="30" color="#FFD3C3"/>
         </Link>
+        </BottomBaby>
+        <BottomMonitor>
         <Link to="/monitoringpage">
-          <FiMonitor className="monitor" size="30" color="black"/>
+          <FiMonitor size="30" color="black"/>
         </Link>
+        </BottomMonitor>
+        <BottomUser>
         <Link to="/bandregisterpage">
-          <FaUserCircle className="user" size="35" color="black"/>
+          <FaUserCircle size="35" color="black"/>
         </Link>
+        </BottomUser>
+        </BottomLogoContainer>
       </BottomBar>
-    </>
+    </Container1>
+    // </>
   );
 }
 

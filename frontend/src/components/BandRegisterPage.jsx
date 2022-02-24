@@ -10,26 +10,15 @@ import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
 
 const Container1 = styled.div`
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  margin-left: -40px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 `;
 
-// const Container2 = styled.div``;
-
-// const Container3 = styled.div``;
-
-
 const TopBar = styled.nav`
-   /* height: 40px;
-   padding: 1rem;
-   color: black;
-   background: #4EED8E;
-   font-weight: bold;
-   display: flex;
-   justify-content: space-between;
-   align-items: center; */
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
    height: 30px;
@@ -44,26 +33,19 @@ const TopBar = styled.nav`
 `;
 
 const Title = styled.div`
-    /* color: #EF564D;
-    font-weight: bold;
-    font-size: 20px;
-    width: 170px;
-    margin-left: 130px;
-    margin-bottom: 4px; */
     display: flex;
     justify-content: center;
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    align-items: center;
     color: #EF564D;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
-    margin-right: 10%;
+    margin-right: 3rem;
 
     .watch {
-    font-size: 25px;
-    color: black;
-    margin-left: 1%;
+      margin-left: 0.3rem;
+      font-size: 25px;
+      color: black;
    }
 `;
 
@@ -72,81 +54,84 @@ const Logout = styled.div`
   width: 30px;
 
   .logout {
-    margin-left: 0%;
     font-size: 25px;
     color: black;
   }
 `;
 
-// const LogoBox = styled.div`
-//   margin-right: 130px;
-
-//   .logo {
-//         font-size: 25px;
-//         color: black;
-//     }
-// `;
+const MiddleBarContainer = styled.div`
+  display: inline-flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%; 
+`;
 
 const MiddleBar = styled.nav`
+    position: fixed;
+    top: 6vh;
     width: 100%;
     height: 30px;
     padding: 1rem;
     color: black;
     background: #4EED8E;
     font-weight: bold;
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 14%;
-
-    .user {
-      margin-left: -90%;
-    }
-    .mobil {
-      margin-left: -50%;
-    }
 `;
 
-// const Container = styled.div``;
+const BandIconContainer = styled.div`
+  width: 2rem;
+  height: 2rem;
+`;
+const MobilIconContainer = styled.div`
+  width: 2rem;
+  height: 2rem;
+`;
+const UserIconContainer = styled.div`
+  width: 2rem;
+  height: 2rem;
+`;
+
+const RegisterFormContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const RegisterForm = styled.div`
-    width: 370px;
+    width: 350px;
     height: 170px;
-    margin-left: 7%;
-    margin-top: 15%;
     border-radius: 10px;
     background-color: white;
     font-size: 20px;
     box-shadow: 4px 4px 0px #e9dadad7;
 `;
 
-const InsideForm = styled.div`
-    width: 200px;
-    height: 170px;
-    margin-top: -39%;
-    margin-left: 35%;
-`;
-
 const InsideLogo = styled.div`
-    width: 100px;
+    width: 6rem;
     height: 170px;
-    margin-right: 0;
-    margin-left: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: yellow;
     border-radius: 10px;
+    float: left;
+`;
 
-    .logo3 {
-        margin-left: 30%;
-        margin-top: 60%;
-    }
-
+const InsideForm = styled.div`
+    margin-top: 1rem;
+    margin-right: 3rem;
+    float: right;
+    width: 10rem;
+    height: 10rem;
 `;
 
 const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
-    margin-left: 22%;
-    margin-top: 5%;
     background-color: white;
     border-color: white;
     color: #4EED8E;
@@ -154,49 +139,23 @@ const RegisterButton = styled.button`
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
+    margin-left: 2rem;
 `;
-
-// const LogoContainer = styled.div`
-//     .logo4 {
-//         color: black;
-//         font-size: 30px;
-//         margin-left: 48%;
-//     }
-// `;
 
 const InsideTitle = styled.div`
     width: 170px;
     color: black;
     font-size: 17px;
     font-weight: bold;
-    margin-top: -5%;
-    margin-left: 25%;
+    margin-left: 2rem;
 `;
 
 const GetSerial = styled.input`
     width: 150px;
-    margin-left: 17px;
-    margin-top: -5px;
     text-align: center;
 `;
 
 const BottomBar = styled.nav`
-  /* height: 28px;
-  padding: 1rem;
-  color: black;
-  background: #4EED8E;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  bottom: 0;
-  left: 0;
-  right: 0; 
-  margin-top: 74%;
-  
-  .monitor {
-    margin-left: 5px;
-  } */
   height: 28px;
   width: 100%;
   padding: 1rem;
@@ -206,27 +165,14 @@ const BottomBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* bottom: 0;
-  left: 0;
-  right: 0;  */
-  margin-top: 76%;
-
-  .monitor2 {
-    margin-bottom: 1px;
-    margin-left: -50%;
-  }
-  .user {
-    margin-left: -80%;
-  }
-  .baby {
-    margin-bottom: 1px;
-  }
+  position: fixed;
+  bottom: 0;
 `;
 
 export default function BandRegisterPage() {
 
   return (
-    <>
+    <Container1>
     <TopBar>
         <Link to="/">
           <Logout>
@@ -237,18 +183,26 @@ export default function BandRegisterPage() {
           <BsSmartwatch className="watch" />
         </Title>
     </TopBar>
+    <MiddleBarContainer>
     <MiddleBar>
         <Link to="/bandregisterpage">
+          <BandIconContainer>
             <BsSmartwatch size="27" color="red" />
+          </BandIconContainer>
         </Link>
         <Link to="/mobilregisterpage">
+          <MobilIconContainer>
             <MdToys className="mobil" size="30" color="black" />
+          </MobilIconContainer>
         </Link>
         <Link to="/userregisterpage">
+          <UserIconContainer>
             <FaUserCircle className="user" size="28"color="black" />
+          </UserIconContainer>
         </Link>
     </MiddleBar>
-    <Container1>
+    {/* </MiddleBarContainer> */}
+    <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
             <BsSmartwatch className="logo3" size="45" />
@@ -260,21 +214,17 @@ export default function BandRegisterPage() {
             <RegisterButton>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    {/* <LogoContainer>
-        <AiOutlinePlusSquare className="logo4" />
-    </LogoContainer> */}
-    </Container1>
+    </RegisterFormContainer>
+    </MiddleBarContainer>
     <BottomBar>
         <Link to="/mainpage">
-          <FaBaby className="baby" size="30" color="#FFD3C3"/>
+          <FaBaby size="30" color="#FFD3C3"/>
         </Link>
         <Link to="/monitoringpage">
-          <FiMonitor className="monitor2" size="30" color="black"/>
+          <FiMonitor size="30" color="black"/>
         </Link>
-        <Link to="/registerpage">
-          <FaUserCircle className="user" size="35" color="black"/>
-        </Link>
+          <FaUserCircle size="35" color="black"/>
     </BottomBar>
-  </>
+    </Container1>
   );
 }
