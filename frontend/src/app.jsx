@@ -9,7 +9,7 @@ import BandRegisterPage from './components/BandRegisterPage';
 import MobilRegisterPage from './components/MobilRegisterPage';
 import UserRegisterPage from './components/UserRegisterPage';
 
-function App({user, register, state}) {
+function App({user, register1, state}) {
   return (
     <div className="App">
       <Router>
@@ -27,10 +27,10 @@ function App({user, register, state}) {
             <MonitoringPage />
           </Route>
           <Route path="/BandRegisterPage">
-            <BandRegisterPage register={register}/>
+            <BandRegisterPage register1={register1}/>
           </Route>
           <Route path="/MobilRegisterPage">
-            <MobilRegisterPage register={register}/>
+            <MobilRegisterPage register1={register1}/>
           </Route>
           <Route path="/UserRegisterPage">
             <UserRegisterPage />

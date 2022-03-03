@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-class Register {
+class register {
     async mobilRegister (email, serialNumber){
         try {
             const res = await axios({
@@ -38,4 +38,4 @@ class Register {
 
 }
 
-export default Register;
+export default register;

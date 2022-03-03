@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
@@ -169,14 +169,44 @@ const BottomBar = styled.nav`
   bottom: 0;
 `;
 
-const MobilRegisterPage = () => {
+const MobilRegisterPage = ({register1}) => {
+    const history = useHistory();
+    const [serialNumber, setSerialNumber] = useState('');
+    const [email, setEmail] = useState('');
+    const inputRef = useRef()
+
+    const goToMain = () => {
+      history.push('./MainPage');
+  }
+
+  const MobilRegister = event => {
+      event.preventDefault();
+      if(serialNumber === "" || email ===""){
+          window.alert("이메일과 모빌의 일련번호를 입력해주세요.");
+          return;
+      }
+      console.log('Mobil Register');
+      register1.mobilRegister(email, serialNumber);
+  };
+
+  const handleChange = (event) => {
+    const type = event.target.name;
+    if (type === 'serialNumber') {
+        const inputNumber = event.target.value;
+        setSerialNumber(inputNumber);
+    }
+    else if (type === 'email') {
+        const inputEmail= event.target.value;
+        setEmail(inputEmail);
+    }
+}
 
   return (
     <Container1>
     <TopBar>
     <Link to="/">
           <Logout>
-            <MdLogout className="logout" />
+            <MdLogout className="logout" onClick={goToMain}/>
           </Logout>
         </Link>
         <Title>모빌 등록
@@ -209,8 +239,20 @@ const MobilRegisterPage = () => {
         <InsideForm>
             <br />
             <InsideTitle>기기 일련번호</InsideTitle>
-            <GetSerial type="text" placeholder="Serial Number Here" />
-            <RegisterButton>등록</RegisterButton>
+            <GetSerial 
+              type="text" 
+              name="email"
+              placeholder="email Here" 
+              onChange={handleChange}
+            />
+            <GetSerial 
+              type="text" 
+              placeholder="Serial Number Here" 
+              name="serialNumber"
+              ref={inputRef}
+              onChange={handleChange}
+            />
+            <RegisterButton onClick={MobilRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
     </RegisterFormContainer>
