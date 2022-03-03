@@ -8,9 +8,8 @@ import { MdLogout } from 'react-icons/md';
 
 const Container1 = styled.div`
   display: flex;
-  /* justify-content: center; */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
   flex-direction: column;
 `;
@@ -19,9 +18,8 @@ const TopBar = styled.nav`
    position: fixed;
    top: 0;
    left: 0;
-   height: 30px;
-   width: 100%;
-   padding: 1rem;
+   height: 3rem;
+   width: 100vw;
    color: black;
    background: #4EED8E;
    font-weight: bold;
@@ -33,8 +31,7 @@ const TopBar = styled.nav`
 const Title = styled.div`
     display: flex;
     justify-content: center;
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    align-items: center;
     color: #EF564D;
     font-weight: bold;
     font-size: 20px;
@@ -56,14 +53,6 @@ const Logout = styled.div`
     color: black;
   }
 `;
-
-// const LogoBox = styled.div`
-//   margin-right: 110px;
-//   .logo {
-//         font-size: 25px;
-//         color: black;
-//     }
-// `;
 
 const VideoBoxContainer = styled.div`
   width: 100%;
@@ -112,14 +101,11 @@ const ButtonContainer = styled.div`
 const OnButton = styled.button`
     width: 100px;
     height: 35px;
-    /* margin-left: 25%;
-    margin-top: 5%; */
     border-radius: 20px;
     background-color: #0068FA;
     color: black;
     text-align: center;
     vertical-align: center;
-    /* line-height: 35px; */
     font-size: 20px;
     font-weight: bold;
 `;
@@ -127,45 +113,62 @@ const OnButton = styled.button`
 const OffButton = styled.button`
     width: 100px;
     height: 35px;
-    /* margin-left: 3%;
-    margin-top: 5%; */
     border-radius: 20px;
     background-color: #FA1201;
     color: black;
     text-align: center;
     vertical-align: center;
-    /* line-height: 35px; */
     font-size: 20px;
     font-weight: bold;
 `;
 
 const BottomBar = styled.nav`
-  /* height: 28px;
-  padding: 1rem;
+  height: 3rem;
+  width: 100vw;
   color: black;
   background: #4EED8E;
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  bottom: 0;
-  left: 0;
-  right: 0; 
-  margin-top: 34%; */
-  height: 28px;
-  width: 100%;
-  padding: 1rem;
-  color: black;
-  background: #4EED8E;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* bottom: 0;
-  left: 0;
-  right: 0;  */
   position: fixed;
   bottom: 0;
+  align-items: center;
+`;
+
+const BottomLogoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin-top: 10px;
+`;
+
+const BottomBaby = styled.div`
+  /* width: 2em;
+  height: 1em; */
+
+  .bottombaby {
+    font-size: 30px;
+    color: #FFD3C3;
+  }
+`;
+
+const BottomMonitor = styled.div`
+  /* width: 2em;
+  height: 1em; */
+
+  .bottommonitor {
+    font-size: 30px;
+    color: black;
+  }
+`;
+
+const BottomUser = styled.div`
+  /* width: 2em;
+  height: 1em; */
+
+  .bottomuser {
+    font-size: 30px;
+    color: black;
+  }
 `;
 
 export default function MonitoringPage() {
@@ -183,8 +186,6 @@ export default function MonitoringPage() {
       </TopBar>
       <VideoBoxContainer>
       <VideoBox />
-      {/* <ControlBoxContainer> */}
-      {/* <ControlBox>모빌</ControlBox> */}
       <ControlBoxContainer>
       <ControlBox>모빌</ControlBox>
       </ControlBoxContainer>
@@ -192,18 +193,25 @@ export default function MonitoringPage() {
       <OnButton>ON</OnButton>
       <OffButton>OFF</OffButton>
       </ButtonContainer>
-      {/* </ControlBoxContainer> */}
       </VideoBoxContainer>
       <BottomBar>
+        <BottomLogoContainer>
+        <BottomBaby>
         <Link to="/mainpage">
-          <FaBaby size="30" color="#FFD3C3"/>
+          <FaBaby className="bottombaby" />
         </Link>
+        </BottomBaby>
+        <BottomMonitor>
         <Link to="/monitoringpage">
-          <FiMonitor size="30" color="black"/>
+          <FiMonitor className="bottommonitor" />
         </Link>
+        </BottomMonitor>
+        <BottomUser>
         <Link to="/bandregisterpage">
-          <FaUserCircle size="35" color="black"/>
+          <FaUserCircle className="bottomuser" />
         </Link>
+        </BottomUser>
+        </BottomLogoContainer>
       </BottomBar>
       </Container1>
   );

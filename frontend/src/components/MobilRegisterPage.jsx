@@ -10,10 +10,10 @@ import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
 
 const Container1 = styled.div`
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
 `;
 
@@ -21,9 +21,8 @@ const TopBar = styled.nav`
    position: fixed;
    top: 0;
    left: 0;
-   height: 30px;
-   width: 100%;
-   padding: 1rem;
+   height: 3rem;
+   width: 100vw;
    color: black;
    background: #4EED8E;
    font-weight: bold;
@@ -39,8 +38,7 @@ const Title = styled.div`
     color: #EF564D;
     font-weight: bold;
     font-size: 20px;
-    width: 100%;
-    margin-right: 3rem;
+    width: 100vw;
 
     .mobil {
       margin-left: 0.3rem;
@@ -63,15 +61,14 @@ const MiddleBarContainer = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: start;
-  width: 100%; 
+  width: 100vw;
 `;
 
 const MiddleBar = styled.nav`
    position: fixed;
-   top: 6vh;
-   width: 100%;
-   height: 30px;
-   padding: 1rem;
+   top: 3rem;
+   width: 100vw;
+   height: 3rem;
    color: black;
    background: #4EED8E;
    font-weight: bold;
@@ -81,21 +78,21 @@ const MiddleBar = styled.nav`
 `;
 
 const BandIconContainer = styled.div`
-  width: 2rem;
-  height: 2rem;
+  /* width: 2rem;
+  height: 2rem; */
 `;
 const MobilIconContainer = styled.div`
-  width: 2rem;
-  height: 2rem;
+  /* width: 2rem;
+  height: 2rem; */
 `;
 const UserIconContainer = styled.div`
-  width: 2rem;
-  height: 2rem;
+  /* width: 2rem;
+  height: 2rem; */
 `;
 
 const RegisterFormContainer = styled.div`
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: calc( 100vh - 12rem );
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -156,19 +153,62 @@ const GetSerial = styled.input`
 `;
 
 const BottomBar = styled.nav`
-  height: 28px;
-  width: 100%;
-  padding: 1rem;
+  height: 3rem;
+  width: 100vw;
   color: black;
   background: #4EED8E;
   font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+`;
+
+const SetBottom = styled.div` // 그냥 크기 맞추는용 없앨수도 있음
+  height: 3rem;
+  width: 100vw;
+  background-color: white;
+  color: white;
+  position: fixed;
+  bottom: 3rem;
+`;
+
+const BottomLogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  bottom: 0;
+  width: 100vw;
+  margin-top: 10px;
 `;
 
+const BottomBaby = styled.div`
+  /* width: 2em;
+  height: 1em; */
+
+  .bottombaby {
+    font-size: 30px;
+    color: #FFD3C3;
+  }
+`;
+
+const BottomMonitor = styled.div`
+  /* width: 2em;
+  height: 1em; */
+
+  .bottommonitor {
+    font-size: 30px;
+    color: black;
+  }
+`;
+
+const BottomUser = styled.div`
+  /* width: 2em;
+  height: 1em; */
+
+  .bottomuser {
+    font-size: 30px;
+    color: black;
+  }
+`;
 
 export default function BandRegisterPage() {
 
@@ -216,16 +256,25 @@ export default function BandRegisterPage() {
     </RegisterForm>
     </RegisterFormContainer>
     </MiddleBarContainer>
+    <SetBottom />
     <BottomBar>
+      <BottomLogoContainer>
+        <BottomBaby>
         <Link to="/mainpage">
-          <FaBaby className="baby" size="30" color="#FFD3C3"/>
+          <FaBaby className="bottombaby" />
         </Link>
+        </BottomBaby>
+        <BottomMonitor>
         <Link to="/monitoringpage">
-          <FiMonitor className="monitor2" size="30" color="black"/>
+          <FiMonitor className="bottommonitor" />
         </Link>
+        </BottomMonitor>
+        <BottomUser>
         <Link to="/registerpage">
-          <FaUserCircle className="user" size="35" color="black"/>
+          <FaUserCircle className="bottomuser" />
         </Link>
+        </BottomUser>
+      </BottomLogoContainer>
     </BottomBar>
     </Container1>
   );
