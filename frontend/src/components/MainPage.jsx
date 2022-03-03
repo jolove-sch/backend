@@ -273,7 +273,7 @@ const BottomUser = styled.div`
   height: 50px;
 `;
 
-export default function MainPage() {
+const MainPage = () => {
   return ( 
     // <>
     <Container1>
@@ -350,4 +350,5 @@ export default function MainPage() {
   );
 }
 
+export default MainPage;
 

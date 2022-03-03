@@ -169,7 +169,7 @@ const BottomBar = styled.nav`
   bottom: 0;
 `;
 
-export default function BandRegisterPage() {
+const BandRegisterPage = () => {
 
   return (
     <Container1>
@@ -228,3 +228,5 @@ export default function BandRegisterPage() {
     </Container1>
   );
 }
+
+export default BandRegisterPage;

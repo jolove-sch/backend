@@ -108,7 +108,7 @@ const ResetButton = styled.button`
   background: #3dbefa;
 `;
 
-const InputSample = () => {
+const Register = () => {
   const inputRef = useRef(); //ref 객체 생성.
   
   const [user, setUser] = useState({
@@ -182,4 +182,4 @@ const InputSample = () => {
   );
 };
 
-export default InputSample;
+export default Register;

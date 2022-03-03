@@ -168,7 +168,7 @@ const BottomBar = styled.nav`
   bottom: 0;
 `;
 
-export default function MonitoringPage() {
+const MonitoringPage = () =>{
   return (
       <Container1>
       <TopBar>
@@ -208,3 +208,5 @@ export default function MonitoringPage() {
       </Container1>
   );
 }
+
+export default MonitoringPage;

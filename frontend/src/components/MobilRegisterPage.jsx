@@ -169,8 +169,7 @@ const BottomBar = styled.nav`
   bottom: 0;
 `;
 
-
-export default function BandRegisterPage() {
+const MobilRegisterPage = () => {
 
   return (
     <Container1>
@@ -230,3 +229,5 @@ export default function BandRegisterPage() {
     </Container1>
   );
 }
+
+export default MobilRegisterPage;
