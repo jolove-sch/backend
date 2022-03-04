@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
@@ -274,6 +275,18 @@ const BottomUser = styled.div`
 `;
 
 const MainPage = () => {
+  const [state, setState] = useState([]);
+  useEffect(() => {
+    axios.get('http://jolove.kro.kr/api/band/status/testSeiral')//기기 일련번호 가져오기 보류
+          .then(response => {
+            setState(response.data.data);
+          });
+  }, []);
+
+  useEffect(() => {
+    console.log(state)
+  }, [state]); // state에 가져온 정보 저장됐는지 확인 용도
+
   return ( 
     // <>
     <Container1>
@@ -296,30 +309,35 @@ const MainPage = () => {
         <HeartBeatContainer>
         <HeartBeat> 
           <FaHeartbeat className="Heartbeat" />
+          <div>{state.heartBeat}</div>
           <HearBeatRate>심장박동수</HearBeatRate>
         </HeartBeat>
         </HeartBeatContainer>
         <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
+          <div>{state.oxygen}</div>
           <OxygenRate>산소포화도</OxygenRate>
         </Oxygen>
         </OxygenContainer>
         <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
+          <div>{state.temporature}</div>
           <TemperatureRate>체온</TemperatureRate>
         </Temperature>
         </TemperaturetContainer>
         <CryingContainer>
         <Crying>
           <ImCrying className="Crying" />
+          <div>{state.cry}</div>
           <DetectCrying>울음감지</DetectCrying>
         </Crying>
         </CryingContainer>
         <OverturnContainer>
         <Overturn>
           <MdBabyChangingStation className="Overturn" />
+          <div>{state.flipped}</div>
           <DetectingOverturn>뒤집힘감지</DetectingOverturn>
         </Overturn>
         </OverturnContainer>
