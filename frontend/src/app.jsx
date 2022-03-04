@@ -1,23 +1,39 @@
 import React from 'react';
 import './app.css';
-import Login from './components/pages/login';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import SingUp from './components/pages/singup';
-import MainPage from './components/pages/mainpage';
+import MainPage from './components/MainPage';
+import LoginPage from './components/LoginPage';
+import Register from './components/Register';
+import MonitoringPage from './components/MonitoringPage';
+import BandRegisterPage from './components/BandRegisterPage';
+import MobilRegisterPage from './components/MobilRegisterPage';
+import UserRegisterPage from './components/UserRegisterPage';
 
-function App({user}) {
+function App({user, register1, state}) {
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path={['/', 'home']}>
-            <Login user={user} />
+            <LoginPage user={user} />
           </Route>
-          <Route path="/Signup">
-            <SingUp user={user} />
+          <Route path="/Register">
+            <Register user={user} />
           </Route>
-          <Route path="/Mainpage">
-            <MainPage user={user} />
+          <Route path="/MainPage">
+            <MainPage user={user} state={state}/>
+          </Route>
+          <Route path="/MonitoringPage">
+            <MonitoringPage />
+          </Route>
+          <Route path="/BandRegisterPage">
+            <BandRegisterPage register1={register1}/>
+          </Route>
+          <Route path="/MobilRegisterPage">
+            <MobilRegisterPage register1={register1}/>
+          </Route>
+          <Route path="/UserRegisterPage">
+            <UserRegisterPage />
           </Route>
         </Switch>
       </Router>

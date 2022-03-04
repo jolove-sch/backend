@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { GoSignIn } from 'react-icons/go';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Container = styled.div`
   position: absolute;
@@ -121,23 +121,50 @@ const ResetButton = styled.button`
   }
 `;
 
-const InputSample = () => {
-  const inputRef = useRef(); //ref 객체 생성.
-  
-  const [user, setUser] = useState({
-    userid: "",
-    userpassword: "",
-    username: "",
-  });
-  const { userid, userpassword, username } = user;
+const Register = ({user}) => {
+  const inputRef = useRef();
 
-  const onChangeInput = e => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
-  };
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+
+    const history = useHistory();
+
+    const goToLogin = () => {
+        history.push('/');
+    }
+
+
+  const handleChange = (event) => {
+    const type = event.target.name;
+    if (type === 'email') {
+        const inputEmail = event.target.value;
+        setEmail(inputEmail);
+    } else if (type === 'password') {
+        const inputPassword = event.target.value;
+        setPassword(inputPassword);
+    } else if (type === 'phoneNumber') {
+        const inputPhoneNumber = event.target.value;
+        setPhoneNumber(inputPhoneNumber);
+    }
+}
+
+const onSignUp =  async event => {
+  event.preventDefault();
+  if(email === "" || password === "" || phoneNumber === ""){
+    window.alert("Email과 Password, 전화번호를 입력해주세요.");
+    return;
+  }
+  console.log('Signup');  
+  await user//
+        .signup(email, password, phoneNumber)
+        .then(() => goToLogin)
+  }
 
   const onReset = () => {
-    setUser({ userid: "", userpassword: "", username: "" });
+    setEmail('');
+    setPassword('');
+    setPhoneNumber('');
     inputRef.current.focus();
   };
 
@@ -146,17 +173,17 @@ const InputSample = () => {
         <ElementContainer>
         <Title>회원가입</Title>
          <LogoContainer>
-             <GoSignIn className="logo" />
+             <GoSignIn className="logo" onClick={goToLogin} />
          </LogoContainer>
         <UnderContainer>
-          <IdLabel>ID</IdLabel>
+          <IdLabel>Email</IdLabel>
           <br />
           <InputId 
             type="text"
-            name="userid" 
+            name="email" 
             placeholder="Input Id Here"
-            value={userid}
-            onChange={onChangeInput}
+            value={email}
+            onChange={handleChange}
             ref={inputRef}
           />
           <br />
@@ -165,21 +192,21 @@ const InputSample = () => {
           <br />
           <InputPassword 
             type="password" 
-            name="userpassword"
-            value={userpassword}
+            name="password"
+            value={password}
             placeholder="Input Password Here"
-            onChange={onChangeInput} 
+            onChange={handleChange} 
           />
           <br />
           <br />
-          <NameLabel>NAME</NameLabel>
+          <NameLabel>PHONE NUMBER</NameLabel>
           <br />
           <InputName 
             type="text"
-            name="username"
-            value={username}
-            placeholder="Input Name Here"
-            onChange={onChangeInput} 
+            name="phoneNumber"
+            value={phoneNumber}
+            placeholder="Input phoneNumber Here"
+            onChange={handleChange} 
           />
           <br />
           <br />
@@ -195,4 +222,4 @@ const InputSample = () => {
   );
 };
 
-export default InputSample;
+export default Register;

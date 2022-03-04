@@ -211,7 +211,7 @@ const BottomUser = styled.div`
   }
 `;
 
-export default function BandRegisterPage() {
+const BandRegisterPage = () => {
 
   return (
     <Container1>
@@ -278,3 +278,5 @@ export default function BandRegisterPage() {
     </Container1>
   );
 }
+
+export default BandRegisterPage;

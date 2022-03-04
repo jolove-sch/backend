@@ -171,7 +171,7 @@ const BottomUser = styled.div`
   }
 `;
 
-export default function MonitoringPage() {
+const MonitoringPage = () =>{
   return (
       <Container1>
       <TopBar>
@@ -216,3 +216,5 @@ export default function MonitoringPage() {
       </Container1>
   );
 }
+
+export default MonitoringPage;

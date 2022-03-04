@@ -16,6 +16,7 @@ const Container1 = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
+  overflow: hidden;
 `;
 
 const TopBar = styled.nav`
@@ -90,15 +91,20 @@ const InsideLogo = styled.div`
 `;
 
 const Insidestatus = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 2rem;
   float: right;
-  width: 18rem;
-  height: 30rem;
+  width: 20rem;
+  height: 17rem;
 `;
 
 const HeartBeatContainer = styled.div`
-  width: 200px;
+  width: 150px;
   height: 50px;
+  /* text-align: left;
+  margin-left: 1rem; */
 `;
 
 const HeartBeat = styled.span`
@@ -111,14 +117,16 @@ const HeartBeat = styled.span`
   }
 `;
 
-const HearBeatRate = styled.span` // 서버에서 심장박동수 받아올 부분
-  width: 220px;
-  height: 20px;
-`;
+// const HearBeatRate = styled.span` // 서버에서 심장박동수 받아올 부분
+//   width: 220px;
+//   height: 20px;
+// `;
 
 const OxygenContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Oxygen = styled.span`
@@ -130,13 +138,15 @@ const Oxygen = styled.span`
   }
 `;
 
-const OxygenRate = styled.span` // 서버에서 산소포화도 받아올 부분
-  width: 220px;
-`;
+// const OxygenRate = styled.span` // 서버에서 산소포화도 받아올 부분
+//   width: 220px;
+// `;
 
 const TemperaturetContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Temperature = styled.span`
@@ -148,13 +158,15 @@ const Temperature = styled.span`
   }
 `;
 
-const TemperatureRate = styled.span` // 서버에서 체온 받아올 부분
-  width: 220px;
-`;
+// const TemperatureRate = styled.span` // 서버에서 체온 받아올 부분
+//   width: 220px;
+// `;
 
 const CryingContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Crying = styled.span`
@@ -166,13 +178,15 @@ const Crying = styled.span`
   }
 `;
 
-const DetectCrying = styled.span` // 서버에서 울음을 감지할 부분
-  width: 220px;
-`;
+// const DetectCrying = styled.span` // 서버에서 울음을 감지할 부분
+//   width: 200px;
+// `;
 
 const OverturnContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Overturn = styled.span`
@@ -184,9 +198,9 @@ const Overturn = styled.span`
   }
 `;
 
-const DetectingOverturn = styled.span` // 서버에서 뒤집힘을 감지할 부분
-  width: 220px;
-`;
+// const DetectingOverturn = styled.span` // 서버에서 뒤집힘을 감지할 부분
+//   width: 220px;
+// `;
 
 const BottomBar = styled.nav`
   height: 3rem;
@@ -238,7 +252,7 @@ const BottomUser = styled.div`
   }
 `;
 
-export default function MainPage() {
+const MainPage = () => {
   return ( 
     <Container1>
       <TopBar>
@@ -260,31 +274,31 @@ export default function MainPage() {
         <HeartBeatContainer>
         <HeartBeat> 
           <FaHeartbeat className="Heartbeat" />
-          <HearBeatRate>심장박동수</HearBeatRate>
+          {/* <HearBeatRate>심장박동수</HearBeatRate> */}
         </HeartBeat>
         </HeartBeatContainer>
         <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
-          <OxygenRate>산소포화도</OxygenRate>
+          {/* <OxygenRate>산소포화도</OxygenRate> */}
         </Oxygen>
         </OxygenContainer>
         <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
-          <TemperatureRate>체온</TemperatureRate>
+          {/* <TemperatureRate>체온</TemperatureRate> */}
         </Temperature>
         </TemperaturetContainer>
         <CryingContainer>
         <Crying>
           <ImCrying className="Crying" />
-          <DetectCrying>울음감지</DetectCrying>
+          {/* <DetectCrying>울음감지</DetectCrying> */}
         </Crying>
         </CryingContainer>
         <OverturnContainer>
         <Overturn>
           <MdBabyChangingStation className="Overturn" />
-          <DetectingOverturn>뒤집힘감지</DetectingOverturn>
+          {/* <DetectingOverturn>뒤집힘감지</DetectingOverturn> */}
         </Overturn>
         </OverturnContainer>
         </Insidestatus>
@@ -313,4 +327,5 @@ export default function MainPage() {
   );
 }
 
+export default MainPage;
 

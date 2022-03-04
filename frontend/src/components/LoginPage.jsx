@@ -1,8 +1,8 @@
-import React  from 'react';
+import React, {useState, useRef}  from 'react';
 import styled from 'styled-components';
 import { FaBaby } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaKey } from 'react-icons/fa';
 
 const Container = styled.div`
@@ -70,7 +70,8 @@ const ButtonContainer = styled.div`
 
 const LoginButton = styled.button`
   font-size: 0.9em;
-  padding: 0.25rem 4.65rem; //세로 가로
+  width: 100%;
+  height: 50%;
   border-radius: 3px;
   color: white;
   background: #3dbefa;
@@ -78,7 +79,8 @@ const LoginButton = styled.button`
 
 const RegisterButton = styled.button`
   font-size: 0.9em;
-  padding: 0.25rem 4.2rem; // 세로 가로
+  width: 100%;
+  height: 50%;
   border-radius: 3px; // 테두리
   color: white;
   background: #3dbefa;
@@ -95,7 +97,40 @@ const PasswordInputBox = styled.input`
   text-align: center;
 `;
 
-export default function LoginPage() {
+const LoginPage = ({user}) => {
+
+  const history = useHistory();
+  const inputRef = useRef();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onLogin = event => {
+    event.preventDefault();
+    if(email === "" || password === ""){
+        window.alert("Email과 Password를 입력해주세요.");
+        return;
+    }
+    console.log('Login');
+    user.login(email, password);
+      //.then(data => goToMain(data.access-token));
+    history.push('/mainpage');
+};  
+
+const goToSignUp = () => {
+  history.push('/signup');
+}
+
+const handleOnChange = (event) => {
+    const type = event.target.name;
+    if (type === 'email') {
+        const inputEmail = event.target.value;
+        setEmail(inputEmail);
+    } else if (type === 'password') {
+        const inputPassword = event.target.value;
+        setPassword(inputPassword);
+    }
+}
 
   return (
       <Container>
@@ -106,23 +141,36 @@ export default function LoginPage() {
        </LogoContainer>
         <UnderContainer>
          <FaUser className="logo2"/>
-         <IdInputBox type="text" placeholder='아이디' />
+         <IdInputBox 
+          type="text" 
+          placeholder='Email'
+          name="email"
+          ref={inputRef}
+          onChange={handleOnChange}
+          />
           <br />
          <FaKey className="logo2"/>
-         <PasswordInputBox type="password" placeholder='비밀번호' />
+         <PasswordInputBox 
+          type="password" 
+          placeholder='Password' 
+          name="password"
+          onChange={handleOnChange}
+          />
           <br />
         </UnderContainer>
         <br />
         <ButtonContainer>
          <Link to="/mainpage">
-          <LoginButton>로그인</LoginButton>
+          <LoginButton onClick={onLogin}>로그인</LoginButton>
          </Link>
          <br />
          <Link to='/register'>
-          <RegisterButton>회원가입</RegisterButton>
+          <RegisterButton onClick={goToSignUp}>회원가입</RegisterButton>
          </Link>
         </ButtonContainer>
         </ElementContainer>
       </Container>
   );
 }
+
+export default LoginPage;
