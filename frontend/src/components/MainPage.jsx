@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
@@ -117,7 +118,7 @@ const HeartBeat = styled.span`
   }
 `;
 
-// const HearBeatRate = styled.span` // 서버에서 심장박동수 받아올 부분
+// const HearBeatRate = styled.span` // 서버에서 심장박동수 받아올 부분 
 //   width: 220px;
 //   height: 20px;
 // `;
@@ -253,6 +254,18 @@ const BottomUser = styled.div`
 `;
 
 const MainPage = () => {
+  const [state, setState] = useState([]);
+  useEffect(() => {
+    axios.get('http://jolove.kro.kr/api/band/status/testSeiral')//기기 일련번호 가져오기 보류
+          .then(response => {
+            setState(response.data.data);
+          });
+  }, []);
+
+  useEffect(() => {
+    console.log(state)
+  }, [state]); // state에 가져온 정보 저장됐는지 확인 용도
+
   return ( 
     <Container1>
       <TopBar>
@@ -275,30 +288,35 @@ const MainPage = () => {
         <HeartBeat> 
           <FaHeartbeat className="Heartbeat" />
           {/* <HearBeatRate>심장박동수</HearBeatRate> */}
+          <div>{state.heartBeat}</div>
         </HeartBeat>
         </HeartBeatContainer>
         <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
           {/* <OxygenRate>산소포화도</OxygenRate> */}
+          <div>{state.oxygen}</div>
         </Oxygen>
         </OxygenContainer>
         <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
           {/* <TemperatureRate>체온</TemperatureRate> */}
+          <div>{state.temporature}</div>
         </Temperature>
         </TemperaturetContainer>
         <CryingContainer>
         <Crying>
           <ImCrying className="Crying" />
           {/* <DetectCrying>울음감지</DetectCrying> */}
+          <div>{state.cry}</div>
         </Crying>
         </CryingContainer>
         <OverturnContainer>
         <Overturn>
           <MdBabyChangingStation className="Overturn" />
           {/* <DetectingOverturn>뒤집힘감지</DetectingOverturn> */}
+          <div>{state.flipped}</div>
         </Overturn>
         </OverturnContainer>
         </Insidestatus>

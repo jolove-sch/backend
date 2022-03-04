@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
 // import { AiOutlinePlusSquare } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
@@ -211,14 +211,45 @@ const BottomUser = styled.div`
   }
 `;
 
-const BandRegisterPage = () => {
+const BandRegisterPage = ({register1}) => {
+  const history = useHistory();
+  const inputRef = useRef();
+
+  const [email, setEmail] = useState('');
+  const [serialNumber, setSerialNumber] = useState('');
+
+  const goToMain = () => {
+      history.push('./mainpage');
+    }
+
+    const BandRegister = event => {
+      event.preventDefault();
+      if(email === "" || serialNumber === ""){
+          window.alert("Email과 밴드의 일련번호를 입력해주세요.");
+          return;
+      }
+          console.log('Band Register');
+          register1.bandRegister(email, serialNumber);
+          
+  };
+
+  const handleChange = (event) => {
+      const type = event.target.name;
+      if (type === 'email') {
+          const inputEmail = event.target.value;
+          setEmail(inputEmail);
+      } else if (type === 'serialNumber') {
+          const inputserialNumber= event.target.value;
+          setSerialNumber(inputserialNumber);
+      }
+  }
 
   return (
     <Container1>
     <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" />
+            <MdLogout className="logout" onClick={goToMain}/>
           </Logout>
         </Link>
         <Title>밴드 등록
@@ -251,8 +282,21 @@ const BandRegisterPage = () => {
         <InsideForm>
             <br />
             <InsideTitle>기기 일련번호</InsideTitle>
-            <GetSerial type="text" placeholder="Serial Number Here" />
-            <RegisterButton>등록</RegisterButton>
+            <GetSerial 
+              type="text" 
+              placeholder="Email" 
+              name="email"
+              ref={inputRef}
+              onChange={handleChange}
+              />
+            <GetSerial 
+              type="text" 
+              placeholder="Serial Number Here" 
+              name="serialNumber"
+              minlength="6"
+              onChange={handleChange}
+              />
+            <RegisterButton onClick={BandRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
     </RegisterFormContainer>
