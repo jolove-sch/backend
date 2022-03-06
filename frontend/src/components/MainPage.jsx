@@ -311,7 +311,12 @@ const MainPage = () => {
         <OverturnContainer>
         <Overturn>
           <MdBabyChangingStation className="Overturn" />
-          <DetectingOverturn>{state.flipped}</DetectingOverturn>
+          <DetectingOverturn>
+            {
+              state.flipped === 'false'
+              ? <span>OFF</span> : <span>ON</span>
+            }
+            </DetectingOverturn>
         </Overturn>
         </OverturnContainer>
         </Insidestatus>
