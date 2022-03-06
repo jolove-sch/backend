@@ -309,36 +309,31 @@ const MainPage = () => {
         <HeartBeatContainer>
         <HeartBeat> 
           <FaHeartbeat className="Heartbeat" />
-          <div>{state.heartBeat}</div>
-          <HearBeatRate>심장박동수</HearBeatRate>
+          <HearBeatRate>{state.heartBeat}</HearBeatRate>
         </HeartBeat>
         </HeartBeatContainer>
         <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
-          <div>{state.oxygen}</div>
-          <OxygenRate>산소포화도</OxygenRate>
+          <OxygenRate>{state.oxygen}</OxygenRate>
         </Oxygen>
         </OxygenContainer>
         <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
-          <div>{state.temporature}</div>
-          <TemperatureRate>체온</TemperatureRate>
+          <TemperatureRate>{state.temperature}</TemperatureRate>
         </Temperature>
         </TemperaturetContainer>
         <CryingContainer>
         <Crying>
           <ImCrying className="Crying" />
-          <div>{state.cry}</div>
-          <DetectCrying>울음감지</DetectCrying>
+          <DetectCrying>{state.cry}</DetectCrying>
         </Crying>
         </CryingContainer>
         <OverturnContainer>
         <Overturn>
           <MdBabyChangingStation className="Overturn" />
-          <div>{state.flipped}</div>
-          <DetectingOverturn>뒤집힘감지</DetectingOverturn>
+          <DetectingOverturn>{state.flipped}</DetectingOverturn>
         </Overturn>
         </OverturnContainer>
         </Insidestatus>
