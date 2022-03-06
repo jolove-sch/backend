@@ -12,27 +12,20 @@ import { MdBabyChangingStation } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 
-// const Container = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   margin-left: -40px;
-// `;
-
 const Container1 = styled.div`
   display: flex;
-  /* justify-content: center; */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
+  overflow: hidden;
 `;
 
 const TopBar = styled.nav`
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
-   height: 30px;
-   width: 100%;
-   padding: 1rem;
+   height: 3rem;
+   width: 100vw;
    color: black;
    background: #4EED8E;
    font-weight: bold;
@@ -44,31 +37,19 @@ const TopBar = styled.nav`
 const Title = styled.div`
     display: flex;
     justify-content: center;
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    align-items: center;
     color: #EF564D;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
-    /* margin-right: 5%; */
-
+    
    .baby {
      font-size: 25px;
      color: #FFD3C3;
    }
 `;
 
-// const LogoBox = styled.div`
-//    /* margin-right: 100px; */
-
-//   .baby {
-//         font-size: 25px;
-//         color: #FFD3C3;
-//     }
-// `;
-
 const Logout = styled.div`
-  /* margin-left: -10px; */
   height: 30px;
   width: 30px;
 
@@ -79,19 +60,16 @@ const Logout = styled.div`
 `;
 
 const StatusContainer = styled.div`
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: calc( 100vh - 6rem );
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const StatusForm = styled.div`
-    /* overflow: scroll; */
-    width: 600px;
+    width: 25rem;
     height: 300px; 
-    /* margin-left: 9%;
-    margin-top: 30%; */
     border-radius: 10px;
     background-color: #f8f1f1;
     
@@ -103,36 +81,36 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-right: 0; */
     background-color: #FAF427;
     border-radius: 10px;
     float: left;
 
     .insidebaby {
-        /* margin-left: 25%;
-        margin-top: 90%; */
         font-size: 50px;
         color: #FFD3C3;
     }
 `;
 
 const Insidestatus = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 2rem;
   float: right;
-  width: 30rem;
-  height: 30rem;
+  width: 20rem;
+  height: 17rem;
 `;
 
 const HeartBeatContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: left;
+  margin-left: 1rem; */
 `;
 
 const HeartBeat = styled.span`
   width: 30px;
   height: 30px;
-  /* margin-left: 110px;
-  margin-top: -60%; */
 
   .Heartbeat {
     color: #f56464;
@@ -140,22 +118,20 @@ const HeartBeat = styled.span`
   }
 `;
 
-const HearBeatRate = styled.span` // 서버에서 심장박동수 받아올 부분
+const HearBeatRate = styled.span` 
   width: 220px;
   height: 20px;
-  /* margin-top: -100%;
-  margin-left: 110%; */
 `;
 
 const OxygenContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Oxygen = styled.span`
   width: 250px;
-  /* margin-left: 110px;
-  margin-top: 0%; */
 
   .Oxygen {
     color: #220bf5;
@@ -163,21 +139,19 @@ const Oxygen = styled.span`
   }
 `;
 
-const OxygenRate = styled.span` // 서버에서 산소포화도 받아올 부분
+const OxygenRate = styled.span`
   width: 220px;
-  /* margin-top: -10%;
-  margin-left: 14%; */
 `;
 
 const TemperaturetContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Temperature = styled.span`
   width: 250px;
-  /* margin-left: 110px;
-  margin-top: 0%; */
 
   .Temperature {
     color: #0c0000;
@@ -185,21 +159,19 @@ const Temperature = styled.span`
   }
 `;
 
-const TemperatureRate = styled.span` // 서버에서 체온 받아올 부분
+const TemperatureRate = styled.span` 
   width: 220px;
-  /* margin-top: -10%;
-  margin-left: 14%; */
 `;
 
 const CryingContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Crying = styled.span`
   width: 250px;
-  /* margin-left: 110px;
-  margin-top: 0%; */
 
   .Crying {
     color: #0c0000;
@@ -207,21 +179,19 @@ const Crying = styled.span`
   }
 `;
 
-const DetectCrying = styled.span` // 서버에서 울음을 감지할 부분
-  width: 220px;
-  /* margin-top: -10%;
-  margin-left: 14%; */
+const DetectCrying = styled.span`
+  width: 200px;
 `;
 
 const OverturnContainer = styled.div`
-  width: 250px;
+  width: 150px;
   height: 50px;
+  /* text-align: center;
+  margin-left: 1rem; */
 `;
 
 const Overturn = styled.span`
   width: 250px;
-  /* margin-left: 110px;
-  margin-top: 0%; */
 
   .Overturn {
     color: #0c0000;
@@ -229,49 +199,58 @@ const Overturn = styled.span`
   }
 `;
 
-const DetectingOverturn = styled.span` // 서버에서 뒤집힘을 감지할 부분
+const DetectingOverturn = styled.span`
   width: 220px;
-  /* margin-top: -10%;
-  margin-left: 14%; */
 `;
 
 const BottomBar = styled.nav`
-  height: 28px;
-  width: 100%;
-  padding: 1rem;
+  height: 3rem;
+  width: 100vw;
+  /* padding: 1rem; */
   color: black;
   background: #4EED8E;
   font-weight: bold;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   position: fixed;
   bottom: 0;
-  /* bottom: 0;
-  left: 0;
-  right: 0;  */
-  /* margin-top: 74%; */
+  align-items: center;
 `;
 
 const BottomLogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
+  margin-top: 10px;
 `;
 
 const BottomBaby = styled.div`
-  width: 50px;
-  height: 50px;
+  /* width: 2em;
+  height: 1em; */
+
+  .bottombaby {
+    font-size: 30px;
+    color: #FFD3C3;
+  }
 `;
 
 const BottomMonitor = styled.div`
-  width: 50px;
-  height: 50px;
+  /* width: 2em;
+  height: 1em; */
+
+  .bottommonitor {
+    font-size: 30px;
+    color: black;
+  }
 `;
 
 const BottomUser = styled.div`
-  width: 50px;
-  height: 50px;
+  /* width: 2em;
+  height: 1em; */
+
+  .bottomuser {
+    font-size: 30px;
+    color: black;
+  }
 `;
 
 const MainPage = () => {
@@ -288,7 +267,6 @@ const MainPage = () => {
   }, [state]); // state에 가져온 정보 저장됐는지 확인 용도
 
   return ( 
-    // <>
     <Container1>
       <TopBar>
         <Link to="/">
@@ -343,23 +321,22 @@ const MainPage = () => {
         <BottomLogoContainer>
         <BottomBaby>
         <Link to="/mainpage">
-          <FaBaby size="30" color="#FFD3C3"/>
+          <FaBaby className="bottombaby" />
         </Link>
         </BottomBaby>
         <BottomMonitor>
         <Link to="/monitoringpage">
-          <FiMonitor size="30" color="black"/>
+          <FiMonitor className="bottommonitor"/>
         </Link>
         </BottomMonitor>
         <BottomUser>
         <Link to="/bandregisterpage">
-          <FaUserCircle size="35" color="black"/>
+          <FaUserCircle className="bottomuser"/>
         </Link>
         </BottomUser>
         </BottomLogoContainer>
       </BottomBar>
     </Container1>
-    // </>
   );
 }
 

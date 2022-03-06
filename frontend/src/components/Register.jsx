@@ -61,7 +61,7 @@ const UnderContainer = styled.div`
 `;
 
 const InputId = styled.input`
-  padding: 0.5em 2.5em; // 세로길이, 가로길이
+  padding: 0.5rem 2.5rem; // 세로길이, 가로길이
   text-align: center;
 `;
 
@@ -71,7 +71,7 @@ const IdLabel = styled.label`
 `;
 
 const InputPassword = styled.input`
-  padding: 0.5em 2.5em; // 세로길이, 가로길이
+  padding: 0.5rem 2.5rem; // 세로길이, 가로길이
   text-align: center;
 `;
 
@@ -81,7 +81,7 @@ const PasswordLabel = styled.label`
 `;
 
 const InputName = styled.input`
-  padding: 0.5em 2.5em; // 세로길이, 가로길이
+  padding: 0.5rem 2.5rem; // 세로길이, 가로길이
   text-align: center;
 `;
 
@@ -93,19 +93,32 @@ const NameLabel = styled.label`
 const RegisterButton = styled.button`
   position: center;
   font-size: 0.9rem;
-  padding: 0.25rem 6.5rem; //세로 가로
+  /* padding: 0.25rem 6rem; //세로 가로 */
+  width: 100%;
+  height: 10%;
   border-radius: 3px;
   color: white;
   background: #3dbefa;
+  &:hover {
+    background-color: white;
+    color: #3dbefa;
+  }
+  
 `;
 
 const ResetButton = styled.button`
   position: center;
   font-size: 0.9rem;
-  padding: 0.25rem 6.2rem; //세로 가로
+  /* padding: 0.25rem 6rem; //세로 가로 */
+  width: 100%;
+  height: 10%;
   border-radius: 3px;
   color: white;
   background: #3dbefa;
+  &:hover {
+    background-color: white;
+    color: #3dbefa;
+  }
 `;
 
 const Register = ({user}) => {
@@ -198,7 +211,7 @@ const onSignUp =  async event => {
           <br />
           <br />
           <Link to="/">
-            <RegisterButton onClick={() => {alert("가입을 환영합니다!")}}>등록</RegisterButton>
+            <RegisterButton onClick={() => {alert("가입을 환영합니다!")}}>Sign Up</RegisterButton>
           </Link>
           <br />
           <br />

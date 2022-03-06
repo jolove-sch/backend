@@ -70,7 +70,8 @@ const ButtonContainer = styled.div`
 
 const LoginButton = styled.button`
   font-size: 0.9em;
-  padding: 0.25rem 4.65rem; //세로 가로
+  width: 100%;
+  height: 50%;
   border-radius: 3px;
   color: white;
   background: #3dbefa;
@@ -78,7 +79,8 @@ const LoginButton = styled.button`
 
 const RegisterButton = styled.button`
   font-size: 0.9em;
-  padding: 0.25rem 4.2rem; // 세로 가로
+  width: 100%;
+  height: 50%;
   border-radius: 3px; // 테두리
   color: white;
   background: #3dbefa;
