@@ -7,7 +7,7 @@ import { RiCelsiusFill } from 'react-icons/ri';
 import { SiOxygen } from 'react-icons/si';
 import { ImCrying } from 'react-icons/im';
 import { MdBabyChangingStation } from 'react-icons/md';
-import { MdLogout } from 'react-icons/md';
+// import { MdLogout } from 'react-icons/md';
 
 const StateBox = (props) => {
   const [state, setState] = useState([]);
