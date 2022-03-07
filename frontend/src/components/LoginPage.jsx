@@ -49,7 +49,6 @@ const LogoContainer = styled.div`
 `;
 
 const UnderContainer = styled.div`
-  position: flex;
   top: 50%;
   left: 50%;
 
@@ -58,7 +57,7 @@ const UnderContainer = styled.div`
     color: gray;
     position: absolute;
     margin: 5px;
-    margin-left: 3%;
+    margin-left: 1%;
   }
 `;
 
@@ -89,7 +88,6 @@ const RegisterButton = styled.button`
 const IdInputBox = styled.input`
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
-
 `;
 
 const PasswordInputBox = styled.input`
@@ -149,7 +147,7 @@ const handleOnChange = (event) => {
           onChange={handleOnChange}
           />
           <br />
-         <FaKey className="logo2"/>
+         <FaKey className="logo2" />
          <PasswordInputBox 
           type="password" 
           placeholder='Password' 

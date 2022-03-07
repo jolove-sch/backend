@@ -120,9 +120,9 @@ const InsideLogo = styled.div`
 
 const InsideForm = styled.div`
     margin-top: 0.2rem;
-    margin-right: 3.5rem;
+    margin-right: 2rem;
     float: right;
-    width: 10rem;
+    width: 12rem;
     height: 10rem;
 `;
 
@@ -136,7 +136,7 @@ const RegisterButton = styled.button`
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
 `;
 
 const InsideTitle = styled.div`
@@ -144,7 +144,6 @@ const InsideTitle = styled.div`
     color: black;
     font-size: 17px;
     font-weight: bold;
-    
 `;
 
 const GetId = styled.input`

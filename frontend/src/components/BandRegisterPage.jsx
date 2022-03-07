@@ -137,7 +137,7 @@ const RegisterButton = styled.button`
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
 `;
 
 const InsideTitle = styled.div`
@@ -145,7 +145,7 @@ const InsideTitle = styled.div`
     color: black;
     font-size: 17px;
     font-weight: bold;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
 `;
 
 const GetSerial = styled.input`
