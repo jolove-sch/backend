@@ -1,13 +1,13 @@
 import React from 'react';
 import './app.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import MainPage from './components/MainPage';
-import LoginPage from './components/LoginPage';
-import Register from './components/Register';
-import MonitoringPage from './components/MonitoringPage';
-import BandRegisterPage from './components/BandRegisterPage';
-import MobilRegisterPage from './components/MobilRegisterPage';
-import UserRegisterPage from './components/UserRegisterPage';
+import MainPage from './components/page/MainPage';
+import LoginPage from './components/page/LoginPage';
+import Register from './components/page/Register';
+import MonitoringPage from './components/page/MonitoringPage';
+import BandRegisterPage from './components/page/BandRegisterPage';
+import MobilRegisterPage from './components/page/MobilRegisterPage';
+import UserRegisterPage from './components/page/UserRegisterPage';
 
 function App({user, register1, state}) {
   return (
