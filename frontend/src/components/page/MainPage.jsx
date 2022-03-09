@@ -52,7 +52,7 @@ const Container1 = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  overflow: hidden;
+  overflow: scroll;
 `;
 
 const TopBar = styled.nav`

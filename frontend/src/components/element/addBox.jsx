@@ -42,6 +42,7 @@ const StatusContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: auto;
 `;
 
 const ButtonContainer = styled.div`
