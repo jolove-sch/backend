@@ -70,7 +70,7 @@ const InsideLogo = styled.div`
 `;
 
 const InsideForm = styled.div`
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     margin-right: 3rem;
     float: right;
     width: 10rem;
