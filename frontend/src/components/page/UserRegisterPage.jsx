@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
+import AddBox4 from '../element/addBox4';
+
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -246,7 +248,7 @@ export default function BandRegisterPage() {
           </UserIconContainer>
         </Link>
     </MiddleBar>
-    <RegisterFormContainer>
+    {/* <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
             <FaUserCircle className="logo3" size="45" />
@@ -259,7 +261,8 @@ export default function BandRegisterPage() {
             <RegisterButton>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer>
+    </RegisterFormContainer> */}
+    <AddBox4 />
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>

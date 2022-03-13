@@ -8,6 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
+import AddBox3 from '../element/addBox3';
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -272,7 +273,7 @@ const MobilRegisterPage = ({register1}) => {
           </UserIconContainer>
         </Link>
     </MiddleBar>
-    <RegisterFormContainer>
+    {/* <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
             <MdToys className="logo3" size="45" />
@@ -296,7 +297,8 @@ const MobilRegisterPage = ({register1}) => {
             <RegisterButton onClick={MobilRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer>
+    </RegisterFormContainer> */}
+    <AddBox3 />
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>
