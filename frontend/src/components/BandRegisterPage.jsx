@@ -8,8 +8,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
-import AddBox2 from '../element/addBox2';
-
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -17,7 +15,6 @@ const Container1 = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  /* overflow: scroll; */
 `;
 
 const TopBar = styled.nav`
@@ -277,7 +274,7 @@ const BandRegisterPage = ({register1}) => {
           </UserIconContainer>
         </Link>
     </MiddleBar>
-    {/* <RegisterFormContainer>
+    <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
             <BsSmartwatch className="logo3" size="45" />
@@ -302,8 +299,7 @@ const BandRegisterPage = ({register1}) => {
             <RegisterButton onClick={BandRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer> */}
-    <AddBox2 />
+    </RegisterFormContainer>
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>

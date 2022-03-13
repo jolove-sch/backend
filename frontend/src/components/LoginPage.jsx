@@ -83,7 +83,6 @@ const RegisterButton = styled.button`
   border-radius: 3px; // 테두리
   color: white;
   background: #3dbefa;
-  
 `;
 
 const IdInputBox = styled.input`
