@@ -7,6 +7,7 @@ import { RiCelsiusFill } from 'react-icons/ri';
 import { SiOxygen } from 'react-icons/si';
 import { ImCrying } from 'react-icons/im';
 import { MdBabyChangingStation } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 // import { MdLogout } from 'react-icons/md';
 
 const StateBox = (props) => {
@@ -29,11 +30,13 @@ const StateBox = (props) => {
       {props.count && props.count.map((item, i) => (
       <StatusForm key={i}>
         <InsideLogo>
+        <Link to="/heartpage">
           <FaBaby className="insidebaby" />
+        </Link>
         </InsideLogo>
         <Insidestatus>
         <HeartBeatContainer>
-        <HeartBeat> 
+        <HeartBeat>
           <FaHeartbeat className="Heartbeat" />
           <HearBeatRate>{state.heartBeat}</HearBeatRate>
         </HeartBeat>

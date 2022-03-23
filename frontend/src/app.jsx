@@ -8,6 +8,7 @@ import MonitoringPage from './components/page/MonitoringPage';
 import BandRegisterPage from './components/page/BandRegisterPage';
 import MobilRegisterPage from './components/page/MobilRegisterPage';
 import UserRegisterPage from './components/page/UserRegisterPage';
+import HeartPage from './components/page/HeartPage';
 
 function App({user, register1, state}) {
   return (
@@ -34,6 +35,9 @@ function App({user, register1, state}) {
           </Route>
           <Route path="/UserRegisterPage">
             <UserRegisterPage />
+          </Route>
+          <Route path="/HeartPage">
+            <HeartPage />
           </Route>
         </Switch>
       </Router>
