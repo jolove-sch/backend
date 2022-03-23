@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ApexCharts from 'react-apexcharts';
 import styled from 'styled-components';
 import axios from 'axios';
 import { FaBaby } from 'react-icons/fa';

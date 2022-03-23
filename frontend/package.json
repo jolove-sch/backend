@@ -4,10 +4,7 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
-<<<<<<< HEAD
     "@nivo/core": "^0.79.0",
-=======
->>>>>>> f9b0e930b0b9d5b855572a558bb099e2b8d199eb
     "@nivo/line": "^0.79.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
