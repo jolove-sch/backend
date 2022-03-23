@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import ApexCharts from 'react-apexcharts';
 import styled from 'styled-components';
 import axios from 'axios';
 import { FaBaby } from 'react-icons/fa';
@@ -18,6 +19,8 @@ const StateBox = (props) => {
       setState(response.data.data);
     });
   }, []);
+
+  
 
   useEffect(() => {
     console.log(state)

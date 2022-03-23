@@ -8,7 +8,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
-import AddBox2 from '../element/addBox2';
 
 
 const Container1 = styled.div`
@@ -221,31 +220,34 @@ const BandRegisterPage = ({register1}) => {
   const [email, setEmail] = useState('');
   const [serialNumber, setSerialNumber] = useState('');
 
+  const BandRegister = event => {
+    event.preventDefault();
+    if(email === "" || serialNumber === ""){
+        window.alert("Email과 밴드의 일련번호를 입력해주세요.");
+        return;
+    }
+    console.log('Band Register');
+    register1.bandRegister(email, serialNumber);
+        
+};
+
+
+  const handleChange = (event) => {
+    const type = event.target.name;
+    if (type === 'email') {
+        const inputEmail = event.target.value;
+        setEmail(inputEmail);
+    } else if (type === 'serialNumber') {
+        const inputserialNumber= event.target.value;
+        setSerialNumber(inputserialNumber);
+    }
+  }
+
   const goToMain = () => {
       history.push('./mainpage');
     }
 
-    const BandRegister = event => {
-      event.preventDefault();
-      if(email === "" || serialNumber === ""){
-          window.alert("Email과 밴드의 일련번호를 입력해주세요.");
-          return;
-      }
-          console.log('Band Register');
-          register1.bandRegister(email, serialNumber);
-          
-  };
 
-  const handleChange = (event) => {
-      const type = event.target.name;
-      if (type === 'email') {
-          const inputEmail = event.target.value;
-          setEmail(inputEmail);
-      } else if (type === 'serialNumber') {
-          const inputserialNumber= event.target.value;
-          setSerialNumber(inputserialNumber);
-      }
-  }
 
   return (
     <Container1>
@@ -277,7 +279,7 @@ const BandRegisterPage = ({register1}) => {
           </UserIconContainer>
         </Link>
     </MiddleBar>
-    {/* <RegisterFormContainer>
+    <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
             <BsSmartwatch className="logo3" size="45" />
@@ -302,8 +304,7 @@ const BandRegisterPage = ({register1}) => {
             <RegisterButton onClick={BandRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer> */}
-    <AddBox2 />
+    </RegisterFormContainer> 
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>
