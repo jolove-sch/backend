@@ -172,7 +172,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
 } from "recharts";
 
 import styled from 'styled-components';
@@ -184,25 +184,99 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: scroll;
 `;
+
 
 const data = [
   {
-    name: "12:00",
+    name: "00:00",
+    // uv: 4000,
+    temperature: 36.3,
+    amt: 2400
+  },
+  {
+    name: "01:00",
     // uv: 4000,
     temperature: 36.5,
     amt: 2400
   },
   {
+    name: "02:00",
+    // uv: 4000,
+    temperature: 36.3,
+    amt: 2400
+  },
+  {
+    name: "03:00",
+    // uv: 4000,
+    temperature: 36.2,
+    amt: 2400
+  },
+  {
+    name: "04:00",
+    // uv: 4000,
+    temperature: 36.7,
+    amt: 2400
+  },
+  {
+    name: "05:00",
+    // uv: 4000,
+    temperature: 37.0,
+    amt: 2400
+  },
+  {
+    name: "06:00",
+    // uv: 4000,
+    temperature: 37.3,
+    amt: 2400
+  },
+  {
+    name: "07:00",
+    // uv: 4000,
+    temperature: 37.5,
+    amt: 2400
+  },
+  {
+    name: "08:00",
+    // uv: 4000,
+    temperature: 38.0,
+    amt: 2400
+  },
+  {
+    name: "09:00",
+    // uv: 4000,
+    temperature: 36.6,
+    amt: 2400
+  },
+  {
+    name: "10:00",
+    // uv: 4000,
+    temperature: 36.8,
+    amt: 2400
+  },
+  {
+    name: "11:00",
+    // uv: 4000,
+    temperature: 36.4,
+    amt: 2400
+  },
+  {
+    name: "12:00",
+    // uv: 4000,
+    temperature: 36.2,
+    amt: 2400
+  },
+  {
     name: "13:00",
     // uv: 3000,
-    temperature: 36.8,
+    temperature: 36.3,
     amt: 2210
   },
   {
     name: "14:00",
     // uv: 2000,
-    temperature: 37.5,
+    temperature: 36.4,
     amt: 2290
   },
   {
@@ -228,10 +302,112 @@ const data = [
     // uv: 3490,
     temperature: 36.9,
     amt: 2100
+  },
+  {
+    name: "19:00",
+    // uv: 3490,
+    temperature: 36.3,
+    amt: 2100
+  },
+  {
+    name: "20:00",
+    // uv: 3490,
+    temperature: 36.7,
+    amt: 2100
+  },
+  {
+    name: "21:00",
+    // uv: 3490,
+    temperature: 36.9,
+    amt: 2100
+  },
+  {
+    name: "22:00",
+    // uv: 3490,
+    temperature: 37.0,
+    amt: 2100
+  },
+  {
+    name: "23:00",
+    // uv: 3490,
+    temperature: 36.5,
+    amt: 2100
   }
 ];
 
 const data2 = [ // 영유아 평균 심박수 140~160
+  {
+  name: "00:00",
+  // uv: 4000,
+  bpm: 140,
+  amt: 2400
+  },
+  {
+  name: "01:00",
+  // uv: 4000,
+  bpm: 143,
+  amt: 2400
+  },
+  {
+  name: "02:00",
+  // uv: 4000,
+  bpm: 142,
+  amt: 2400
+  },
+  {
+  name: "03:00",
+  // uv: 4000,
+  bpm: 145,
+  amt: 2400
+  },
+  {
+  name: "04:00",
+  // uv: 4000,
+  bpm: 146,
+  amt: 2400
+  },
+  {
+  name: "05:00",
+  // uv: 4000,
+  bpm: 144,
+  amt: 2400
+  },
+  {
+  name: "06:00",
+  // uv: 4000,
+  bpm: 147,
+  amt: 2400
+  },
+  {
+  name: "07:00",
+  // uv: 4000,
+  bpm: 143,
+  amt: 2400
+  },
+  {
+  name: "08:00",
+  // uv: 4000,
+  bpm: 142,
+  amt: 2400
+  },
+  {
+  name: "09:00",
+  // uv: 4000,
+  bpm: 145,
+  amt: 2400
+  },
+  {
+  name: "10:00",
+  // uv: 4000,
+  bpm: 141,
+  amt: 2400
+  },
+  {
+  name: "11:00",
+  // uv: 4000,
+  bpm: 140,
+  amt: 2400
+  },
   {
     name: "12:00",
     // uv: 4000,
@@ -273,51 +449,183 @@ const data2 = [ // 영유아 평균 심박수 140~160
     // uv: 3490,
     bpm: 165,
     amt: 2100
-  }
+  },
+  {
+    name: "19:00",
+    // uv: 4000,
+    bpm: 150,
+    amt: 2400
+    },
+    {
+    name: "20:00",
+    // uv: 4000,
+    bpm: 153,
+    amt: 2400
+    },
+    {
+    name: "21:00",
+    // uv: 4000,
+    bpm: 157,
+    amt: 2400
+    },
+    {
+    name: "22:00",
+    // uv: 4000,
+    bpm: 154,
+    amt: 2400
+    },
+    {
+    name: "23:00",
+    // uv: 4000,
+    bpm: 150,
+    amt: 2400
+    }
 ];
 
 const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의, 90%이하면 저산소증
   {
-    name: "12:00",
+  name: "00:00",
+  // uv: 4000,
+  o2_percent: 96,
+  amt: 2400
+  },
+  {
+  name: "01:00",
+  // uv: 3000,
+  o2_percent: 98,
+  amt: 2210
+  },
+  {
+  name: "02:00",
+  // uv: 2000,
+  o2_percent: 93,
+  amt: 2290
+  },
+  {
+  name: "03:00",
+  // uv: 2780,
+  o2_percent: 91,
+  amt: 2000
+  },
+  {
+  name: "04:00",
+  // uv: 1890,
+  o2_percent: 90,
+  amt: 2181
+  },
+  {
+  name: "05:00",
+  // uv: 2390,
+  o2_percent: 93,
+  amt: 2500
+  },
+  {
+  name: "06:00",
+  // uv: 3490,
+  o2_percent: 94,
+  amt: 2100
+  },
+  {
+    name: "07:00",
     // uv: 4000,
-    o2_percent: 0.95,
+    o2_percent: 95,
     amt: 2400
   },
   {
-    name: "13:00",
+    name: "08:00",
     // uv: 3000,
-    o2_percent: 0.98,
+    o2_percent: 98,
     amt: 2210
   },
   {
-    name: "14:00",
+    name: "09:00",
     // uv: 2000,
-    o2_percent: 0.94,
+    o2_percent: 94,
     amt: 2290
   },
   {
-    name: "15:00",
+    name: "10:00",
     // uv: 2780,
-    o2_percent: 0.92,
+    o2_percent: 92,
     amt: 2000
   },
   {
-    name: "16:00",
+    name: "11:00",
     // uv: 1890,
-    o2_percent: 0.97,
+    o2_percent: 97,
     amt: 2181
   },
   {
-    name: "17:00",
+    name: "12:00",
     // uv: 2390,
-    o2_percent: 0.91,
+    o2_percent: 91,
     amt: 2500
   },
   {
-    name: "18:00",
+    name: "13:00",
     // uv: 3490,
-    o2_percent: 0.89,
+    o2_percent: 89,
     amt: 2100
+  },
+  {
+    name: "14:00",
+    // uv: 4000,
+    o2_percent: 95,
+    amt: 2400
+  },
+  {
+    name: "15:00",
+    // uv: 3000,
+    o2_percent: 98,
+    amt: 2210
+  },
+  {
+    name: "16:00",
+    // uv: 2000,
+    o2_percent: 94,
+    amt: 2290
+  },
+  {
+    name: "17:00",
+    // uv: 2780,
+    o2_percent: 92,
+    amt: 2000
+  },
+  {
+    name: "18:00",
+    // uv: 1890,
+    o2_percent: 97,
+    amt: 2181
+  },
+  {
+    name: "19:00",
+    // uv: 2390,
+    o2_percent: 91,
+    amt: 2500
+  },
+  {
+    name: "20:00",
+    // uv: 3490,
+    o2_percent: 89,
+    amt: 2100
+  },
+  {
+    name: "21:00",
+    // uv: 4000,
+    o2_percent: 95,
+    amt: 2400
+  },
+  {
+    name: "22:00",
+    // uv: 3000,
+    o2_percent: 98,
+    amt: 2210
+  },
+  {
+    name: "23:00",
+    // uv: 2000,
+    o2_percent: 94,
+    amt: 2290
   }
 ];
 
@@ -389,7 +697,7 @@ const CustomizedDot2 = (props) => {
 const CustomizedDot3 = (props) => {
   const { cx, cy, value } = props;
 
-  if (value < 0.95 && value >= 0.9) {
+  if (value < 95 && value >= 90) {
     return (
       <svg
         x={cx - 10}
@@ -403,7 +711,7 @@ const CustomizedDot3 = (props) => {
       </svg>
     );
   }
-  else if (value < 0.9) {
+  else if (value < 90) {
     return (
       <svg
         x={cx - 10}
@@ -444,19 +752,23 @@ export default function HeartPage() {
   return (
     <Container>
     <LineChart // 체온 차트
-      width={1000}
+      width={1800}
       height={300}
       data={data_1}
       margin={{
-        top: 5,
-        right: 30,
+        top: 20,
+        right: 80,
         left: 20,
-        bottom: 5
+        bottom: 20
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis type="number" domain={[36, 40]}/>
+      <YAxis 
+          label={{ value: '℃', angle: 0, position: 'bottom' }} 
+          // type="number" 
+          domain={[36, 40]}
+      />
       <Tooltip />
       <Legend />
       <Line
@@ -465,23 +777,26 @@ export default function HeartPage() {
         stroke="#8884d8"
         dot={<CustomizedDot />}
       />
-      {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
     </LineChart>
-
+    <br />
     <LineChart // 심박수 차트
-      width={1000}
+      width={1800}
       height={300}
       data={data2}
       margin={{
-        top: 5,
-        right: 30,
+        top: 20,
+        right: 80,
         left: 20,
-        bottom: 5
+        bottom: 20
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis type="number" domain={[130, 170]}/>
+      <YAxis 
+          label={{ value: 'bpm', angle: 0, position: 'top' }}
+          type="number" 
+          domain={[130, 170]}
+      />
       <Tooltip />
       <Legend />
       <Line
@@ -490,23 +805,26 @@ export default function HeartPage() {
         stroke="#8884d8"
         dot={<CustomizedDot2 />}
       />
-      {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
     </LineChart>
-
+    <br />
     <LineChart // 산소포화도 차트
-      width={1000}
+      width={1800}
       height={300}
       data={data3}
       margin={{
-        top: 5,
-        right: 30,
+        top: 20,
+        right: 80,
         left: 20,
-        bottom: 5
+        bottom: 20
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis type="number" domain={[0.9, 1.0]}/>
+      <YAxis 
+            label={{ value: '%', angle: 0, position: 'top' }}
+            type="number" 
+            domain={[80, 100]}
+      />
       <Tooltip />
       <Legend />
       <Line
@@ -515,7 +833,6 @@ export default function HeartPage() {
         stroke="#8884d8"
         dot={<CustomizedDot3 />}
       />
-      {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
     </LineChart>
     </Container>
   );
