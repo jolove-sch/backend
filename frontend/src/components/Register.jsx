@@ -176,7 +176,7 @@ const onSignUp =  async event => {
              <GoSignIn className="logo" onClick={goToLogin} />
          </LogoContainer>
         <UnderContainer>
-          <IdLabel>이메일</IdLabel>
+          <IdLabel>Email</IdLabel>
           <br />
           <InputId 
             type="text"
@@ -188,7 +188,7 @@ const onSignUp =  async event => {
           />
           <br />
           <br />
-          <PasswordLabel>비밀번호</PasswordLabel>
+          <PasswordLabel>PASSWORD</PasswordLabel>
           <br />
           <InputPassword 
             type="password" 
@@ -199,7 +199,7 @@ const onSignUp =  async event => {
           />
           <br />
           <br />
-          <NameLabel>전화번호</NameLabel>
+          <NameLabel>PHONE NUMBER</NameLabel>
           <br />
           <InputName 
             type="text"
