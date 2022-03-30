@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import useStore from '../../service/store';
 import axios from 'axios';
 import { FaBaby } from 'react-icons/fa';
 import { FaHeartbeat } from 'react-icons/fa';
@@ -11,20 +12,24 @@ import { Link } from 'react-router-dom';
 // import { MdLogout } from 'react-icons/md';
 
 const StateBox = (props) => {
-  const [state, setState] = useState([]);
-  useEffect(() => {
-    axios.get('http://jolove.kro.kr/api/band/status/testSeiral')
-    .then(response => {
-      setState(response.data.data);
-    });
-  }, []);
-
+  const setResObj = useStore((state) => state.setResObj);
+  const heartBeat = useStore((state) => state.heartBeat);
+  const oxygen = useStore((state) => state.oxygen);
+  const temperature = useStore((state) => state.temperature);
+  const cry = useStore((state) => state.cry);
+  const flipped = useStore((state) => state.flipped);
   
-
   useEffect(() => {
-    console.log(state)
-  }, [state]);
-
+    axios
+      .get('http://jolove.kro.kr/api/band/status/testSeiral')
+      .then((response) => {
+        setResObj(response.data.data);
+        console.log(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },[])
 
 
   return (
@@ -40,19 +45,19 @@ const StateBox = (props) => {
         <HeartBeatContainer>
         <HeartBeat>
           <FaHeartbeat className="Heartbeat" />
-          <HearBeatRate>{state.heartBeat}</HearBeatRate>
+          <HearBeatRate>{heartBeat}</HearBeatRate>
         </HeartBeat>
         </HeartBeatContainer>
         <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
-          <OxygenRate>{state.oxygen}</OxygenRate>
+          <OxygenRate>{oxygen}</OxygenRate>
         </Oxygen>
         </OxygenContainer>
         <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
-          <TemperatureRate>{state.temperature}</TemperatureRate>
+          <TemperatureRate>{temperature}</TemperatureRate>
         </Temperature>
         </TemperaturetContainer>
         <CryingContainer>
@@ -60,7 +65,7 @@ const StateBox = (props) => {
           <ImCrying className="Crying" />
           <DetectCrying>
             {
-              state.cry=== 'false'
+              cry=== 'false'
               ? <span>OFF</span> : <span>ON</span>
             }
           </DetectCrying>
@@ -71,7 +76,7 @@ const StateBox = (props) => {
           <MdBabyChangingStation className="Overturn" />
           <DetectingOverturn>
             {
-              state.flipped === 'false'
+              flipped === 'false'
               ? <span>OFF</span> : <span>ON</span>
             }
             </DetectingOverturn>
