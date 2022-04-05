@@ -21,10 +21,12 @@ const StateBox = (props) => {
   
   useEffect(() => {
     axios
-      .get('http://jolove.kro.kr/api/band/status/testSeiral')
+      .get('http://jolove.kro.kr/api/band/list',{
+        withCredentials: true
+      })
       .then((response) => {
-        setResObj(response.data.data);
-        console.log(response.data.data);
+        setResObj(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);

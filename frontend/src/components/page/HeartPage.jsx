@@ -767,7 +767,7 @@ export default function HeartPage() {
       <YAxis 
           label={{ value: '℃', angle: 0, position: 'bottom' }} 
           // type="number" 
-          domain={[36, 40]}
+          domain={[0, 40]}
       />
       <Tooltip />
       <Legend />
