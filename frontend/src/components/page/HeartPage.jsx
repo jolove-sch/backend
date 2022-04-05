@@ -1,171 +1,8 @@
-// import React from 'react';
-// import './styles.css';
-// import styled from 'styled-components';
-
-// import {
-//     LineChart,
-//     Line,
-//     XAxis,
-//     YAxis,
-//     CartesianGrid,
-//     Tooltip,
-//     Legend
-//   } from "recharts";
-
-//   const Container = styled.div`
-//     width: 100vw;
-//     height: 100vh;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//   `;
-  
-//   const data = [
-//     {
-//       name: "Page A",
-//       // uv: 4000,
-//       // pv: 2400,
-//       // amt: 2400
-//       temp: 36.5,
-//       temp2: 37.0,
-//       amt: 2400
-//     },
-//     {
-//       name: "Page B",
-//       temp: 36.1,
-//       temp2: 37.5,
-//       amt: 2210
-//     },
-//     {
-//       name: "Page C",
-//       temp: 36.8,
-//       temp2: 38.3,
-//       amt: 2290
-//     },
-//     {
-//       name: "Page D",
-//       temp: 36.3,
-//       temp2: 37.0,
-//       amt: 2000
-//     },
-//     {
-//       name: "Page E",
-//       temp: 36.9,
-//       temp2: 38.5,
-//       amt: 2181
-//     },
-//     {
-//       name: "Page F",
-//       temp: 37.0,
-//       temp2: 38.4,
-//       amt: 2500
-//     },
-//     {
-//       name: "Page G",
-//       temp: 36.2,
-//       temp2: 38.4,
-//       amt: 2100
-//     },
-//     {
-//       name: "Page H",
-//       temp: 36.8,
-//       temp2: 37.5,
-//       amt: 2000
-//     },
-//     {
-//       name: "Page I",
-//       temp: 36.2,
-//       temp2: 38.6,
-//       amt: 2000
-//     }
-//   ];
-  
-// const HeartPage = () =>{
-//     return (
-//     <Container>
-//       <LineChart
-//         width={1000}
-//         height={300}
-//         data={data}
-//         margin={{
-//           top: 5,
-//           right: 30,
-//           left: 20,
-//           bottom: 5
-//         }}
-//       >
-//         <CartesianGrid strokeDasharray="3 3" />
-//         <XAxis dataKey="name" />
-//         <YAxis type="number" domain={[0, 50]}/>
-//         <Tooltip />
-//         <Legend />
-//         <Line
-//           type="monotone"
-//           dataKey="temp2" // pv
-//           stroke="#8884d8"
-//           activeDot={{ r: 8 }}
-//         />
-//         <Line type="monotone" dataKey="temp" stroke="#82ca9d" /> 
-//       </LineChart>
-
-//       <LineChart
-//         width={1000}
-//         height={300}
-//         data={data}
-//         margin={{
-//           top: 5,
-//           right: 30,
-//           left: 20,
-//           bottom: 5
-//         }}
-//       >
-//         <CartesianGrid strokeDasharray="3 3" />
-//         <XAxis dataKey="name" />
-//         <YAxis />
-//         <Tooltip />
-//         <Legend />
-//         <Line
-//           type="monotone"
-//           dataKey="temp2" // pv
-//           stroke="#8884d8"
-//           activeDot={{ r: 8 }}
-//         />
-//         <Line type="monotone" dataKey="temp" stroke="#82ca9d" />
-//       </LineChart>
-
-//       <LineChart
-//         width={1000}
-//         height={300}
-//         data={data}
-//         margin={{
-//           top: 5,
-//           right: 30,
-//           left: 20,
-//           bottom: 5
-//         }}
-//       >
-//         <CartesianGrid strokeDasharray="3 3" />
-//         <XAxis dataKey="name" />
-//         <YAxis />
-//         <Tooltip />
-//         <Legend />
-//         <Line
-//           type="monotone"
-//           dataKey="temp2" // pv
-//           stroke="#8884d8"
-//           activeDot={{ r: 8 }}
-//         />
-//         <Line type="monotone" dataKey="temp" stroke="#82ca9d" />
-//       </LineChart>
-//     </Container>
-//     );
-// }
-
 import useStore from "../../service/store";
 import "./styles.css";
 import React, { FunctionComponent } from "react";
 import {
+  ResponsiveContainer,
   LineChart,
   Line,
   XAxis,
@@ -267,72 +104,72 @@ const data = [
     temperature: 36.2,
     amt: 2400
   },
-  {
-    name: "13:00",
-    // uv: 3000,
-    temperature: 36.3,
-    amt: 2210
-  },
-  {
-    name: "14:00",
-    // uv: 2000,
-    temperature: 36.4,
-    amt: 2290
-  },
-  {
-    name: "15:00",
-    // uv: 2780,
-    temperature: 37.6,
-    amt: 2000
-  },
-  {
-    name: "16:00",
-    // uv: 1890,
-    temperature: 36.6,
-    amt: 2181
-  },
-  {
-    name: "17:00",
-    // uv: 2390,
-    temperature: 36.3,
-    amt: 2500
-  },
-  {
-    name: "18:00",
-    // uv: 3490,
-    temperature: 36.9,
-    amt: 2100
-  },
-  {
-    name: "19:00",
-    // uv: 3490,
-    temperature: 36.3,
-    amt: 2100
-  },
-  {
-    name: "20:00",
-    // uv: 3490,
-    temperature: 36.7,
-    amt: 2100
-  },
-  {
-    name: "21:00",
-    // uv: 3490,
-    temperature: 36.9,
-    amt: 2100
-  },
-  {
-    name: "22:00",
-    // uv: 3490,
-    temperature: 37.0,
-    amt: 2100
-  },
-  {
-    name: "23:00",
-    // uv: 3490,
-    temperature: 36.5,
-    amt: 2100
-  }
+  // {
+  //   name: "13:00",
+  //   // uv: 3000,
+  //   temperature: 36.3,
+  //   amt: 2210
+  // },
+  // {
+  //   name: "14:00",
+  //   // uv: 2000,
+  //   temperature: 36.4,
+  //   amt: 2290
+  // },
+  // {
+  //   name: "15:00",
+  //   // uv: 2780,
+  //   temperature: 37.6,
+  //   amt: 2000
+  // },
+  // {
+  //   name: "16:00",
+  //   // uv: 1890,
+  //   temperature: 36.6,
+  //   amt: 2181
+  // },
+  // {
+  //   name: "17:00",
+  //   // uv: 2390,
+  //   temperature: 36.3,
+  //   amt: 2500
+  // },
+  // {
+  //   name: "18:00",
+  //   // uv: 3490,
+  //   temperature: 36.9,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "19:00",
+  //   // uv: 3490,
+  //   temperature: 36.3,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "20:00",
+  //   // uv: 3490,
+  //   temperature: 36.7,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "21:00",
+  //   // uv: 3490,
+  //   temperature: 36.9,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "22:00",
+  //   // uv: 3490,
+  //   temperature: 37.0,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "23:00",
+  //   // uv: 3490,
+  //   temperature: 36.5,
+  //   amt: 2100
+  // }
 ];
 
 const data2 = [ // 영유아 평균 심박수 140~160
@@ -510,13 +347,13 @@ const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의,
   {
   name: "04:00",
   // uv: 1890,
-  o2_percent: 90,
+  o2_percent: 89,
   amt: 2181
   },
   {
   name: "05:00",
   // uv: 2390,
-  o2_percent: 93,
+  o2_percent: 88,
   amt: 2500
   },
   {
@@ -751,21 +588,22 @@ export default function HeartPage() {
 
   return (
     <Container>
+    <ResponsiveContainer width="100%" height="100%">
     <LineChart // 체온 차트
       width={1800}
       height={300}
       data={data_1}
       margin={{
         top: 20,
-        right: 80,
-        left: 20,
+        right: 200,
+        left: 200,
         bottom: 20
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
       <YAxis 
-          label={{ value: '℃', angle: 0, position: 'bottom' }} 
+          label={{ value: '℃', angle: 0, position: 'top' }} 
           // type="number" 
           domain={[0, 40]}
       />
@@ -778,24 +616,29 @@ export default function HeartPage() {
         dot={<CustomizedDot />}
       />
     </LineChart>
+    </ResponsiveContainer>
     <br />
+    <ResponsiveContainer width="100%" height="100%">
     <LineChart // 심박수 차트
       width={1800}
       height={300}
       data={data2}
       margin={{
         top: 20,
-        right: 80,
-        left: 20,
+        right: 200,
+        left: 200,
         bottom: 20
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
+      <XAxis 
+          dataKey="name"
+      />
       <YAxis 
-          label={{ value: 'bpm', angle: 0, position: 'top' }}
+          label={{ value: 'bpm', offset: 8, angle: 0, position: 'top' }}
           type="number" 
           domain={[130, 170]}
+          
       />
       <Tooltip />
       <Legend />
@@ -806,22 +649,24 @@ export default function HeartPage() {
         dot={<CustomizedDot2 />}
       />
     </LineChart>
+    </ResponsiveContainer>
     <br />
+    <ResponsiveContainer width="100%" height="100%">
     <LineChart // 산소포화도 차트
       width={1800}
       height={300}
       data={data3}
       margin={{
         top: 20,
-        right: 80,
-        left: 20,
+        right: 200,
+        left: 200,
         bottom: 20
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
       <YAxis 
-            label={{ value: '%', angle: 0, position: 'top' }}
+            label={{ value: '%', offset: 8, angle: 0, position: 'top' }}
             type="number" 
             domain={[80, 100]}
       />
@@ -834,7 +679,8 @@ export default function HeartPage() {
         dot={<CustomizedDot3 />}
       />
     </LineChart>
-    </Container>
+    </ResponsiveContainer>
+    </Container> 
   );
 }
 
