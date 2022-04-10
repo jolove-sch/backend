@@ -11,6 +11,8 @@ import { MdBabyChangingStation } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 // import { MdLogout } from 'react-icons/md';
 
+axios.defaults.withCredentials = true;
+
 const StateBox = (props) => {
   const setResObj = useStore((state) => state.setResObj);
   const heartBeat = useStore((state) => state.heartBeat);
@@ -21,7 +23,7 @@ const StateBox = (props) => {
   
   useEffect(() => {
     axios
-      .get('http://jolove.kro.kr/api/band/status/testSeiral')
+      .get('https://jolove.kro.kr/api/band/list')
       .then((response) => {
         setResObj(response.data.data);
         console.log(response.data.data);

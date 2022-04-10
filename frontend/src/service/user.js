@@ -1,16 +1,17 @@
 import axios from 'axios';
 
+axios.defaults.withCredentials = true;
 
 class User {
     async login (email, password){
         try {
             const res = await axios({
                 method: "post",
-                url: 'http://jolove.kro.kr/api/auth/login',
+                url: 'https://jolove.kro.kr/api/auth/login',
                 data: {
                     email: email,
                     password: password,
-                },
+                }
             });
             console.log(res);
         } catch (error) {
