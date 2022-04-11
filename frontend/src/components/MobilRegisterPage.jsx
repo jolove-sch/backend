@@ -4,10 +4,10 @@ import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link, useHistory } from 'react-router-dom';
+// import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
-
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -40,11 +40,11 @@ const Title = styled.div`
     font-size: 20px;
     width: 100vw;
 
-    .watch {
+    .mobil {
       margin-left: 0.3rem;
       font-size: 25px;
       color: black;
-   }
+    }
 `;
 
 const Logout = styled.div`
@@ -61,30 +61,33 @@ const MiddleBarContainer = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: start;
-  width: 100vw; 
+  width: 100vw;
 `;
 
 const MiddleBar = styled.nav`
-    position: fixed;
-    top: 3rem;
-    width: 100vw;
-    height: 3rem;
-    color: black;
-    background: #4EED8E;
-    font-weight: bold;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
+   position: fixed;
+   top: 3rem;
+   width: 100vw;
+   height: 3rem;
+   color: black;
+   background: #4EED8E;
+   font-weight: bold;
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
 `;
 
 const BandIconContainer = styled.div`
-  
+  /* width: 2rem;
+  height: 2rem; */
 `;
 const MobilIconContainer = styled.div`
-  
+  /* width: 2rem;
+  height: 2rem; */
 `;
 const UserIconContainer = styled.div`
- 
+  /* width: 2rem;
+  height: 2rem; */
 `;
 
 const RegisterFormContainer = styled.div`
@@ -93,7 +96,6 @@ const RegisterFormContainer = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 `;
 
 const RegisterForm = styled.div`
@@ -106,18 +108,18 @@ const RegisterForm = styled.div`
 `;
 
 const InsideLogo = styled.div`
-    width: 6rem;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: yellow;
-    border-radius: 10px;
-    float: left;
+   width: 6rem;
+   height: 170px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: yellow;
+   border-radius: 10px;
+   float: left;
 `;
 
 const InsideForm = styled.div`
-    margin-top: 0rem;
+    margin-top: 1rem;
     margin-right: 3rem;
     float: right;
     width: 10rem;
@@ -134,6 +136,7 @@ const RegisterButton = styled.button`
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
+    /* margin-left: 2rem; */
 `;
 
 const InsideTitle = styled.div`
@@ -141,6 +144,7 @@ const InsideTitle = styled.div`
     color: black;
     font-size: 17px;
     font-weight: bold;
+    /* margin-left: 2rem; */
 `;
 
 const GetSerial = styled.input`
@@ -159,7 +163,7 @@ const BottomBar = styled.nav`
   align-items: center;
 `;
 
-const SetBottom = styled.div` 
+const SetBottom = styled.div` // 그냥 크기 맞추는용 없앨수도 있음
   height: 3rem;
   width: 100vw;
   background-color: white;
@@ -177,6 +181,8 @@ const BottomLogoContainer = styled.div`
 `;
 
 const BottomBaby = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottombaby {
     font-size: 30px;
@@ -185,6 +191,8 @@ const BottomBaby = styled.div`
 `;
 
 const BottomMonitor = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottommonitor {
     font-size: 30px;
@@ -193,6 +201,8 @@ const BottomMonitor = styled.div`
 `;
 
 const BottomUser = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottomuser {
     font-size: 30px;
@@ -200,98 +210,93 @@ const BottomUser = styled.div`
   }
 `;
 
-const BandRegisterPage = ({register1}) => {
-  const history = useHistory();
-  const inputRef = useRef();
+const MobilRegisterPage = ({register1}) => {
+    const history = useHistory();
+    const [serialNumber, setSerialNumber] = useState('');
+    const [email, setEmail] = useState('');
+    const inputRef = useRef()
 
-  const [email, setEmail] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
+    const goToMain = () => {
+      history.push('./MainPage');
+  }
 
-  const BandRegister = event => {
-    event.preventDefault();
-    if(email === "" || serialNumber === ""){
-        window.alert("Email과 밴드의 일련번호를 입력해주세요.");
-        return;
-    }
-    console.log('Band Register');
-    register1.bandRegister(email, serialNumber);
-        
-};
-
+  const MobilRegister = event => {
+      event.preventDefault();
+      if(serialNumber === "" || email ===""){
+          window.alert("이메일과 모빌의 일련번호를 입력해주세요.");
+          return;
+      }
+      console.log('Mobil Register');
+      register1.mobilRegister(email, serialNumber);
+  };
 
   const handleChange = (event) => {
     const type = event.target.name;
-    if (type === 'email') {
-        const inputEmail = event.target.value;
+    if (type === 'serialNumber') {
+        const inputNumber = event.target.value;
+        setSerialNumber(inputNumber);
+    }
+    else if (type === 'email') {
+        const inputEmail= event.target.value;
         setEmail(inputEmail);
-    } else if (type === 'serialNumber') {
-        const inputserialNumber= event.target.value;
-        setSerialNumber(inputserialNumber);
     }
-  }
-
-  const goToMain = () => {
-      history.push('./mainpage');
-    }
-
-
+}
 
   return (
     <Container1>
     <TopBar>
-        <Link to="/">
+    <Link to="/">
           <Logout>
             <MdLogout className="logout" onClick={goToMain}/>
           </Logout>
         </Link>
-        <Title>밴드 등록
-          <BsSmartwatch className="watch" />
+        <Title>모빌 등록
+          <MdToys className="mobil" />
         </Title>
     </TopBar>
     <MiddleBarContainer>
     <MiddleBar>
         <Link to="/bandregisterpage">
           <BandIconContainer>
-            <BsSmartwatch size="27" color="red" />
+            <BsSmartwatch size="27" color="black" />
           </BandIconContainer>
         </Link>
         <Link to="/mobilregisterpage">
           <MobilIconContainer>
-            <MdToys className="mobil" size="30" color="black" />
+            <MdToys className="mobil" size="30" color="red" />
           </MobilIconContainer>
         </Link>
         <Link to="/userregisterpage">
           <UserIconContainer>
-            <FaUserCircle className="user" size="28"color="black" />
+            <FaUserCircle className="user" size="28" color="black" />
           </UserIconContainer>
         </Link>
     </MiddleBar>
     <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
-            <BsSmartwatch className="logo3" size="45" />
+            <MdToys className="logo3" size="45" />
         </InsideLogo>
         <InsideForm>
             <br />
             <InsideTitle>기기 일련번호</InsideTitle>
             <GetSerial 
               type="text" 
-              placeholder="Email" 
               name="email"
-              ref={inputRef}
+              placeholder="email Here" 
               onChange={handleChange}
-              />
+            />
             <GetSerial 
               type="text" 
               placeholder="Serial Number Here" 
               name="serialNumber"
-              minlength="6"
+              ref={inputRef}
               onChange={handleChange}
-              />
-            <RegisterButton onClick={BandRegister}>등록</RegisterButton>
+            />
+            <RegisterButton onClick={MobilRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer> 
+    </RegisterFormContainer>
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>
@@ -307,7 +312,9 @@ const BandRegisterPage = ({register1}) => {
         </Link>
         </BottomMonitor>
         <BottomUser>
+        <Link to="/registerpage">
           <FaUserCircle className="bottomuser" />
+        </Link>
         </BottomUser>
       </BottomLogoContainer>
     </BottomBar>
@@ -315,4 +322,4 @@ const BandRegisterPage = ({register1}) => {
   );
 }
 
-export default BandRegisterPage;
+export default MobilRegisterPage;

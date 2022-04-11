@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
+// import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { Link, useHistory } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
-
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -78,13 +78,16 @@ const MiddleBar = styled.nav`
 `;
 
 const BandIconContainer = styled.div`
-  
+  /* width: 3rem;
+  height: 3rem; */
 `;
 const MobilIconContainer = styled.div`
-  
+  /* width: 3rem;
+  height: 3rem; */
 `;
 const UserIconContainer = styled.div`
- 
+  /* width: 3rem;
+  height: 3rem; */
 `;
 
 const RegisterFormContainer = styled.div`
@@ -117,7 +120,7 @@ const InsideLogo = styled.div`
 `;
 
 const InsideForm = styled.div`
-    margin-top: 0rem;
+    margin-top: 1rem;
     margin-right: 3rem;
     float: right;
     width: 10rem;
@@ -134,6 +137,7 @@ const RegisterButton = styled.button`
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
+    /* margin-left: 2rem; */
 `;
 
 const InsideTitle = styled.div`
@@ -141,6 +145,7 @@ const InsideTitle = styled.div`
     color: black;
     font-size: 17px;
     font-weight: bold;
+    /* margin-left: 2rem; */
 `;
 
 const GetSerial = styled.input`
@@ -159,7 +164,7 @@ const BottomBar = styled.nav`
   align-items: center;
 `;
 
-const SetBottom = styled.div` 
+const SetBottom = styled.div` // 그냥 크기 맞추는용 없앨수도 있음
   height: 3rem;
   width: 100vw;
   background-color: white;
@@ -177,6 +182,8 @@ const BottomLogoContainer = styled.div`
 `;
 
 const BottomBaby = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottombaby {
     font-size: 30px;
@@ -185,6 +192,8 @@ const BottomBaby = styled.div`
 `;
 
 const BottomMonitor = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottommonitor {
     font-size: 30px;
@@ -193,6 +202,8 @@ const BottomMonitor = styled.div`
 `;
 
 const BottomUser = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottomuser {
     font-size: 30px;
@@ -207,34 +218,31 @@ const BandRegisterPage = ({register1}) => {
   const [email, setEmail] = useState('');
   const [serialNumber, setSerialNumber] = useState('');
 
-  const BandRegister = event => {
-    event.preventDefault();
-    if(email === "" || serialNumber === ""){
-        window.alert("Email과 밴드의 일련번호를 입력해주세요.");
-        return;
-    }
-    console.log('Band Register');
-    register1.bandRegister(email, serialNumber);
-        
-};
-
-
-  const handleChange = (event) => {
-    const type = event.target.name;
-    if (type === 'email') {
-        const inputEmail = event.target.value;
-        setEmail(inputEmail);
-    } else if (type === 'serialNumber') {
-        const inputserialNumber= event.target.value;
-        setSerialNumber(inputserialNumber);
-    }
-  }
-
   const goToMain = () => {
       history.push('./mainpage');
     }
 
+    const BandRegister = event => {
+      event.preventDefault();
+      if(email === "" || serialNumber === ""){
+          window.alert("Email과 밴드의 일련번호를 입력해주세요.");
+          return;
+      }
+          console.log('Band Register');
+          register1.bandRegister(email, serialNumber);
+          
+  };
 
+  const handleChange = (event) => {
+      const type = event.target.name;
+      if (type === 'email') {
+          const inputEmail = event.target.value;
+          setEmail(inputEmail);
+      } else if (type === 'serialNumber') {
+          const inputserialNumber= event.target.value;
+          setSerialNumber(inputserialNumber);
+      }
+  }
 
   return (
     <Container1>
@@ -291,7 +299,7 @@ const BandRegisterPage = ({register1}) => {
             <RegisterButton onClick={BandRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer> 
+    </RegisterFormContainer>
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>

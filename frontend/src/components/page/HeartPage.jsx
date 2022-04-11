@@ -251,72 +251,72 @@ const data2 = [ // 영유아 평균 심박수 140~160
     bpm: 145,
     amt: 2400
   },
-  {
-    name: "13:00",
-    // uv: 3000,
-    bpm: 148,
-    amt: 2210
-  },
-  {
-    name: "14:00",
-    // uv: 2000,
-    bpm: 150,
-    amt: 2290
-  },
-  {
-    name: "15:00",
-    // uv: 2780,
-    bpm: 153,
-    amt: 2000
-  },
-  {
-    name: "16:00",
-    // uv: 1890,
-    bpm: 156,
-    amt: 2181
-  },
-  {
-    name: "17:00",
-    // uv: 2390,
-    bpm: 135,
-    amt: 2500
-  },
-  {
-    name: "18:00",
-    // uv: 3490,
-    bpm: 165,
-    amt: 2100
-  },
-  {
-    name: "19:00",
-    // uv: 4000,
-    bpm: 150,
-    amt: 2400
-    },
-    {
-    name: "20:00",
-    // uv: 4000,
-    bpm: 153,
-    amt: 2400
-    },
-    {
-    name: "21:00",
-    // uv: 4000,
-    bpm: 157,
-    amt: 2400
-    },
-    {
-    name: "22:00",
-    // uv: 4000,
-    bpm: 154,
-    amt: 2400
-    },
-    {
-    name: "23:00",
-    // uv: 4000,
-    bpm: 150,
-    amt: 2400
-    }
+  // {
+  //   name: "13:00",
+  //   // uv: 3000,
+  //   bpm: 148,
+  //   amt: 2210
+  // },
+  // {
+  //   name: "14:00",
+  //   // uv: 2000,
+  //   bpm: 150,
+  //   amt: 2290
+  // },
+  // {
+  //   name: "15:00",
+  //   // uv: 2780,
+  //   bpm: 153,
+  //   amt: 2000
+  // },
+  // {
+  //   name: "16:00",
+  //   // uv: 1890,
+  //   bpm: 156,
+  //   amt: 2181
+  // },
+  // {
+  //   name: "17:00",
+  //   // uv: 2390,
+  //   bpm: 135,
+  //   amt: 2500
+  // },
+  // {
+  //   name: "18:00",
+  //   // uv: 3490,
+  //   bpm: 165,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "19:00",
+  //   // uv: 4000,
+  //   bpm: 150,
+  //   amt: 2400
+  //   },
+  //   {
+  //   name: "20:00",
+  //   // uv: 4000,
+  //   bpm: 153,
+  //   amt: 2400
+  //   },
+  //   {
+  //   name: "21:00",
+  //   // uv: 4000,
+  //   bpm: 157,
+  //   amt: 2400
+  //   },
+  //   {
+  //   name: "22:00",
+  //   // uv: 4000,
+  //   bpm: 154,
+  //   amt: 2400
+  //   },
+  //   {
+  //   name: "23:00",
+  //   // uv: 4000,
+  //   bpm: 150,
+  //   amt: 2400
+  //   }
 ];
 
 const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의, 90%이하면 저산소증
@@ -398,72 +398,72 @@ const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의,
     o2_percent: 91,
     amt: 2500
   },
-  {
-    name: "13:00",
-    // uv: 3490,
-    o2_percent: 89,
-    amt: 2100
-  },
-  {
-    name: "14:00",
-    // uv: 4000,
-    o2_percent: 95,
-    amt: 2400
-  },
-  {
-    name: "15:00",
-    // uv: 3000,
-    o2_percent: 98,
-    amt: 2210
-  },
-  {
-    name: "16:00",
-    // uv: 2000,
-    o2_percent: 94,
-    amt: 2290
-  },
-  {
-    name: "17:00",
-    // uv: 2780,
-    o2_percent: 92,
-    amt: 2000
-  },
-  {
-    name: "18:00",
-    // uv: 1890,
-    o2_percent: 97,
-    amt: 2181
-  },
-  {
-    name: "19:00",
-    // uv: 2390,
-    o2_percent: 91,
-    amt: 2500
-  },
-  {
-    name: "20:00",
-    // uv: 3490,
-    o2_percent: 89,
-    amt: 2100
-  },
-  {
-    name: "21:00",
-    // uv: 4000,
-    o2_percent: 95,
-    amt: 2400
-  },
-  {
-    name: "22:00",
-    // uv: 3000,
-    o2_percent: 98,
-    amt: 2210
-  },
-  {
-    name: "23:00",
-    // uv: 2000,
-    o2_percent: 94,
-    amt: 2290
-  }
+  // {
+  //   name: "13:00",
+  //   // uv: 3490,
+  //   o2_percent: 89,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "14:00",
+  //   // uv: 4000,
+  //   o2_percent: 95,
+  //   amt: 2400
+  // },
+  // {
+  //   name: "15:00",
+  //   // uv: 3000,
+  //   o2_percent: 98,
+  //   amt: 2210
+  // },
+  // {
+  //   name: "16:00",
+  //   // uv: 2000,
+  //   o2_percent: 94,
+  //   amt: 2290
+  // },
+  // {
+  //   name: "17:00",
+  //   // uv: 2780,
+  //   o2_percent: 92,
+  //   amt: 2000
+  // },
+  // {
+  //   name: "18:00",
+  //   // uv: 1890,
+  //   o2_percent: 97,
+  //   amt: 2181
+  // },
+  // {
+  //   name: "19:00",
+  //   // uv: 2390,
+  //   o2_percent: 91,
+  //   amt: 2500
+  // },
+  // {
+  //   name: "20:00",
+  //   // uv: 3490,
+  //   o2_percent: 89,
+  //   amt: 2100
+  // },
+  // {
+  //   name: "21:00",
+  //   // uv: 4000,
+  //   o2_percent: 95,
+  //   amt: 2400
+  // },
+  // {
+  //   name: "22:00",
+  //   // uv: 3000,
+  //   o2_percent: 98,
+  //   amt: 2210
+  // },
+  // {
+  //   name: "23:00",
+  //   // uv: 2000,
+  //   o2_percent: 94,
+  //   amt: 2290
+  // }
 ];
 
 const CustomizedDot = (props) => {
@@ -590,13 +590,13 @@ export default function HeartPage() {
     <Container>
     <ResponsiveContainer width="100%" height="100%">
     <LineChart // 체온 차트
-      width={1800}
+      width={1000}
       height={300}
       data={data_1}
       margin={{
         top: 20,
-        right: 200,
-        left: 200,
+        right: 40,
+        left: 0,
         bottom: 20
       }}
     >
@@ -620,13 +620,13 @@ export default function HeartPage() {
     <br />
     <ResponsiveContainer width="100%" height="100%">
     <LineChart // 심박수 차트
-      width={1800}
+      width={1000}
       height={300}
       data={data2}
       margin={{
         top: 20,
-        right: 200,
-        left: 200,
+        right: 40,
+        left: 0,
         bottom: 20
       }}
     >
@@ -653,13 +653,13 @@ export default function HeartPage() {
     <br />
     <ResponsiveContainer width="100%" height="100%">
     <LineChart // 산소포화도 차트
-      width={1800}
+      width={1000}
       height={300}
       data={data3}
       margin={{
         top: 20,
-        right: 200,
-        left: 200,
+        right: 40,
+        left: 0,
         bottom: 20
       }}
     >

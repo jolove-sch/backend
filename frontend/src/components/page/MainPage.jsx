@@ -95,7 +95,6 @@ const Logout = styled.div`
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
-  /* padding: 1rem; */
   color: black;
   background: #4EED8E;
   font-weight: bold;
@@ -113,8 +112,7 @@ const BottomLogoContainer = styled.div`
 `;
 
 const BottomBaby = styled.div`
-  /* width: 2em;
-  height: 1em; */
+
   .bottombaby {
     font-size: 30px;
     color: #FFD3C3;
@@ -122,8 +120,7 @@ const BottomBaby = styled.div`
 `;
 
 const BottomMonitor = styled.div`
-  /* width: 2em;
-  height: 1em; */
+  
   .bottommonitor {
     font-size: 30px;
     color: black;
@@ -131,8 +128,7 @@ const BottomMonitor = styled.div`
 `;
 
 const BottomUser = styled.div`
-  /* width: 2em;
-  height: 1em; */
+  
   .bottomuser {
     font-size: 30px;
     color: black;
