@@ -95,7 +95,6 @@ const StatusForm = styled.div`
     height: 300px; 
     border-radius: 10px;
     background-color: #ecbd45;
-    
 `;
 
 const InsideLogo = styled.div`

@@ -6,6 +6,7 @@ import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
+import img from './night_sky.gif';
 
 const MainPage = () => {
   
@@ -53,7 +54,8 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   overflow: hidden;
-  background-color: #0e3fbd;
+  background-image: url(${img});
+  background-size: 100% 100%;
 `;
 
 const TopBar = styled.nav`
