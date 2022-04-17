@@ -94,7 +94,7 @@ const StatusForm = styled.div`
     width: 25rem;
     height: 300px; 
     border-radius: 10px;
-    background-color: #f8f1f1;
+    background-color: #ecbd45;
     
 `;
 
@@ -104,7 +104,7 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FAF427;
+    background-color: yellow;
     border-radius: 10px;
     float: left;
     .insidebaby {

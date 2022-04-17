@@ -16,7 +16,7 @@ const Container = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #bcddce;
+  background-color: #0e3fbd;
 `;
 
 const ElementContainer = styled.div`
@@ -30,10 +30,17 @@ const ElementContainer = styled.div`
 
 const Title = styled.div`
   display: flex;
+  height: 3em;
+  width: 6.5em;
+  margin-bottom: 0.5em;
+  border-radius: 10px;
   font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
-  color: #3dbefa;
+  color: #0e3fbd;
+  background-color: #ecbd45;
+  justify-content: center;
+  align-items: center;
 `;
 
 const LogoContainer = styled.div`
@@ -54,7 +61,7 @@ const UnderContainer = styled.div`
 
   .logo2 {
     font-size: 20px;
-    color: gray;
+    color: #0e3fbd;
     position: absolute;
     margin: 5px;
     margin-left: 1%;
@@ -69,31 +76,42 @@ const ButtonContainer = styled.div`
 
 const LoginButton = styled.button`
   font-size: 0.9em;
+  font-weight: bold;
   width: 100%;
   height: 50%;
+  padding: 0em 4.8em;
   border-radius: 3px;
-  color: white;
-  background: #3dbefa;
+  color: #0e3fbd;
+  background: #ecbd45;
 `;
 
 const RegisterButton = styled.button`
   font-size: 0.9em;
+  font-weight: bold;
   width: 100%;
   height: 50%;
   border-radius: 3px; // 테두리
-  color: white;
-  background: #3dbefa;
+  color: #0e3fbd;
+  background: #ecbd45;
   
 `;
 
 const IdInputBox = styled.input`
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
+  background-color: #ecbd45;
+  ::placeholder{
+    color: #0e3fbd;
+  }
 `;
 
 const PasswordInputBox = styled.input`
   padding: 0.5em 1.5em; // 세로길이, 가로길이
   text-align: center;
+  background-color: #ecbd45;
+  ::placeholder{
+    color: #0e3fbd
+  }
 `;
 
 const LoginPage = ({user}) => {

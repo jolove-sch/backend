@@ -52,7 +52,8 @@ const Container1 = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
+  background-color: #0e3fbd;
 `;
 
 const TopBar = styled.nav`
@@ -62,7 +63,7 @@ const TopBar = styled.nav`
    height: 3rem;
    width: 100vw;
    color: black;
-   background: #4EED8E;
+   background: #ecbd45;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -73,7 +74,7 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #EF564D;
+    color: #0e3fbd;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
@@ -89,14 +90,14 @@ const Logout = styled.div`
   width: 30px;
   .logout {
     font-size: 25px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
   color: black;
-  background: #4EED8E;
+  background:#ecbd45;
   font-weight: bold;
   position: fixed;
   bottom: 0;
@@ -123,7 +124,7 @@ const BottomMonitor = styled.div`
   
   .bottommonitor {
     font-size: 30px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 
@@ -131,6 +132,6 @@ const BottomUser = styled.div`
   
   .bottomuser {
     font-size: 30px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
