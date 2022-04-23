@@ -12,6 +12,7 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(#0f0c29, #302b63, #24243e)
 `;
 
 const TopBar = styled.nav`

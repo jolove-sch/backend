@@ -100,7 +100,8 @@ const RegisterForm = styled.div`
     width: 350px;
     height: 170px;
     border-radius: 10px;
-    background-color: #0e3fbd;
+    /* background-color: #0e3fbd; */
+    background: linear-gradient(45deg, #9effed, #acb6e5);
     font-size: 20px;
     box-shadow: 4px 4px 0px #e9dadad7;
 `;
@@ -111,7 +112,7 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
+    /* background-color: yellow; */
     border-radius: 10px;
     float: left;
 `;
@@ -127,10 +128,10 @@ const InsideForm = styled.div`
 const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
-    background-color: #ecbd45;
-    border-color: #ecbd45;
+    background: linear-gradient(45deg, #9effed, #acb6e5);
+    border-color: #9effed;
     border-radius: 10px;
-    color: #0e3fbd;
+    color: black;
     text-align: center;
     line-height: 35px;
     font-size: 17px;
@@ -140,7 +141,7 @@ const RegisterButton = styled.button`
 
 const InsideTitle = styled.div`
     width: 170px;
-    color: #ecbd45;
+    color: black;
     font-size: 17px;
     font-weight: bold;
 `;
@@ -148,7 +149,7 @@ const InsideTitle = styled.div`
 const GetSerial = styled.input`
     width: 150px;
     text-align: center;
-    background-color: #ecbd45;
+    background: linear-gradient(45deg, #fffc00, #ffffff);
 `;
 
 const BottomBar = styled.nav`

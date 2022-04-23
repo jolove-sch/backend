@@ -94,7 +94,7 @@ const StatusForm = styled.div`
     width: 25rem;
     height: 300px; 
     border-radius: 10px;
-    background-color: #ecbd45;
+    background: linear-gradient(to right, #e1eec3, #f07c7e)
 `;
 
 const InsideLogo = styled.div`
@@ -103,12 +103,13 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
+    /* background-color: #e1eec3; */
     border-radius: 10px;
     float: left;
     .insidebaby {
         font-size: 50px;
-        color: #FFD3C3;
+        /* color: #FFD3C3; */
+        color: #f07c7e;
     }
 `;
 
