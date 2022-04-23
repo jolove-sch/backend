@@ -53,7 +53,7 @@ const RegisterForm = styled.div`
     width: 350px;
     height: 170px;
     border-radius: 10px;
-    background-color: white;
+    background-color: #ecbd45;
     font-size: 20px;
     box-shadow: 4px 4px 0px #e9dadad7;
 `;

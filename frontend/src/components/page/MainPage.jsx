@@ -54,7 +54,7 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   overflow: hidden;
-  background-image: url(${img});
+  background-image: url(${img}); 
   background-size: 100% 100%;
 `;
 
