@@ -149,7 +149,8 @@ const InsideTitle = styled.div`
 const GetSerial = styled.input`
     width: 150px;
     text-align: center;
-    background: linear-gradient(45deg, #fffc00, #ffffff);
+    /* background: linear-gradient(45deg, #fffc00, #ffffff); */
+    background: white;
 `;
 
 const BottomBar = styled.nav`

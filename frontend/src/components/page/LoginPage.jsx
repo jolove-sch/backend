@@ -83,6 +83,10 @@ const LoginButton = styled.button`
   border-radius: 3px;
   color: #0e3fbd;
   background: #ecbd45;
+  &:hover {
+    background-color: white;
+    color: #0e3fbd;
+  }
 `;
 
 const RegisterButton = styled.button`
@@ -93,7 +97,10 @@ const RegisterButton = styled.button`
   border-radius: 3px; // 테두리
   color: #0e3fbd;
   background: #ecbd45;
-  
+  &:hover {
+    background-color: white;
+    color: #0e3fbd;
+  }
 `;
 
 const IdInputBox = styled.input`

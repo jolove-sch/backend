@@ -54,7 +54,8 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(#11998e, #38ef7d);
+  /* background: linear-gradient(#11998e, #38ef7d); */
+  background: white;
   /* background-image: url(${img}); 
   background-size: 100% 100%; */
 `;

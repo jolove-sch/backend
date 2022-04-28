@@ -83,8 +83,8 @@ const ControlBox = styled.div`
   width: 130px;
   height: 35px;
   border-radius: 20px;
-  background-color: #f7f709;
-  color: black;
+  background-color: #0e3fbd;
+  color: #ecbd45;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -103,24 +103,34 @@ const OnButton = styled.button`
     width: 100px;
     height: 35px;
     border-radius: 20px;
+    border-color: #0068FA;
     background-color: #0068FA;
     color: black;
     text-align: center;
     vertical-align: center;
     font-size: 20px;
     font-weight: bold;
+    &:hover {
+      background-color: #ecbd45;
+      border-color: #ecbd45;
+    }
 `;
 
 const OffButton = styled.button`
     width: 100px;
     height: 35px;
     border-radius: 20px;
+    border-color: #FA1201;
     background-color: #FA1201;
     color: black;
     text-align: center;
     vertical-align: center;
     font-size: 20px;
     font-weight: bold;
+    &:hover {
+      background-color: #ecbd45;
+      border-color: #ecbd45;
+    }
 `;
 
 const BottomBar = styled.nav`

@@ -22,6 +22,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   overflow: scroll;
+  background: linear-gradient(#ece9e6, #ffffff);
 `;
 
 
