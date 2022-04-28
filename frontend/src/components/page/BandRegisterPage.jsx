@@ -213,21 +213,22 @@ const BottomUser = styled.div`
   }
 `;
 
-const BandRegisterPage = ({register1}) => {
+const BandRegisterPage = ({register1, user}) => {
   const history = useHistory();
   const inputRef = useRef();
 
   const [email, setEmail] = useState('');
   const [serialNumber, setSerialNumber] = useState('');
+  const [nickName, setNickName] = useState('');
 
   const BandRegister = event => {
     event.preventDefault();
-    if(email === "" || serialNumber === ""){
-        window.alert("Email과 밴드의 일련번호를 입력해주세요.");
+    if(email === "" || serialNumber === "" || nickName === ""){
+        window.alert("Email과 밴드의 일련번호, 닉네임을 입력해주세요.");
         return;
     }
     console.log('Band Register');
-    register1.bandRegister(email, serialNumber);
+    register1.bandRegister(email, serialNumber, nickName);
         
 };
 
@@ -240,21 +241,24 @@ const BandRegisterPage = ({register1}) => {
     } else if (type === 'serialNumber') {
         const inputserialNumber= event.target.value;
         setSerialNumber(inputserialNumber);
-    }
+    } else if (type === 'nickName') {
+        const inputNickName= event.target.value;
+        setNickName(inputNickName);
+  }
   }
 
-  const goToMain = () => {
-      history.push('./mainpage');
+  const logOut = () => {
+    console.log('LogOut');
+    user.logout();
+    history.push('/');
     }
-
-
 
   return (
     <Container1>
     <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" onClick={goToMain}/>
+            <MdLogout className="logout" onClick={logOut}/>
           </Logout>
         </Link>
         <Title>밴드 등록
@@ -299,6 +303,12 @@ const BandRegisterPage = ({register1}) => {
               placeholder="Serial Number Here" 
               name="serialNumber"
               minlength="6"
+              onChange={handleChange}
+              />
+            <GetSerial 
+              type="text" 
+              placeholder="NickName" 
+              name="nickName"
               onChange={handleChange}
               />
             <RegisterButton onClick={BandRegister}>등록</RegisterButton>

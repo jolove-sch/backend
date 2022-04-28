@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaBaby } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 
 const Container1 = styled.div`
@@ -171,13 +171,18 @@ const BottomUser = styled.div`
   }
 `;
 
-const MonitoringPage = () =>{
+const MonitoringPage = ({user}) =>{
+
+  const logOut = () => {
+    console.log('LogOut');
+    user.logout();
+    }
   return (
       <Container1>
       <TopBar>
-        <Link to="/">
+        <Link to="/" >
           <Logout>
-            <MdLogout className="logout" />
+            <MdLogout className="logout" onClick={logOut} />
           </Logout>
         </Link>
          <Title>아이 모니터링

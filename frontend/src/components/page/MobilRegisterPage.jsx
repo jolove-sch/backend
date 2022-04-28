@@ -210,15 +210,17 @@ const BottomUser = styled.div`
   }
 `;
 
-const MobilRegisterPage = ({register1}) => {
+const MobilRegisterPage = ({register1, user}) => {
     const history = useHistory();
     const [serialNumber, setSerialNumber] = useState('');
     const [email, setEmail] = useState('');
     const inputRef = useRef()
 
-    const goToMain = () => {
-      history.push('./MainPage');
-  }
+    const logOut = () => {
+      console.log('LogOut');
+      user.logout();
+      history.push('/');
+      }
 
   const MobilRegister = event => {
       event.preventDefault();
@@ -252,7 +254,7 @@ const onReset = () => {
     <TopBar>
     <Link to="/">
           <Logout>
-            <MdLogout className="logout" onClick={goToMain}/>
+            <MdLogout className="logout" onClick={logOut}/>
           </Logout>
         </Link>
         <Title>모빌 등록

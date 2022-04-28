@@ -25,13 +25,13 @@ function App({user, register1, state}) {
             <MainPage user={user} state={state}/>
           </Route>
           <Route path="/MonitoringPage">
-            <MonitoringPage />
+            <MonitoringPage user={user}/>
           </Route>
           <Route path="/BandRegisterPage">
-            <BandRegisterPage register1={register1}/>
+            <BandRegisterPage register1={register1} user={user}/>
           </Route>
           <Route path="/MobilRegisterPage">
-            <MobilRegisterPage register1={register1}/>
+            <MobilRegisterPage register1={register1} user={user}/>
           </Route>
           <Route path="/UserRegisterPage">
             <UserRegisterPage />

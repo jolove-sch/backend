@@ -1,20 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AddBox from '../element/addBox';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
 
-const MainPage = () => {
+const MainPage = ({user}) => {
+
+  const logOut = () => {
+    console.log('LogOut');
+    user.logout();
+  }
   
   return ( 
     <Container1>
       <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" />
+            <MdLogout className="logout" onClick={logOut}/>
           </Logout>
         </Link>
           <Title>실시간 아이정보

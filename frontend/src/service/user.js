@@ -1,16 +1,19 @@
 import axios from 'axios';
 
+axios.defaults.withCredentials = true;
 
 class User {
     async login (email, password){
         try {
             const res = await axios({
                 method: "post",
-                url: 'http://jolove.kro.kr/api/auth/login',
+                url: 'https://jolove.kro.kr/api/auth/login',
+
                 data: {
                     email: email,
                     password: password,
-                },
+                }
+                
             });
             console.log(res);
         } catch (error) {
@@ -22,7 +25,7 @@ class User {
         try {
             const res = await axios({
                 method: "post",
-                url: 'http://jolove.kro.kr/api/auth/sign',
+                url: 'https://jolove.kro.kr/api/auth/sign',
                 data: {
                     email: email,
                     password: password,
@@ -36,10 +39,17 @@ class User {
     };
 
 
-    /*logout() {
-        const history = useHistory();
-        history.replaceState('./');
-    }*/
+    async logout() {
+        try{
+        const res = await axios({
+            method: 'post',
+            url:'https://jolove.kro.kr/api/auth/logout',
+        });
+        console.log(res);
+        } catch(error) {
+            console.log(error);
+        }
+    }
 };
 
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 class register {
-    async mobilRegister (email, serialNumber){
+    async mobilRegister (email, serialNumber, nickname){
         try {
             const res = await axios({
                 method: "post",
@@ -10,8 +10,13 @@ class register {
                 data: {
                     email: email,
                     serialNumber: serialNumber,
+                    nickName: nickname
                 },
-            });
+            },
+            {
+                withCredentials: true
+            }
+            );
             console.log(res);
         } catch (error) {
             console.log(error);

@@ -104,14 +104,14 @@ const LoginPage = ({user}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onLogin = event => {
+  const onLogin = async(event) => {
     event.preventDefault();
     if(email === "" || password === ""){
         window.alert("Email과 Password를 입력해주세요.");
         return;
     }
     console.log('Login');
-    user.login(email, password);
+    await user.login(email, password);
       //.then(data => goToMain(data.access-token));
     history.push('/mainpage');
 };  
