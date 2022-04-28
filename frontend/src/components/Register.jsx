@@ -14,7 +14,7 @@ const Container = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #0e3fbd;
+  background-color: #bcddce;
 `;
 
 const ElementContainer = styled.div`
@@ -28,17 +28,10 @@ const ElementContainer = styled.div`
 
 const Title = styled.div`
   display: flex;
-  height: 3em;
-  width: 6.5em;
-  margin-bottom: 0.5em;
-  border-radius: 10px;
   font-size: 2em;
   font-family: sans-serif;
   font-weight: bold;
-  color: #0e3fbd;
-  background-color: #ecbd45;
-  justify-content: center;
-  align-items: center;
+  color: #3dbefa;
 `;
 
 const LogoContainer = styled.div`
@@ -49,7 +42,7 @@ const LogoContainer = styled.div`
 
   .logo {
     font-size: 40px;
-    color: #ecbd45;
+    color: black;
   }
 `;
 
@@ -70,83 +63,61 @@ const UnderContainer = styled.div`
 const InputId = styled.input`
   padding: 0.5rem 2.5rem; // 세로길이, 가로길이
   text-align: center;
-  background-color: #ecbd45;
 `;
 
 const IdLabel = styled.label`
-  color: #ecbd45;
+  color: black;
   font-size: 17px;
-  font-weight: bold;
 `;
 
 const InputPassword = styled.input`
   padding: 0.5rem 2.5rem; // 세로길이, 가로길이
   text-align: center;
-  background-color: #ecbd45;
 `;
 
 const PasswordLabel = styled.label`
-  color: #ecbd45;
+  color: black;
   font-size: 17px;
-  font-weight: bold;
 `;
 
 const InputName = styled.input`
   padding: 0.5rem 2.5rem; // 세로길이, 가로길이
   text-align: center;
-  background-color: #ecbd45;
 `;
 
 const NameLabel = styled.label`
-  color: #ecbd45;
+  color: black;
   font-size: 17px;
-  font-weight: bold;
 `;
 
 const RegisterButton = styled.button`
   position: center;
   font-size: 0.9rem;
-  font-weight: 600;
   /* padding: 0.25rem 6rem; //세로 가로 */
   width: 100%;
   height: 10%;
   border-radius: 3px;
-  color: #0e3fbd;
-  background: #ecbd45;
+  color: white;
+  background: #3dbefa;
   &:hover {
     background-color: white;
-    color: #0e3fbd;
+    color: #3dbefa;
   }
+  
 `;
 
 const ResetButton = styled.button`
   position: center;
   font-size: 0.9rem;
-  font-weight: 600;
   /* padding: 0.25rem 6rem; //세로 가로 */
   width: 100%;
   height: 10%;
   border-radius: 3px;
-  color: #0e3fbd;
-  background: #ecbd45;
+  color: white;
+  background: #3dbefa;
   &:hover {
     background-color: white;
-    color: #0e3fbd;
-  }
-`;
-
-const GotoLogin = styled.button`
-  position: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  width: 100%;
-  height: 10%;
-  border-radius: 3px;
-  color: #0e3fbd;
-  background: #ecbd45;
-  &:hover {
-    background-color: white;
-    color: #0e3fbd;
+    color: #3dbefa;
   }
 `;
 
@@ -205,7 +176,7 @@ const onSignUp =  async event => {
              <GoSignIn className="logo" onClick={goToLogin} />
          </LogoContainer>
         <UnderContainer>
-          <IdLabel>이메일</IdLabel>
+          <IdLabel>Email</IdLabel>
           <br />
           <InputId 
             type="text"
@@ -217,7 +188,7 @@ const onSignUp =  async event => {
           />
           <br />
           <br />
-          <PasswordLabel>비밀번호</PasswordLabel>
+          <PasswordLabel>PASSWORD</PasswordLabel>
           <br />
           <InputPassword 
             type="password" 
@@ -228,7 +199,7 @@ const onSignUp =  async event => {
           />
           <br />
           <br />
-          <NameLabel>전화번호</NameLabel>
+          <NameLabel>PHONE NUMBER</NameLabel>
           <br />
           <InputName 
             type="text"
@@ -245,13 +216,6 @@ const onSignUp =  async event => {
           <br />
           <br />
           <ResetButton onClick={onReset}>Reset</ResetButton>
-          <br />
-          <br />
-          <Link to='/'>
-            <GotoLogin>
-              Back to Login Page
-            </GotoLogin>
-          </Link>
         </UnderContainer>
         </ElementContainer>
      </Container>

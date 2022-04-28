@@ -24,7 +24,7 @@ const TopBar = styled.nav`
    height: 3rem;
    width: 100vw;
    color: black;
-   background: #4EED8E;
+   background: #ecbd45;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -35,7 +35,7 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #EF564D;
+    color: #0e3fbd;
     font-weight: bold;
     font-size: 20px;
     width: 100vw;
@@ -43,7 +43,7 @@ const Title = styled.div`
     .mobil {
       margin-left: 0.3rem;
       font-size: 25px;
-      color: black;
+      color: #0e3fbd;
     }
 `;
 
@@ -53,7 +53,7 @@ const Logout = styled.div`
 
   .logout {
     font-size: 25px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 
@@ -70,7 +70,7 @@ const MiddleBar = styled.nav`
    width: 100vw;
    height: 3rem;
    color: black;
-   background: #4EED8E;
+   background: #ecbd45;
    font-weight: bold;
    display: inline-flex;
    justify-content: space-between;
@@ -102,7 +102,7 @@ const RegisterForm = styled.div`
     width: 350px;
     height: 170px;
     border-radius: 10px;
-    background-color: white;
+    background: linear-gradient(45deg, #9effed, #acb6e5);
     font-size: 20px;
     box-shadow: 4px 4px 0px #e9dadad7;
 `;
@@ -113,13 +113,13 @@ const InsideLogo = styled.div`
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: yellow;
+   /* background: #9effed; */
    border-radius: 10px;
    float: left;
 `;
 
 const InsideForm = styled.div`
-    margin-top: 1rem;
+    margin-top: 0rem;
     margin-right: 3rem;
     float: right;
     width: 10rem;
@@ -129,14 +129,15 @@ const InsideForm = styled.div`
 const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
-    background-color: white;
-    border-color: white;
-    color: #4EED8E;
+    background: linear-gradient(45deg, #9effed, #acb6e5);
+    border-color: #9effed;
+    border-radius: 10px;
+    color: black;
     text-align: center;
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
-    /* margin-left: 2rem; */
+    margin-top: 0.5rem;
 `;
 
 const InsideTitle = styled.div`
@@ -150,13 +151,14 @@ const InsideTitle = styled.div`
 const GetSerial = styled.input`
     width: 150px;
     text-align: center;
+    background-color: white;
 `;
 
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
   color: black;
-  background: #4EED8E;
+  background: #ecbd45;
   font-weight: bold;
   position: fixed;
   bottom: 0;
@@ -196,7 +198,7 @@ const BottomMonitor = styled.div`
 
   .bottommonitor {
     font-size: 30px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 
@@ -206,7 +208,7 @@ const BottomUser = styled.div`
 
   .bottomuser {
     font-size: 30px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 
@@ -265,7 +267,7 @@ const onReset = () => {
     <MiddleBar>
         <Link to="/bandregisterpage">
           <BandIconContainer>
-            <BsSmartwatch size="27" color="black" />
+            <BsSmartwatch size="27" color="#0e3fbd" />
           </BandIconContainer>
         </Link>
         <Link to="/mobilregisterpage">
@@ -275,7 +277,7 @@ const onReset = () => {
         </Link>
         <Link to="/userregisterpage">
           <UserIconContainer>
-            <FaUserCircle className="user" size="28" color="black" />
+            <FaUserCircle className="user" size="28" color="#0e3fbd" />
           </UserIconContainer>
         </Link>
     </MiddleBar>
@@ -290,7 +292,7 @@ const onReset = () => {
             <GetSerial 
               type="text" 
               name="email"
-              placeholder="email Here" 
+              placeholder="Email" 
               onChange={handleChange}
             />
             <GetSerial 

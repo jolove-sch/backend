@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaBaby } from 'react-icons/fa';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 
 const Container1 = styled.div`
@@ -12,7 +12,6 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(#0f0c29, #302b63, #24243e)
 `;
 
 const TopBar = styled.nav`
@@ -21,8 +20,8 @@ const TopBar = styled.nav`
    left: 0;
    height: 3rem;
    width: 100vw;
-   color: #0e3fbd;
-   background: #ecbd45;
+   color: black;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -33,7 +32,7 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0e3fbd;
+    color: #EF564D;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
@@ -48,10 +47,10 @@ const Title = styled.div`
 const Logout = styled.div`
   height: 30px;
   width: 30px;
-   
+
   .logout {
     font-size: 25px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
@@ -83,8 +82,8 @@ const ControlBox = styled.div`
   width: 130px;
   height: 35px;
   border-radius: 20px;
-  background-color: #0e3fbd;
-  color: #ecbd45;
+  background-color: #f7f709;
+  color: black;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -103,41 +102,31 @@ const OnButton = styled.button`
     width: 100px;
     height: 35px;
     border-radius: 20px;
-    border-color: #0068FA;
     background-color: #0068FA;
     color: black;
     text-align: center;
     vertical-align: center;
     font-size: 20px;
     font-weight: bold;
-    &:hover {
-      background-color: #ecbd45;
-      border-color: #ecbd45;
-    }
 `;
 
 const OffButton = styled.button`
     width: 100px;
     height: 35px;
     border-radius: 20px;
-    border-color: #FA1201;
     background-color: #FA1201;
     color: black;
     text-align: center;
     vertical-align: center;
     font-size: 20px;
     font-weight: bold;
-    &:hover {
-      background-color: #ecbd45;
-      border-color: #ecbd45;
-    }
 `;
 
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
   color: black;
-  background: #ecbd45;
+  background: #4EED8E;
   font-weight: bold;
   position: fixed;
   bottom: 0;
@@ -168,7 +157,7 @@ const BottomMonitor = styled.div`
 
   .bottommonitor {
     font-size: 30px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
@@ -178,22 +167,17 @@ const BottomUser = styled.div`
 
   .bottomuser {
     font-size: 30px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
-const MonitoringPage = ({user}) =>{
-
-  const logOut = () => {
-    console.log('LogOut');
-    user.logout();
-    }
+const MonitoringPage = () =>{
   return (
       <Container1>
       <TopBar>
-        <Link to="/" >
+        <Link to="/">
           <Logout>
-            <MdLogout className="logout" onClick={logOut} />
+            <MdLogout className="logout" />
           </Logout>
         </Link>
          <Title>아이 모니터링

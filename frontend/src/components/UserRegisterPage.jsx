@@ -1,13 +1,13 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
-
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -24,7 +24,7 @@ const TopBar = styled.nav`
    height: 3rem;
    width: 100vw;
    color: black;
-   background: #ecbd45;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -35,16 +35,16 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0e3fbd;
+    color: #EF564D;
     font-weight: bold;
     font-size: 20px;
     width: 100vw;
 
-    .watch {
+    .user1 {
       margin-left: 0.3rem;
       font-size: 25px;
-      color: #0e3fbd;
-   }
+      color: black;
+    }
 `;
 
 const Logout = styled.div`
@@ -53,7 +53,7 @@ const Logout = styled.div`
 
   .logout {
     font-size: 25px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
@@ -61,7 +61,7 @@ const MiddleBarContainer = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: start;
-  width: 100vw; 
+  width: 100vw;
 `;
 
 const MiddleBar = styled.nav`
@@ -70,7 +70,7 @@ const MiddleBar = styled.nav`
     width: 100vw;
     height: 3rem;
     color: black;
-    background: #ecbd45;
+    background: #4EED8E;
     font-weight: bold;
     display: inline-flex;
     justify-content: space-between;
@@ -78,13 +78,16 @@ const MiddleBar = styled.nav`
 `;
 
 const BandIconContainer = styled.div`
-  
+  /* width: 2rem;
+  height: 2rem; */
 `;
 const MobilIconContainer = styled.div`
-  
+  /* width: 2rem;
+  height: 2rem; */
 `;
 const UserIconContainer = styled.div`
- 
+  /* width: 2rem;
+  height: 2rem; */
 `;
 
 const RegisterFormContainer = styled.div`
@@ -93,15 +96,13 @@ const RegisterFormContainer = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 `;
 
 const RegisterForm = styled.div`
     width: 350px;
     height: 170px;
     border-radius: 10px;
-    /* background-color: #0e3fbd; */
-    background: linear-gradient(45deg, #9effed, #acb6e5);
+    background-color: white;
     font-size: 20px;
     box-shadow: 4px 4px 0px #e9dadad7;
 `;
@@ -112,59 +113,61 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: yellow; */
+    background-color: yellow;
     border-radius: 10px;
     float: left;
 `;
 
 const InsideForm = styled.div`
-    margin-top: 0rem;
-    margin-right: 3rem;
+    margin-top: 0.2rem;
+    margin-right: 2rem;
     float: right;
-    width: 10rem;
+    width: 12rem;
     height: 10rem;
 `;
 
 const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
-    background: linear-gradient(45deg, #9effed, #acb6e5);
-    border-color: #9effed;
-    border-radius: 10px;
-    color: black;
+    background-color: white;
+    border-color: white;
+    color: #4EED8E;
     text-align: center;
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
-    margin-top: 0.5rem;
+    /* margin-left: 2rem; */
 `;
 
 const InsideTitle = styled.div`
-    width: 170px;
+    width: 190px;
     color: black;
     font-size: 17px;
     font-weight: bold;
 `;
 
-const GetSerial = styled.input`
+const GetId = styled.input`
     width: 150px;
     text-align: center;
-    /* background: linear-gradient(45deg, #fffc00, #ffffff); */
-    background: white;
+`;
+
+const GetPassword = styled.input`
+    width: 150px;
+    text-align: center;
 `;
 
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
   color: black;
-  background: #ecbd45;
+  background: #4EED8E;
   font-weight: bold;
   position: fixed;
   bottom: 0;
   align-items: center;
 `;
 
-const SetBottom = styled.div` 
+const SetBottom = styled.div` // 그냥 크기 맞추는용 없앨수도 있음
   height: 3rem;
   width: 100vw;
   background-color: white;
@@ -182,6 +185,8 @@ const BottomLogoContainer = styled.div`
 `;
 
 const BottomBaby = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottombaby {
     font-size: 30px;
@@ -190,123 +195,71 @@ const BottomBaby = styled.div`
 `;
 
 const BottomMonitor = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottommonitor {
     font-size: 30px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
 const BottomUser = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottomuser {
     font-size: 30px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
-const BandRegisterPage = ({register1, user}) => {
-  const history = useHistory();
-  const inputRef = useRef();
-
-  const [email, setEmail] = useState('');
-  const [serialNumber, setSerialNumber] = useState('');
-  const [nickName, setNickName] = useState('');
-
-  const BandRegister = event => {
-    event.preventDefault();
-    if(email === "" || serialNumber === "" || nickName === ""){
-        window.alert("Email과 밴드의 일련번호, 닉네임을 입력해주세요.");
-        return;
-    }
-    console.log('Band Register');
-    register1.bandRegister(email, serialNumber, nickName);
-        
-};
-
-
-  const handleChange = (event) => {
-    const type = event.target.name;
-    if (type === 'email') {
-        const inputEmail = event.target.value;
-        setEmail(inputEmail);
-    } else if (type === 'serialNumber') {
-        const inputserialNumber= event.target.value;
-        setSerialNumber(inputserialNumber);
-    } else if (type === 'nickName') {
-        const inputNickName= event.target.value;
-        setNickName(inputNickName);
-  }
-  }
-
-  const logOut = () => {
-    console.log('LogOut');
-    user.logout();
-    history.push('/');
-    }
+export default function BandRegisterPage() {
 
   return (
     <Container1>
     <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" onClick={logOut}/>
+            <MdLogout className="logout" />
           </Logout>
         </Link>
-        <Title>밴드 등록
-          <BsSmartwatch className="watch" />
+        <Title>사용자 등록
+            <FaUserCircle className="user1" />
         </Title>
     </TopBar>
     <MiddleBarContainer>
     <MiddleBar>
         <Link to="/bandregisterpage">
           <BandIconContainer>
-            <BsSmartwatch size="27" color="red" />
+            <BsSmartwatch size="27" color="black" />
           </BandIconContainer>
         </Link>
         <Link to="/mobilregisterpage">
           <MobilIconContainer>
-            <MdToys className="mobil" size="30" color="#0e3fbd" />
+            <MdToys className="mobil" size="30" color="black" />
           </MobilIconContainer>
         </Link>
         <Link to="/userregisterpage">
           <UserIconContainer>
-            <FaUserCircle className="user" size="28"color="#0e3fbd" />
+            <FaUserCircle className="user" size="28" color="red" />
           </UserIconContainer>
         </Link>
     </MiddleBar>
     <RegisterFormContainer>
     <RegisterForm>
         <InsideLogo>
-            <BsSmartwatch className="logo3" size="45" />
+            <FaUserCircle className="logo3" size="45" />
         </InsideLogo>
         <InsideForm>
             <br />
-            <InsideTitle>기기 일련번호</InsideTitle>
-            <GetSerial 
-              type="text" 
-              placeholder="Email" 
-              name="email"
-              ref={inputRef}
-              onChange={handleChange}
-              />
-            <GetSerial 
-              type="text" 
-              placeholder="Serial Number Here" 
-              name="serialNumber"
-              minlength="6"
-              onChange={handleChange}
-              />
-            <GetSerial 
-              type="text" 
-              placeholder="NickName" 
-              name="nickName"
-              onChange={handleChange}
-              />
-            <RegisterButton onClick={BandRegister}>등록</RegisterButton>
+            <InsideTitle>사용자 아이디, 비밀번호</InsideTitle>
+            <GetId type="text" placeholder="User Id Here" />
+            <GetPassword type="password" placeholder="User Password Here" />
+            <RegisterButton>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer> 
+    </RegisterFormContainer>
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>
@@ -322,12 +275,12 @@ const BandRegisterPage = ({register1, user}) => {
         </Link>
         </BottomMonitor>
         <BottomUser>
+        <Link to="/registerpage">
           <FaUserCircle className="bottomuser" />
+        </Link>
         </BottomUser>
-      </BottomLogoContainer>
+        </BottomLogoContainer>
     </BottomBar>
     </Container1>
   );
 }
-
-export default BandRegisterPage;

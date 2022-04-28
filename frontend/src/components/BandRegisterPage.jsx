@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { BsSmartwatch } from 'react-icons/bs';
 import { MdToys } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
+// import { AiOutlinePlusSquare } from 'react-icons/ai';
 import { Link, useHistory } from 'react-router-dom';
 import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { MdLogout } from 'react-icons/md';
-
 
 const Container1 = styled.div`
   display: inline-flex;
@@ -24,7 +24,7 @@ const TopBar = styled.nav`
    height: 3rem;
    width: 100vw;
    color: black;
-   background: #ecbd45;
+   background: #4EED8E;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -35,7 +35,7 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0e3fbd;
+    color: #EF564D;
     font-weight: bold;
     font-size: 20px;
     width: 100vw;
@@ -43,7 +43,7 @@ const Title = styled.div`
     .watch {
       margin-left: 0.3rem;
       font-size: 25px;
-      color: #0e3fbd;
+      color: black;
    }
 `;
 
@@ -53,7 +53,7 @@ const Logout = styled.div`
 
   .logout {
     font-size: 25px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
@@ -70,7 +70,7 @@ const MiddleBar = styled.nav`
     width: 100vw;
     height: 3rem;
     color: black;
-    background: #ecbd45;
+    background: #4EED8E;
     font-weight: bold;
     display: inline-flex;
     justify-content: space-between;
@@ -78,13 +78,16 @@ const MiddleBar = styled.nav`
 `;
 
 const BandIconContainer = styled.div`
-  
+  /* width: 3rem;
+  height: 3rem; */
 `;
 const MobilIconContainer = styled.div`
-  
+  /* width: 3rem;
+  height: 3rem; */
 `;
 const UserIconContainer = styled.div`
- 
+  /* width: 3rem;
+  height: 3rem; */
 `;
 
 const RegisterFormContainer = styled.div`
@@ -100,8 +103,7 @@ const RegisterForm = styled.div`
     width: 350px;
     height: 170px;
     border-radius: 10px;
-    /* background-color: #0e3fbd; */
-    background: linear-gradient(45deg, #9effed, #acb6e5);
+    background-color: white;
     font-size: 20px;
     box-shadow: 4px 4px 0px #e9dadad7;
 `;
@@ -112,13 +114,13 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: yellow; */
+    background-color: yellow;
     border-radius: 10px;
     float: left;
 `;
 
 const InsideForm = styled.div`
-    margin-top: 0rem;
+    margin-top: 1rem;
     margin-right: 3rem;
     float: right;
     width: 10rem;
@@ -128,15 +130,14 @@ const InsideForm = styled.div`
 const RegisterButton = styled.button`
     width: 100px;
     height: 35px;
-    background: linear-gradient(45deg, #9effed, #acb6e5);
-    border-color: #9effed;
-    border-radius: 10px;
-    color: black;
+    background-color: white;
+    border-color: white;
+    color: #4EED8E;
     text-align: center;
     line-height: 35px;
     font-size: 17px;
     font-weight: bold;
-    margin-top: 0.5rem;
+    /* margin-left: 2rem; */
 `;
 
 const InsideTitle = styled.div`
@@ -144,27 +145,26 @@ const InsideTitle = styled.div`
     color: black;
     font-size: 17px;
     font-weight: bold;
+    /* margin-left: 2rem; */
 `;
 
 const GetSerial = styled.input`
     width: 150px;
     text-align: center;
-    /* background: linear-gradient(45deg, #fffc00, #ffffff); */
-    background: white;
 `;
 
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
   color: black;
-  background: #ecbd45;
+  background: #4EED8E;
   font-weight: bold;
   position: fixed;
   bottom: 0;
   align-items: center;
 `;
 
-const SetBottom = styled.div` 
+const SetBottom = styled.div` // 그냥 크기 맞추는용 없앨수도 있음
   height: 3rem;
   width: 100vw;
   background-color: white;
@@ -182,6 +182,8 @@ const BottomLogoContainer = styled.div`
 `;
 
 const BottomBaby = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottombaby {
     font-size: 30px;
@@ -190,67 +192,64 @@ const BottomBaby = styled.div`
 `;
 
 const BottomMonitor = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottommonitor {
     font-size: 30px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
 const BottomUser = styled.div`
+  /* width: 2em;
+  height: 1em; */
 
   .bottomuser {
     font-size: 30px;
-    color: #0e3fbd;
+    color: black;
   }
 `;
 
-const BandRegisterPage = ({register1, user}) => {
+const BandRegisterPage = ({register1}) => {
   const history = useHistory();
   const inputRef = useRef();
 
   const [email, setEmail] = useState('');
   const [serialNumber, setSerialNumber] = useState('');
-  const [nickName, setNickName] = useState('');
 
-  const BandRegister = event => {
-    event.preventDefault();
-    if(email === "" || serialNumber === "" || nickName === ""){
-        window.alert("Email과 밴드의 일련번호, 닉네임을 입력해주세요.");
-        return;
+  const goToMain = () => {
+      history.push('./mainpage');
     }
-    console.log('Band Register');
-    register1.bandRegister(email, serialNumber, nickName);
-        
-};
 
+    const BandRegister = event => {
+      event.preventDefault();
+      if(email === "" || serialNumber === ""){
+          window.alert("Email과 밴드의 일련번호를 입력해주세요.");
+          return;
+      }
+          console.log('Band Register');
+          register1.bandRegister(email, serialNumber);
+          
+  };
 
   const handleChange = (event) => {
-    const type = event.target.name;
-    if (type === 'email') {
-        const inputEmail = event.target.value;
-        setEmail(inputEmail);
-    } else if (type === 'serialNumber') {
-        const inputserialNumber= event.target.value;
-        setSerialNumber(inputserialNumber);
-    } else if (type === 'nickName') {
-        const inputNickName= event.target.value;
-        setNickName(inputNickName);
+      const type = event.target.name;
+      if (type === 'email') {
+          const inputEmail = event.target.value;
+          setEmail(inputEmail);
+      } else if (type === 'serialNumber') {
+          const inputserialNumber= event.target.value;
+          setSerialNumber(inputserialNumber);
+      }
   }
-  }
-
-  const logOut = () => {
-    console.log('LogOut');
-    user.logout();
-    history.push('/');
-    }
 
   return (
     <Container1>
     <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" onClick={logOut}/>
+            <MdLogout className="logout" onClick={goToMain}/>
           </Logout>
         </Link>
         <Title>밴드 등록
@@ -266,12 +265,12 @@ const BandRegisterPage = ({register1, user}) => {
         </Link>
         <Link to="/mobilregisterpage">
           <MobilIconContainer>
-            <MdToys className="mobil" size="30" color="#0e3fbd" />
+            <MdToys className="mobil" size="30" color="black" />
           </MobilIconContainer>
         </Link>
         <Link to="/userregisterpage">
           <UserIconContainer>
-            <FaUserCircle className="user" size="28"color="#0e3fbd" />
+            <FaUserCircle className="user" size="28"color="black" />
           </UserIconContainer>
         </Link>
     </MiddleBar>
@@ -297,16 +296,10 @@ const BandRegisterPage = ({register1, user}) => {
               minlength="6"
               onChange={handleChange}
               />
-            <GetSerial 
-              type="text" 
-              placeholder="NickName" 
-              name="nickName"
-              onChange={handleChange}
-              />
             <RegisterButton onClick={BandRegister}>등록</RegisterButton>
         </InsideForm>
     </RegisterForm>
-    </RegisterFormContainer> 
+    </RegisterFormContainer>
     </MiddleBarContainer>
     <SetBottom />
     <BottomBar>

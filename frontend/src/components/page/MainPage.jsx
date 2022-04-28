@@ -6,6 +6,7 @@ import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
+import img from './yard.gif';
 
 const MainPage = ({user}) => {
 
@@ -57,7 +58,11 @@ const Container1 = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
+  /* background: linear-gradient(#11998e, #38ef7d); */
+  background: white;
+  /* background-image: url(${img}); 
+  background-size: 100% 100%; */
 `;
 
 const TopBar = styled.nav`
@@ -67,7 +72,7 @@ const TopBar = styled.nav`
    height: 3rem;
    width: 100vw;
    color: black;
-   background: #4EED8E;
+   background: #ecbd45;
    font-weight: bold;
    display: flex;
    justify-content: space-between;
@@ -78,7 +83,7 @@ const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #EF564D;
+    color: #0e3fbd;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
@@ -94,15 +99,14 @@ const Logout = styled.div`
   width: 30px;
   .logout {
     font-size: 25px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 const BottomBar = styled.nav`
   height: 3rem;
   width: 100vw;
-  /* padding: 1rem; */
   color: black;
-  background: #4EED8E;
+  background:#ecbd45;
   font-weight: bold;
   position: fixed;
   bottom: 0;
@@ -118,8 +122,7 @@ const BottomLogoContainer = styled.div`
 `;
 
 const BottomBaby = styled.div`
-  /* width: 2em;
-  height: 1em; */
+
   .bottombaby {
     font-size: 30px;
     color: #FFD3C3;
@@ -127,19 +130,17 @@ const BottomBaby = styled.div`
 `;
 
 const BottomMonitor = styled.div`
-  /* width: 2em;
-  height: 1em; */
+  
   .bottommonitor {
     font-size: 30px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
 
 const BottomUser = styled.div`
-  /* width: 2em;
-  height: 1em; */
+  
   .bottomuser {
     font-size: 30px;
-    color: black;
+    color: #0e3fbd;
   }
 `;
