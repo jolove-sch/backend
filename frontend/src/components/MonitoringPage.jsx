@@ -171,13 +171,18 @@ const BottomUser = styled.div`
   }
 `;
 
-const MonitoringPage = () =>{
+const MonitoringPage = ({user}) =>{
+  const onLogout = () => {
+    console.log('logout');
+    user.logOut();
+  }
+
   return (
       <Container1>
       <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" />
+            <MdLogout className="logout" onClick={onLogout}/>
           </Logout>
         </Link>
          <Title>아이 모니터링

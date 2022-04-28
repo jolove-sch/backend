@@ -253,7 +253,7 @@ const BottomUser = styled.div`
   }
 `;
 
-const MainPage = () => {
+const MainPage = ({user}) => {
   const [state, setState] = useState([]);
   useEffect(() => {
     axios.get('http://jolove.kro.kr/api/band/status/testSeiral')//기기 일련번호 가져오기 보류
@@ -261,6 +261,11 @@ const MainPage = () => {
             setState(response.data.data);
           });
   }, []);
+
+  const onLogout = () => {
+    console.log('logout');
+    user.logOut();
+  }
 
   useEffect(() => {
     console.log(state)
@@ -271,7 +276,7 @@ const MainPage = () => {
       <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" />
+            <MdLogout className="logout" onClick={onLogout}/>
           </Logout>
         </Link>
           <Title>실시간 아이정보

@@ -211,15 +211,16 @@ const BottomUser = styled.div`
   }
 `;
 
-const BandRegisterPage = ({register1}) => {
+const BandRegisterPage = ({register1, user}) => {
   const history = useHistory();
   const inputRef = useRef();
 
   const [email, setEmail] = useState('');
   const [serialNumber, setSerialNumber] = useState('');
 
-  const goToMain = () => {
-      history.push('./mainpage');
+  const onLogout = () => {
+      console.log('logout');
+      user.logOut();
     }
 
     const BandRegister = event => {
@@ -249,7 +250,7 @@ const BandRegisterPage = ({register1}) => {
     <TopBar>
         <Link to="/">
           <Logout>
-            <MdLogout className="logout" onClick={goToMain}/>
+            <MdLogout className="logout" onClick={onLogout}/>
           </Logout>
         </Link>
         <Title>밴드 등록
