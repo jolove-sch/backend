@@ -221,7 +221,6 @@ const MobilRegisterPage = ({register1, user}) => {
     const logOut = () => {
       console.log('LogOut');
       user.logout();
-      history.push('/');
       }
 
   const MobilRegister = event => {
