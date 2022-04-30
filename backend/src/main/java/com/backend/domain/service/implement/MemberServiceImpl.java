@@ -7,6 +7,7 @@ import com.backend.domain.repository.MemberRepository;
 import com.backend.domain.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
@@ -16,14 +17,12 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member findMemberById(Long id) {
         return memberRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(
-                        ErrorCode.ENTITY_NOT_FOUND));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorCode.ENTITY_NOT_FOUND));
     }
 
     @Override
     public Member findMemberByEmail(String username) {
         return memberRepository.findMemberByEmail(username)
-                .orElseThrow(() -> new EntityNotFoundException(
-                        ErrorCode.ENTITY_NOT_FOUND));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorCode.ENTITY_NOT_FOUND));
     }
 }

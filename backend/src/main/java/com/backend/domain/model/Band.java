@@ -1,17 +1,8 @@
 package com.backend.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import javax.persistence.*;
+
+import lombok.*;
 
 @Getter
 @Builder
@@ -25,23 +16,22 @@ public class Band {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "band_id")
+    @JoinColumn(name = "owner")
     private Member bandOwner;
 
     @Column(nullable = false)
     private String serialNumber;
 
-//    @Column(nullable = false)
-//    private String nickname;
-//
-//    @Column(nullable = false)
-//    private Integer heartRate;
-//
-//    @Column(nullable = false)
-//    private Integer oxygenSaturation;
-//
-//    @Column(nullable = false)
-//    private Integer temperature;
-//
-//    @Column(nullable = false)
+    @Column(nullable = false)
+    private String nickname;
+
+    @Setter
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean cry = false;
+
+    @Setter
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean flipped = false;
 }

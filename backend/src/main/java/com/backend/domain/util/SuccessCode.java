@@ -9,13 +9,18 @@ import lombok.Getter;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum SuccessCode {
     //    Auth
+    SIGN_SUCCESS("회원가입 성공", 200),
     LOGIN_SUCCESS("로그인 성공", 200),
     LOGOUT_SUCCESS("로그아웃 성공", 200),
     REISSUE_SUCCESS("토큰 재발급 성공", 200),
 
+    // text
+    TEST_SUCCESS("cors 테스트 성공", 200),
+
     // Band
     CREATE_BAND_SUCCESS("밴드 등록 성공", 200),
     GET_BAND_STATUS_SUCCESS("밴드 상태 가져오기 성공", 200),
+    GET_BAND_LIST("밴드 리스트 가져오기 성공", 200),
 
     // Mobile
     CREATE_MOBILE_SUCCESS("모빌 등록 성공", 200),
