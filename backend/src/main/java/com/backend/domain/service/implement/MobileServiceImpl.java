@@ -2,11 +2,11 @@ package com.backend.domain.service.implement;
 
 import com.backend.domain.error.exception.BusinessException;
 import com.backend.domain.error.exception.ErrorCode;
-import com.backend.domain.model.Band;
+import com.backend.domain.model.CustomUserDetails;
 import com.backend.domain.model.Member;
 import com.backend.domain.model.Mobile;
-import com.backend.domain.model.dto.ResponseDto;
-import com.backend.domain.model.dto.mobile.CreateMobileDto;
+import com.backend.domain.dto.ResponseDto;
+import com.backend.domain.dto.CreateMobileDto;
 import com.backend.domain.repository.MobileRepository;
 import com.backend.domain.service.MemberService;
 import com.backend.domain.service.MobileService;
@@ -37,7 +37,20 @@ public class MobileServiceImpl implements MobileService {
     }
 
     @Override
-    public ResponseEntity<? extends ResponseDto> createMobile(CreateMobileDto createMobileDto) {
+    public Mobile findMobileByMobileOwner(Member member) {
+        return mobileRepository.findMobileByMobileOwner(member)
+                .orElseThrow(() -> new BusinessException(ErrorCode.ENTITY_NOT_FOUND));
+    }
+
+    @Override
+    public void serialNumberDuplicationCheck(String serialNumber) {
+        if (mobileRepository.findMobileBySerialNumber(serialNumber).isPresent())
+            throw new BusinessException(ErrorCode.SERIAL_NUM_DUPLICATION);
+    }
+
+    @Override
+    public ResponseEntity<ResponseDto> createMobile(CreateMobileDto createMobileDto) {
+        serialNumberDuplicationCheck(createMobileDto.getSerialNumber());
         Member member = memberService.findMemberByEmail(createMobileDto.getEmail());
         mobileRepository.save(Mobile.builder()
                 .mobileOwner(member)
@@ -48,11 +61,9 @@ public class MobileServiceImpl implements MobileService {
     }
 
     @Override
-    public ResponseEntity<? extends ResponseDto> getMobileUrl(String serialNumber) {
+    public ResponseEntity<ResponseDto> getMobileUrl(Member member) {
         // 모빌 객체 찾기
-        Mobile mobile = findMobileBySerialNumber(serialNumber);
-
-        // 모빌 소유자 확인
+        Mobile mobile = findMobileByMobileOwner(member);
 
         // 모빌 url 반환
         return responseService.successResult(SuccessCode.GET_MOBILE_URL_SUCCESS,

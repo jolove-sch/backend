@@ -1,11 +1,13 @@
 package com.backend.domain.controller;
 
-import com.backend.domain.model.dto.ResponseDto;
-import com.backend.domain.model.dto.mobile.CreateMobileDto;
+import com.backend.domain.dto.ResponseDto;
+import com.backend.domain.dto.CreateMobileDto;
+import com.backend.domain.model.CustomUserDetails;
 import com.backend.domain.service.MobileService;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +31,8 @@ public class MobileController {
 
     @GetMapping(value = "/url/{serialNumber}")
     public ResponseEntity<? extends ResponseDto> getMobileUrl(
-            @PathVariable("serialNumber") String serialNumber
+            @AuthenticationPrincipal CustomUserDetails customUserDetails
     ) {
-        return mobileService.getMobileUrl(serialNumber);
+        return mobileService.getMobileUrl(customUserDetails.getMember());
     }
 }

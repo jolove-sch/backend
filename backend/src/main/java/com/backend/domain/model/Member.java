@@ -1,5 +1,6 @@
 package com.backend.domain.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -22,7 +23,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
-public class Member{
+public class Member implements Serializable {
+
+    static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +40,15 @@ public class Member{
     @Column(nullable = false)
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "bandOwner", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(nullable = false)
+    @Builder.Default
+    private String authority = Authority.ROLE_USER;
+
+    @OneToMany(mappedBy = "bandOwner")
     @Builder.Default
     private List<Band> bandList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "mobileOwner", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "mobileOwner")
     @Builder.Default
     private List<Mobile> mobileList = new ArrayList<>();
 }

@@ -1,13 +1,24 @@
 package com.backend.domain.service;
 
+import com.backend.domain.dto.AddStatusDto;
 import com.backend.domain.model.Band;
-import com.backend.domain.model.dto.ResponseDto;
-import com.backend.domain.model.dto.band.CreateBandDto;
+import com.backend.domain.dto.ResponseDto;
+import com.backend.domain.dto.CreateBandDto;
+import com.backend.domain.model.Member;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public interface BandService {
-    public Band findBandById(Long id);
-    public Band findBandBySerialNum(String serialNumber);
-    public ResponseEntity<? extends ResponseDto> createBand(CreateBandDto createBandDto);
-    public ResponseEntity<? extends ResponseDto> getBandStatus(String serialNumber);
+
+    public void serialNumberDuplicationCheck(String serialNumber);
+    public Band findBandBySerialNumber(String serialNumber);
+    public Band findBandByBandOwner(Member member);
+    public List<Band> findBandListByBandOwner(Member member);
+    public ResponseEntity<ResponseDto> getBandListByMember(Member member);
+    public ResponseEntity<ResponseDto> createBand(CreateBandDto createBandDto, Member member);
+    public ResponseEntity<ResponseDto> getBandStatus(Member member);
+    public void addBandStatus(AddStatusDto addStatusDto, int kind);
+    public void changeCryStatus(String serialNumber);
+    public void changeFlipStatus(String serialNumber);
 }
