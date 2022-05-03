@@ -1,6 +1,6 @@
 import useStore from "../../service/store";
 import "./styles.css";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import {
   ResponsiveContainer,
   LineChart,
@@ -13,6 +13,7 @@ import {
 } from "recharts";
 
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Container = styled.div`
   width: 100vw;
@@ -24,449 +25,6 @@ const Container = styled.div`
   overflow: scroll;
   background: linear-gradient(#ece9e6, #ffffff);
 `;
-
-
-const data = [
-  {
-    name: "00:00",
-    // uv: 4000,
-    temperature: 36.3,
-    amt: 2400
-  },
-  {
-    name: "01:00",
-    // uv: 4000,
-    temperature: 36.5,
-    amt: 2400
-  },
-  {
-    name: "02:00",
-    // uv: 4000,
-    temperature: 36.3,
-    amt: 2400
-  },
-  {
-    name: "03:00",
-    // uv: 4000,
-    temperature: 36.2,
-    amt: 2400
-  },
-  {
-    name: "04:00",
-    // uv: 4000,
-    temperature: 36.7,
-    amt: 2400
-  },
-  {
-    name: "05:00",
-    // uv: 4000,
-    temperature: 37.0,
-    amt: 2400
-  },
-  {
-    name: "06:00",
-    // uv: 4000,
-    temperature: 37.3,
-    amt: 2400
-  },
-  {
-    name: "07:00",
-    // uv: 4000,
-    temperature: 37.5,
-    amt: 2400
-  },
-  {
-    name: "08:00",
-    // uv: 4000,
-    temperature: 38.0,
-    amt: 2400
-  },
-  {
-    name: "09:00",
-    // uv: 4000,
-    temperature: 36.6,
-    amt: 2400
-  },
-  {
-    name: "10:00",
-    // uv: 4000,
-    temperature: 36.8,
-    amt: 2400
-  },
-  {
-    name: "11:00",
-    // uv: 4000,
-    temperature: 36.4,
-    amt: 2400
-  },
-  {
-    name: "12:00",
-    // uv: 4000,
-    temperature: 36.2,
-    amt: 2400
-  },
-  // {
-  //   name: "13:00",
-  //   // uv: 3000,
-  //   temperature: 36.3,
-  //   amt: 2210
-  // },
-  // {
-  //   name: "14:00",
-  //   // uv: 2000,
-  //   temperature: 36.4,
-  //   amt: 2290
-  // },
-  // {
-  //   name: "15:00",
-  //   // uv: 2780,
-  //   temperature: 37.6,
-  //   amt: 2000
-  // },
-  // {
-  //   name: "16:00",
-  //   // uv: 1890,
-  //   temperature: 36.6,
-  //   amt: 2181
-  // },
-  // {
-  //   name: "17:00",
-  //   // uv: 2390,
-  //   temperature: 36.3,
-  //   amt: 2500
-  // },
-  // {
-  //   name: "18:00",
-  //   // uv: 3490,
-  //   temperature: 36.9,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "19:00",
-  //   // uv: 3490,
-  //   temperature: 36.3,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "20:00",
-  //   // uv: 3490,
-  //   temperature: 36.7,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "21:00",
-  //   // uv: 3490,
-  //   temperature: 36.9,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "22:00",
-  //   // uv: 3490,
-  //   temperature: 37.0,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "23:00",
-  //   // uv: 3490,
-  //   temperature: 36.5,
-  //   amt: 2100
-  // }
-];
-
-const data2 = [ // 영유아 평균 심박수 140~160
-  {
-  name: "00:00",
-  // uv: 4000,
-  bpm: 140,
-  amt: 2400
-  },
-  {
-  name: "01:00",
-  // uv: 4000,
-  bpm: 143,
-  amt: 2400
-  },
-  {
-  name: "02:00",
-  // uv: 4000,
-  bpm: 142,
-  amt: 2400
-  },
-  {
-  name: "03:00",
-  // uv: 4000,
-  bpm: 145,
-  amt: 2400
-  },
-  {
-  name: "04:00",
-  // uv: 4000,
-  bpm: 146,
-  amt: 2400
-  },
-  {
-  name: "05:00",
-  // uv: 4000,
-  bpm: 144,
-  amt: 2400
-  },
-  {
-  name: "06:00",
-  // uv: 4000,
-  bpm: 147,
-  amt: 2400
-  },
-  {
-  name: "07:00",
-  // uv: 4000,
-  bpm: 143,
-  amt: 2400
-  },
-  {
-  name: "08:00",
-  // uv: 4000,
-  bpm: 142,
-  amt: 2400
-  },
-  {
-  name: "09:00",
-  // uv: 4000,
-  bpm: 145,
-  amt: 2400
-  },
-  {
-  name: "10:00",
-  // uv: 4000,
-  bpm: 141,
-  amt: 2400
-  },
-  {
-  name: "11:00",
-  // uv: 4000,
-  bpm: 140,
-  amt: 2400
-  },
-  {
-    name: "12:00",
-    // uv: 4000,
-    bpm: 145,
-    amt: 2400
-  },
-  // {
-  //   name: "13:00",
-  //   // uv: 3000,
-  //   bpm: 148,
-  //   amt: 2210
-  // },
-  // {
-  //   name: "14:00",
-  //   // uv: 2000,
-  //   bpm: 150,
-  //   amt: 2290
-  // },
-  // {
-  //   name: "15:00",
-  //   // uv: 2780,
-  //   bpm: 153,
-  //   amt: 2000
-  // },
-  // {
-  //   name: "16:00",
-  //   // uv: 1890,
-  //   bpm: 156,
-  //   amt: 2181
-  // },
-  // {
-  //   name: "17:00",
-  //   // uv: 2390,
-  //   bpm: 135,
-  //   amt: 2500
-  // },
-  // {
-  //   name: "18:00",
-  //   // uv: 3490,
-  //   bpm: 165,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "19:00",
-  //   // uv: 4000,
-  //   bpm: 150,
-  //   amt: 2400
-  //   },
-  //   {
-  //   name: "20:00",
-  //   // uv: 4000,
-  //   bpm: 153,
-  //   amt: 2400
-  //   },
-  //   {
-  //   name: "21:00",
-  //   // uv: 4000,
-  //   bpm: 157,
-  //   amt: 2400
-  //   },
-  //   {
-  //   name: "22:00",
-  //   // uv: 4000,
-  //   bpm: 154,
-  //   amt: 2400
-  //   },
-  //   {
-  //   name: "23:00",
-  //   // uv: 4000,
-  //   bpm: 150,
-  //   amt: 2400
-  //   }
-];
-
-const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의, 90%이하면 저산소증
-  {
-  name: "00:00",
-  // uv: 4000,
-  o2_percent: 96,
-  amt: 2400
-  },
-  {
-  name: "01:00",
-  // uv: 3000,
-  o2_percent: 98,
-  amt: 2210
-  },
-  {
-  name: "02:00",
-  // uv: 2000,
-  o2_percent: 93,
-  amt: 2290
-  },
-  {
-  name: "03:00",
-  // uv: 2780,
-  o2_percent: 91,
-  amt: 2000
-  },
-  {
-  name: "04:00",
-  // uv: 1890,
-  o2_percent: 89,
-  amt: 2181
-  },
-  {
-  name: "05:00",
-  // uv: 2390,
-  o2_percent: 88,
-  amt: 2500
-  },
-  {
-  name: "06:00",
-  // uv: 3490,
-  o2_percent: 94,
-  amt: 2100
-  },
-  {
-    name: "07:00",
-    // uv: 4000,
-    o2_percent: 95,
-    amt: 2400
-  },
-  {
-    name: "08:00",
-    // uv: 3000,
-    o2_percent: 98,
-    amt: 2210
-  },
-  {
-    name: "09:00",
-    // uv: 2000,
-    o2_percent: 94,
-    amt: 2290
-  },
-  {
-    name: "10:00",
-    // uv: 2780,
-    o2_percent: 92,
-    amt: 2000
-  },
-  {
-    name: "11:00",
-    // uv: 1890,
-    o2_percent: 97,
-    amt: 2181
-  },
-  {
-    name: "12:00",
-    // uv: 2390,
-    o2_percent: 91,
-    amt: 2500
-  },
-  // {
-  //   name: "13:00",
-  //   // uv: 3490,
-  //   o2_percent: 89,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "14:00",
-  //   // uv: 4000,
-  //   o2_percent: 95,
-  //   amt: 2400
-  // },
-  // {
-  //   name: "15:00",
-  //   // uv: 3000,
-  //   o2_percent: 98,
-  //   amt: 2210
-  // },
-  // {
-  //   name: "16:00",
-  //   // uv: 2000,
-  //   o2_percent: 94,
-  //   amt: 2290
-  // },
-  // {
-  //   name: "17:00",
-  //   // uv: 2780,
-  //   o2_percent: 92,
-  //   amt: 2000
-  // },
-  // {
-  //   name: "18:00",
-  //   // uv: 1890,
-  //   o2_percent: 97,
-  //   amt: 2181
-  // },
-  // {
-  //   name: "19:00",
-  //   // uv: 2390,
-  //   o2_percent: 91,
-  //   amt: 2500
-  // },
-  // {
-  //   name: "20:00",
-  //   // uv: 3490,
-  //   o2_percent: 89,
-  //   amt: 2100
-  // },
-  // {
-  //   name: "21:00",
-  //   // uv: 4000,
-  //   o2_percent: 95,
-  //   amt: 2400
-  // },
-  // {
-  //   name: "22:00",
-  //   // uv: 3000,
-  //   o2_percent: 98,
-  //   amt: 2210
-  // },
-  // {
-  //   name: "23:00",
-  //   // uv: 2000,
-  //   o2_percent: 94,
-  //   amt: 2290
-  // }
-];
-
 const CustomizedDot = (props) => {
   const { cx, cy, value } = props;
 
@@ -579,13 +137,178 @@ const CustomizedDot3 = (props) => {
 }; 
 
 export default function HeartPage() {
-  const {heartBeat, oxygen, temperature} = useStore();
+  const [status, setStatus] = useState([]);
 
-  const data_1 = [
-    {
-      temperature: temperature
-    }
+  useEffect(() => {
+    axios.get('https://jolove.kro.kr/api/band/status',
+      { withCredentials: true})
+      
+      .then((response) => {
+        setStatus(response.data.data);
+        console.log(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error); 
+      });
+  },[])
+
+  useEffect(() => {
+    console.log(status.oxygen)
+  }, [status])
+
+const data1 = [
+      {
+        name: "00:00",
+        // uv: 4000,
+        temperature: status.temperature[0],
+        amt: 2400
+      },
+      {
+        name: "01:00",
+        // uv: 4000,
+        temperature: status.temperature[1],
+        amt: 2400
+      },
+      {
+        name: "02:00",
+        // uv: 4000,
+        temperature: status.temperature[2],
+        amt: 2400
+      },
+      {
+        name: "03:00",
+        // uv: 4000,
+        temperature: status.temperature[3],
+        amt: 2400
+      },
+      {
+        name: "04:00",
+        // uv: 4000,
+        temperature: status.temperature[4],
+        amt: 2400
+      },
+      {
+        name: "05:00",
+        // uv: 4000,
+        temperature: status.temperature[5],
+        amt: 2400
+      },
+      {
+        name: "06:00",
+        // uv: 4000,
+        temperature: status.temperature[6],
+        amt: 2400
+      },
+      {
+        name: "07:00",
+        // uv: 4000,
+        temperature: status.temperature[7],
+        amt: 2400
+      }
   ];
+
+  const data2 = [ // 영유아 평균 심박수 140~160
+    {
+    name: "00:00",
+    // uv: 4000,
+    bpm: status.heartBeat[0],
+    amt: 2400
+    },
+    {
+    name: "01:00",
+    // uv: 4000,
+    bpm: status.heartBeat[1],
+    amt: 2400
+    },
+    {
+    name: "02:00",
+    // uv: 4000,
+    bpm: status.heartBeat[2],
+    amt: 2400
+    },
+    {
+    name: "03:00",
+    // uv: 4000,
+    bpm: status.heartBeat[3],
+    amt: 2400
+    },
+    {
+    name: "04:00",
+    // uv: 4000,
+    bpm: status.heartBeat[4],
+    amt: 2400
+    },
+    {
+    name: "05:00",
+    // uv: 4000,
+    bpm: status.heartBeat[5],
+    amt: 2400
+    },
+    {
+    name: "06:00",
+    // uv: 4000,
+    bpm: status.heartBeat[6],
+    amt: 2400
+    },
+    {
+    name: "07:00",
+    // uv: 4000,
+    bpm: status.heartBeat[7],
+    amt: 2400
+    },
+  ];
+
+
+const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의, 90%이하면 저산소증
+  {
+  name: "00:00",
+  // uv: 4000,
+  o2_percent: status.oxygen[0],
+  amt: 2400
+  },
+  {
+  name: "01:00",
+  // uv: 3000,
+  o2_percent: status.oxygen[1],
+  amt: 2210
+  },
+  {
+  name: "02:00",
+  // uv: 2000,
+  o2_percent: status.oxygen[2],
+  amt: 2290
+  },
+  {
+  name: "03:00",
+  // uv: 2780,
+  o2_percent: status.oxygen[3],
+  amt: 2000
+  },
+  {
+  name: "04:00",
+  // uv: 1890,
+  o2_percent: status.oxygen[4],
+  amt: 2181
+  },
+  {
+  name: "05:00",
+  // uv: 2390,
+  o2_percent: status.oxygen[5],
+  amt: 2500
+  },
+  {
+  name: "06:00",
+  // uv: 3490,
+  o2_percent: status.oxygen[6],
+  amt: 2100
+  },
+  {
+    name: "07:00",
+    // uv: 4000,
+    o2_percent: status.oxygen[7],
+    amt: 2400
+  }
+];
 
   return (
     <Container>
@@ -593,7 +316,7 @@ export default function HeartPage() {
     <LineChart // 체온 차트
       width={1000}
       height={300}
-      data={data_1}
+      data={data1}
       margin={{
         top: 20,
         right: 40,
@@ -619,6 +342,7 @@ export default function HeartPage() {
     </LineChart>
     </ResponsiveContainer>
     <br />
+
     <ResponsiveContainer width="100%" height="100%">
     <LineChart // 심박수 차트
       width={1000}

@@ -35,10 +35,12 @@ const StateBox = (props) => {
       });
   },[])
 
+  console.log(temperature)
 
   return (
     <>
       {props.count && props.count.map((item, i) => (
+
       <StatusForm key={i}>
         <InsideLogo>
         <Link to="/heartpage">
