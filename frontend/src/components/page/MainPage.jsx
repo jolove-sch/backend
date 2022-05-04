@@ -6,7 +6,6 @@ import { FaBaby } from 'react-icons/fa';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
-import img from './yard.gif';
 
 const MainPage = ({user}) => {
 
@@ -59,10 +58,7 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   overflow: hidden;
-  /* background: linear-gradient(#11998e, #38ef7d); */
   background: white;
-  /* background-image: url(${img}); 
-  background-size: 100% 100%; */
 `;
 
 const TopBar = styled.nav`

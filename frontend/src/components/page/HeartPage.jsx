@@ -61,7 +61,7 @@ const CustomizedDot = (props) => {
 const CustomizedDot2 = (props) => {
   const { cx, cy, value } = props;
 
-  if (value < 140 || value > 160) {
+  if (value < 120 || value > 140) {
     return (
       <svg
         x={cx - 10}
@@ -94,7 +94,7 @@ const CustomizedDot2 = (props) => {
 const CustomizedDot3 = (props) => {
   const { cx, cy, value } = props;
 
-  if (value < 95 && value >= 90) {
+  if (value >= 80 && value <= 88) {
     return (
       <svg
         x={cx - 10}
@@ -108,7 +108,7 @@ const CustomizedDot3 = (props) => {
       </svg>
     );
   }
-  else if (value < 90) {
+  else if (value < 80) {
     return (
       <svg
         x={cx - 10}
@@ -179,7 +179,7 @@ export default function HeartPage() {
       <YAxis 
           label={{ value: '℃', angle: 0, position: 'top' }}
           type="number" 
-          domain={[0, 40]}
+          domain={[36, 40]}
           
       />
       <Tooltip />
@@ -213,7 +213,7 @@ export default function HeartPage() {
       <YAxis 
           label={{ value: 'bpm', offset: 8, angle: 0, position: 'top' }}
           type="number" 
-          domain={[130, 170]}
+          domain={[80, 180]}
           
       />
       <Tooltip />
