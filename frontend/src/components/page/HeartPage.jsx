@@ -14,6 +14,7 @@ import {
 
 import styled from 'styled-components';
 import axios from 'axios';
+import { set } from 'immutable';
 
 const Container = styled.div`
   width: 100vw;
@@ -142,7 +143,7 @@ export default function HeartPage() {
   useEffect(() => {
     axios.get('https://jolove.kro.kr/api/band/status',
       { withCredentials: true})
-      
+
       .then((response) => {
         setStatus(response.data.data);
         console.log(response.data.data);
@@ -152,163 +153,11 @@ export default function HeartPage() {
       });
   },[])
 
-  useEffect(() => {
-    console.log(status.oxygen)
-  }, [status])
+  console.log(status.temperature)
 
-const data1 = [
-      {
-        name: "00:00",
-        // uv: 4000,
-        temperature: status.temperature[0],
-        amt: 2400
-      },
-      {
-        name: "01:00",
-        // uv: 4000,
-        temperature: status.temperature[1],
-        amt: 2400
-      },
-      {
-        name: "02:00",
-        // uv: 4000,
-        temperature: status.temperature[2],
-        amt: 2400
-      },
-      {
-        name: "03:00",
-        // uv: 4000,
-        temperature: status.temperature[3],
-        amt: 2400
-      },
-      {
-        name: "04:00",
-        // uv: 4000,
-        temperature: status.temperature[4],
-        amt: 2400
-      },
-      {
-        name: "05:00",
-        // uv: 4000,
-        temperature: status.temperature[5],
-        amt: 2400
-      },
-      {
-        name: "06:00",
-        // uv: 4000,
-        temperature: status.temperature[6],
-        amt: 2400
-      },
-      {
-        name: "07:00",
-        // uv: 4000,
-        temperature: status.temperature[7],
-        amt: 2400
-      }
-  ];
-
-  const data2 = [ // 영유아 평균 심박수 140~160
-    {
-    name: "00:00",
-    // uv: 4000,
-    bpm: status.heartBeat[0],
-    amt: 2400
-    },
-    {
-    name: "01:00",
-    // uv: 4000,
-    bpm: status.heartBeat[1],
-    amt: 2400
-    },
-    {
-    name: "02:00",
-    // uv: 4000,
-    bpm: status.heartBeat[2],
-    amt: 2400
-    },
-    {
-    name: "03:00",
-    // uv: 4000,
-    bpm: status.heartBeat[3],
-    amt: 2400
-    },
-    {
-    name: "04:00",
-    // uv: 4000,
-    bpm: status.heartBeat[4],
-    amt: 2400
-    },
-    {
-    name: "05:00",
-    // uv: 4000,
-    bpm: status.heartBeat[5],
-    amt: 2400
-    },
-    {
-    name: "06:00",
-    // uv: 4000,
-    bpm: status.heartBeat[6],
-    amt: 2400
-    },
-    {
-    name: "07:00",
-    // uv: 4000,
-    bpm: status.heartBeat[7],
-    amt: 2400
-    },
-  ];
-
-
-const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의, 90%이하면 저산소증
-  {
-  name: "00:00",
-  // uv: 4000,
-  o2_percent: status.oxygen[0],
-  amt: 2400
-  },
-  {
-  name: "01:00",
-  // uv: 3000,
-  o2_percent: status.oxygen[1],
-  amt: 2210
-  },
-  {
-  name: "02:00",
-  // uv: 2000,
-  o2_percent: status.oxygen[2],
-  amt: 2290
-  },
-  {
-  name: "03:00",
-  // uv: 2780,
-  o2_percent: status.oxygen[3],
-  amt: 2000
-  },
-  {
-  name: "04:00",
-  // uv: 1890,
-  o2_percent: status.oxygen[4],
-  amt: 2181
-  },
-  {
-  name: "05:00",
-  // uv: 2390,
-  o2_percent: status.oxygen[5],
-  amt: 2500
-  },
-  {
-  name: "06:00",
-  // uv: 3490,
-  o2_percent: status.oxygen[6],
-  amt: 2100
-  },
-  {
-    name: "07:00",
-    // uv: 4000,
-    o2_percent: status.oxygen[7],
-    amt: 2400
-  }
-];
+  const data1 = status.temperature
+  const data2 = status.heartBeat
+  const data3 = status.oxygen
 
   return (
     <Container>
@@ -325,11 +174,13 @@ const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
+      <XAxis 
+          dataKey="name" />
       <YAxis 
-          label={{ value: '℃', angle: 0, position: 'top' }} 
-          // type="number" 
+          label={{ value: '℃', angle: 0, position: 'top' }}
+          type="number" 
           domain={[0, 40]}
+          
       />
       <Tooltip />
       <Legend />
@@ -343,7 +194,7 @@ const data3 = [ // 산소포화도 평균 95%, 95%이하면 저산소증 주의,
     </ResponsiveContainer>
     <br />
 
-    <ResponsiveContainer width="100%" height="100%">
+     <ResponsiveContainer width="100%" height="100%">
     <LineChart // 심박수 차트
       width={1000}
       height={300}
