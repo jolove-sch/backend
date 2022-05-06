@@ -20,6 +20,7 @@ const StateBox = (props) => {
   const temperature = useStore((state) => state.temperature);
   const cry = useStore((state) => state.cry);
   const flipped = useStore((state) => state.flipped);
+  const nickname = useStore((state) => state.nickname);
   
   useEffect(() => {
     axios
@@ -27,15 +28,15 @@ const StateBox = (props) => {
       { withCredentials: true})
       
       .then((response) => {
-        setResObj(response.data);
-        console.log(response.data);
+        setResObj(response.data.data);
+        console.log(response);
       })
       .catch((error) => {
         console.log(error); 
       });
   },[])
 
-  console.log(temperature)
+  //console.log()
 
   return (
     <>
@@ -48,6 +49,7 @@ const StateBox = (props) => {
         </Link>
         </InsideLogo>
         <Insidestatus>
+          <p>{nickname}</p>
         <HeartBeatContainer>
         <HeartBeat>
           <FaHeartbeat className="Heartbeat" />
@@ -71,7 +73,7 @@ const StateBox = (props) => {
           <ImCrying className="Crying" />
           <DetectCrying>
             {
-              cry=== 'false'
+              cry == 'false'
               ? <span>OFF</span> : <span>ON</span>
             }
           </DetectCrying>
@@ -82,7 +84,7 @@ const StateBox = (props) => {
           <MdBabyChangingStation className="Overturn" />
           <DetectingOverturn>
             {
-              flipped === 'false'
+              flipped == 'false'
               ? <span>OFF</span> : <span>ON</span>
             }
             </DetectingOverturn>

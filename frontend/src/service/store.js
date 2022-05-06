@@ -7,17 +7,38 @@ const useStore = create((set) => ({
   temperature: [],
   cry: [],
   flipped: [],
+  nickname: [],
 
   setResObj: (res) => {
     set((state) => ({
       resObj: res,
-      heartBeat: res.heartBeat,
-      oxygen: res.oxygen,
-      temperature: res.temperature,
-      cry: res.cry,
-      flipped: res.flipped
+      nickname: res && res.map(r => {
+        console.log(r.nickname)
+        return r.nickname
+      }),
+      heartBeat:res && res.map(r => {
+        console.log(r.heartBeat)
+        return r.heartBeat
+      }),
+      oxygen: res && res.map(r => {
+        console.log(r.oxygen)
+        return r.oxygen
+      }),
+      temperature: res && res.map(r => {
+        console.log(r.temperature)
+        return r.temperature
+      }),
+      cry:res && res.map(r => {
+        console.log(r.cry)
+        return r.cry
+      }),
+      flipped: res && res.map(r => {
+        console.log(r.flipped)
+        return r.flipped
+      })
     }));
   }
+
 }));
 
 export default useStore;
