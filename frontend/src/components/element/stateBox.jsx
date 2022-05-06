@@ -48,9 +48,10 @@ const StateBox = (props) => {
         <Link to="/heartpage">
           <FaBaby className="insidebaby" />
         </Link>
+        {/* {nickname} */}
+        <Nickname>{nickname}</Nickname>
         </InsideLogo>
         <Insidestatus>
-          <p>{nickname}</p>
         <HeartBeatContainer>
         <HeartBeat>
           <FaHeartbeat className="Heartbeat" />
@@ -112,6 +113,7 @@ const InsideLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     /* background-color: #e1eec3; */
     border-radius: 10px;
     float: left;
@@ -120,6 +122,14 @@ const InsideLogo = styled.div`
         /* color: #FFD3C3; */
         color: #f07c7e;
     }
+`;
+
+const Nickname = styled.div`
+    width: 5rem;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Insidestatus = styled.div`
