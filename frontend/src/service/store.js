@@ -2,6 +2,7 @@ import create from 'zustand';
 
 const useStore = create((set) => ({
   resObj: [],
+  id: [],
   heartBeat: [],
   oxygen: [],
   temperature: [],
@@ -12,6 +13,10 @@ const useStore = create((set) => ({
   setResObj: (res) => {
     set((state) => ({
       resObj: res,
+      id: res && res.map(r => {
+        console.log(r.id)
+        return r.id
+      }),
       nickname: res && res.map(r => {
         console.log(r.nickname)
         return r.nickname

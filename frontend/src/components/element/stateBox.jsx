@@ -21,6 +21,7 @@ const StateBox = (props) => {
   const cry = useStore((state) => state.cry);
   const flipped = useStore((state) => state.flipped);
   const nickname = useStore((state) => state.nickname);
+  const id = useStore((state) => state.id)
   
   useEffect(() => {
     axios
@@ -29,7 +30,7 @@ const StateBox = (props) => {
       
       .then((response) => {
         setResObj(response.data.data);
-        console.log(response);
+        console.log(response.data.data);
       })
       .catch((error) => {
         console.log(error); 
@@ -40,9 +41,9 @@ const StateBox = (props) => {
 
   return (
     <>
-      {props.count && props.count.map((item, i) => (
-
-      <StatusForm key={i}>
+      {props.count && props.count.map((item, id) => (
+      
+      <StatusForm key={id}>
         <InsideLogo>
         <Link to="/heartpage">
           <FaBaby className="insidebaby" />
