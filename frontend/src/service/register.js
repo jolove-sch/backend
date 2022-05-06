@@ -6,7 +6,7 @@ class register {
         try {
             const res = await axios({
                 method: "post",
-                url: 'http://jolove.kro.kr/api/mobile',
+                url: 'https://jolove.kro.kr/api/mobile',
                 data: {
                     email: email,
                     serialNumber: serialNumber,
@@ -23,14 +23,15 @@ class register {
         }
     };
 
-    async bandRegister (email, serialNumber){
+    async bandRegister (email, serialNumber, nickname){
         try {
             const res = await axios({
                 method: "post",
-                url: 'http://jolove.kro.kr/api/band',
+                url: 'https://jolove.kro.kr/api/band',
                 data: {
                     email: email,
                     serialNumber: serialNumber,
+                    nickname: nickname
                 },
             });
             console.log(res);

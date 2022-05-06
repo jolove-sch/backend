@@ -14,31 +14,31 @@ const useStore = create((set) => ({
     set((state) => ({
       resObj: res,
       id: res && res.map(r => {
-        console.log(r.id)
+        //console.log(r.id)
         return r.id
       }),
       nickname: res && res.map(r => {
-        console.log(r.nickname)
+        //console.log(r.nickname)
         return r.nickname
       }),
       heartBeat:res && res.map(r => {
-        console.log(r.heartBeat)
+        //console.log(r.heartBeat)
         return r.heartBeat
       }),
       oxygen: res && res.map(r => {
-        console.log(r.oxygen)
+        //console.log(r.oxygen)
         return r.oxygen
       }),
       temperature: res && res.map(r => {
-        console.log(r.temperature)
+        //console.log(r.temperature)
         return r.temperature
       }),
       cry:res && res.map(r => {
-        console.log(r.cry)
+        //console.log(r.cry)
         return r.cry
       }),
       flipped: res && res.map(r => {
-        console.log(r.flipped)
+        //console.log(r.flipped)
         return r.flipped
       })
     }));
