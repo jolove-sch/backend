@@ -36,38 +36,36 @@ const StateBox = (props) => {
         console.log(error); 
       });
   },[])
-
-  //console.log()
-
+  
   return (
     <>
-      {props.count && props.count.map((item, id) => (
+      {props.count && props.count.map((item, i) => (
       
-      <StatusForm key={id}>
+      <StatusForm key={i}>
         <InsideLogo>
         <Link to="/heartpage">
           <FaBaby className="insidebaby" />
         </Link>
         {/* {nickname} */}
-        <Nickname>{nickname}</Nickname>
+        <Nickname>{nickname[i]}</Nickname>
         </InsideLogo>
         <Insidestatus>
         <HeartBeatContainer>
         <HeartBeat>
           <FaHeartbeat className="Heartbeat" />
-          <HearBeatRate>{heartBeat}</HearBeatRate>
+          <HearBeatRate>{heartBeat[i]}</HearBeatRate>
         </HeartBeat>
         </HeartBeatContainer>
         <OxygenContainer>
         <Oxygen>
           <SiOxygen className="Oxygen" />
-          <OxygenRate>{oxygen}</OxygenRate>
+          <OxygenRate>{oxygen[i]}</OxygenRate>
         </Oxygen>
         </OxygenContainer>
         <TemperaturetContainer>
         <Temperature>
           <RiCelsiusFill className="Temperature" />
-          <TemperatureRate>{temperature}</TemperatureRate>
+          <TemperatureRate>{temperature[i]}</TemperatureRate>
         </Temperature>
         </TemperaturetContainer>
         <CryingContainer>
@@ -75,7 +73,7 @@ const StateBox = (props) => {
           <ImCrying className="Crying" />
           <DetectCrying>
             {
-              cry == 'false'
+              cry[i] == 'false'
               ? <span>OFF</span> : <span>ON</span>
             }
           </DetectCrying>
@@ -86,7 +84,7 @@ const StateBox = (props) => {
           <MdBabyChangingStation className="Overturn" />
           <DetectingOverturn>
             {
-              flipped == 'false'
+              flipped[i] == 'false'
               ? <span>OFF</span> : <span>ON</span>
             }
             </DetectingOverturn>

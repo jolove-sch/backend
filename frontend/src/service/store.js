@@ -18,13 +18,15 @@ const useStore = create((set) => ({
         return r.id
       }),
       nickname: res && res.map(r => {
-        //console.log(r.nickname)
+        const a = [r.nickname]
+        console.log(a)
         return r.nickname
       }),
-      heartBeat:res && res.map(r => {
-        //console.log(r.heartBeat)
+      heartBeat: res && res.map((r, i)=> {
+        //console.log(i, r.heartBeat)
         return r.heartBeat
-      }),
+      })
+      ,
       oxygen: res && res.map(r => {
         //console.log(r.oxygen)
         return r.oxygen
