@@ -139,12 +139,16 @@ const CustomizedDot3 = (props) => {
 
 export default function HeartPage() {
   const [status, setStatus] = useState([]);
+  const setResObj = useStore((state) => state.setResObj);
+  const id = useStore((state) => state.id)
 
   useEffect(() => {
     axios.get('https://jolove.kro.kr/api/band/status',
+    //{ id: id},
       { withCredentials: true})
 
       .then((response) => {
+        setResObj(response.data.data);
         setStatus(response.data.data);
         console.log(response.data.data);
       })

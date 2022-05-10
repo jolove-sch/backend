@@ -18,8 +18,8 @@ const useStore = create((set) => ({
         return r.id
       }),
       nickname: res && res.map(r => {
-        const a = [r.nickname]
-        console.log(a)
+        // const a = [r.nickname]
+        // console.log(a)
         return r.nickname
       }),
       heartBeat: res && res.map((r, i)=> {
