@@ -2,15 +2,14 @@ import axios from 'axios';
 
 
 class register {
-    async mobilRegister (email, serialNumber, nickname){
+    async mobilRegister (email, serialNumber){
         try {
             const res = await axios({
                 method: "post",
                 url: 'https://jolove.kro.kr/api/mobile',
                 data: {
                     email: email,
-                    serialNumber: serialNumber,
-                    nickName: nickname
+                    serialNumber: serialNumber
                 },
             },
             {

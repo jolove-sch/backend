@@ -15,6 +15,7 @@ import {
 import styled from 'styled-components';
 import axios from 'axios';
 import { set } from 'immutable';
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100vw;
@@ -139,16 +140,14 @@ const CustomizedDot3 = (props) => {
 
 export default function HeartPage() {
   const [status, setStatus] = useState([]);
-  const setResObj = useStore((state) => state.setResObj);
-  const id = useStore((state) => state.id)
+  const location = useLocation();
+  const id = location.state.id;
 
   useEffect(() => {
-    axios.get('https://jolove.kro.kr/api/band/status',
-    //{ id: id},
+    axios.get(`https://jolove.kro.kr/api/band/status/${id}`,
       { withCredentials: true})
 
       .then((response) => {
-        setResObj(response.data.data);
         setStatus(response.data.data);
         console.log(response.data.data);
       })

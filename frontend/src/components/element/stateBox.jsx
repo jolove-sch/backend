@@ -44,7 +44,12 @@ const StateBox = (props) => {
       
       <StatusForm key={i}>
         <InsideLogo>
-        <Link to="/heartpage">
+        <Link to= {{
+          pathname: '/heartpage',
+          state: {
+            id:id[i]
+          }
+        }}>
           <FaBaby className="insidebaby" />
         </Link>
         {/* {nickname} */}
