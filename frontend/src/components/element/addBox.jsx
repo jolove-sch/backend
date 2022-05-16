@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import StateBox from './stateBox';
+import create from 'zustand';
 import {AiOutlinePlusSquare, AiOutlineMinusSquare} from 'react-icons/ai';
 
 const AddBox = () => {
-  const [count, setCount] = useState([0]);
-    
+  const [count, setCount] = useState(JSON.parse(localStorage.getItem("count")) || 0);
+  
+  useEffect(() => {
+    localStorage.setItem("count", JSON.stringify(count));
+  },[count]);
+
   const onAddBox = () => {
     let countArr = [...count];
-    let counter = countArr.slice(-1)[0];
+    let counter = countArr.slice(-1)[0]; 
     counter += 1;
     countArr.push(counter);
     setCount(countArr);
   }
+
 
   const onDeleteBox = () => {
     let countArr = [...count];
@@ -21,6 +27,8 @@ const AddBox = () => {
     countArr.pop(counter);
     setCount(countArr);
   }
+
+  // localStorage.removeItem("count")
 
   return (
     <StatusContainer>
