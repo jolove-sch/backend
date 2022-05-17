@@ -5,7 +5,7 @@ import create from 'zustand';
 import {AiOutlinePlusSquare, AiOutlineMinusSquare} from 'react-icons/ai';
 
 const AddBox = () => {
-  const [count, setCount] = useState(JSON.parse(localStorage.getItem("count")) || 0);
+  const [count, setCount] = useState(JSON.parse(localStorage.getItem("count")) || [0]);
   
   useEffect(() => {
     localStorage.setItem("count", JSON.stringify(count));
