@@ -79,8 +79,7 @@ const StateBox = (props) => {
           <ImCrying className="Crying" />
           <DetectCrying>
             {
-              cry[i] == 'false'
-              ? <span>OFF</span> : <span>ON</span>
+              cry[i] == false ? <span>OFF</span> : <span>ON</span>
             }
           </DetectCrying>
         </Crying>
@@ -90,8 +89,7 @@ const StateBox = (props) => {
           <MdBabyChangingStation className="Overturn" />
           <DetectingOverturn>
             {
-              flipped[i] == 'false'
-              ? <span>OFF</span> : <span>ON</span>
+              flipped[i] == false ? <span>OFF</span> : <span>ON</span>
             }
             </DetectingOverturn>
         </Overturn>
