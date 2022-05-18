@@ -1,3 +1,6 @@
+# 아키텍쳐
+![아키텍쳐(찐최종)](https://user-images.githubusercontent.com/75168305/169107780-168704f0-73fb-443f-9d2c-58f9eacf01ca.png)
+
 # Backend
 
 ## Coding convention
