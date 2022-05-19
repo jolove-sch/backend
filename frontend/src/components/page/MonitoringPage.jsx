@@ -182,12 +182,23 @@ const BottomUser = styled.div`
   }
 `;
 
-const MonitoringPage = ({user}) =>{
+const MonitoringPage = ({user, mobile}) =>{
 
   const logOut = () => {
     console.log('LogOut');
     user.logout();
     }
+
+  const mobileOn = () => {
+    console.log('On');
+    mobile.mobileControl(true);
+  }
+
+  const mobileOff = () => {
+    console.log('Off');
+    mobile.mobileControl(false);
+  }
+
   return (
       <Container1>
       <TopBar>
@@ -206,8 +217,8 @@ const MonitoringPage = ({user}) =>{
       <ControlBox>모빌</ControlBox>
       </ControlBoxContainer>
       <ButtonContainer>
-      <OnButton>ON</OnButton>
-      <OffButton>OFF</OffButton>
+      <OnButton onClick={mobileOn}>ON</OnButton>
+      <OffButton onClick={mobileOff}>OFF</OffButton>
       </ButtonContainer>
       </VideoBoxContainer>
       <BottomBar>

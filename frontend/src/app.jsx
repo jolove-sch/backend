@@ -10,7 +10,7 @@ import MobilRegisterPage from './components/page/MobilRegisterPage';
 import UserRegisterPage from './components/page/UserRegisterPage';
 import HeartPage from './components/page/HeartPage';
 
-function App({user, register1, state}) {
+function App({user, register1, state, mobile}) {
   return (
     <div className="App">
       <Router>
@@ -25,7 +25,7 @@ function App({user, register1, state}) {
             <MainPage user={user} state={state}/>
           </Route>
           <Route path="/MonitoringPage">
-            <MonitoringPage user={user}/>
+            <MonitoringPage user={user} mobil={mobile}/>
           </Route>
           <Route path="/BandRegisterPage">
             <BandRegisterPage register1={register1} user={user}/>
