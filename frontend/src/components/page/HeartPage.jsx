@@ -30,7 +30,7 @@ const Container = styled.div`
 const CustomizedDot = (props) => {
   const { cx, cy, value } = props;
 
-  if (value < 37.0) {
+  if (value < 37.0 && value > 35.0) {
     return (
       <svg
         x={cx - 10}
