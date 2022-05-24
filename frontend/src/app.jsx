@@ -25,7 +25,7 @@ function App({user, register1, state, mobile}) {
             <MainPage user={user} state={state}/>
           </Route>
           <Route path="/MonitoringPage">
-            <MonitoringPage user={user} mobil={mobile}/>
+            <MonitoringPage user={user} mobile={mobile}/>
           </Route>
           <Route path="/BandRegisterPage">
             <BandRegisterPage register1={register1} user={user}/>
