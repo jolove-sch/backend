@@ -1,10 +1,13 @@
-import React  from 'react';
+import React, { useEffect, useRef }  from 'react';
+import mobileUrl from '../../service/mobileUrl';
 import styled from 'styled-components';
 import { FiMonitor } from 'react-icons/fi';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaBaby } from 'react-icons/fa';
 import { Link, useHistory } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
+import axios from 'axios';
+import mobileOff_Img from '../../img/off.png'
 
 const Container1 = styled.div`
   display: flex;
@@ -64,7 +67,7 @@ const VideoBoxContainer = styled.div`
   flex-direction: column;
 `;
 
-const VideoBox = styled.div`
+const VideoBox = styled.img`
     width: 370px;
     height: 250px;
     border-radius: 10px;
@@ -184,6 +187,28 @@ const BottomUser = styled.div`
 
 const MonitoringPage = ({user, mobile}) =>{
 
+  const setResObj = mobileUrl((state) => state.setResObj);
+  const mUrl = mobileUrl((state) => state.mUrl);
+
+  useEffect(() => {
+    axios.get('https://jolove.kro.kr/api/mobile/url',
+    { withCredentials: true})
+
+    .then((response) => {
+      setResObj(response.data)
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  })
+
+  const errorHandler = (event) => {
+    console.log("Mobile OFF");
+    event.target.src = mobileOff_Img;
+
+  }
+
   const logOut = () => {
     console.log('LogOut');
     user.logout();
@@ -212,7 +237,7 @@ const MonitoringPage = ({user, mobile}) =>{
          </Title>
       </TopBar>
       <VideoBoxContainer>
-      <VideoBox />
+      <VideoBox src={mUrl} onError={errorHandler}/>
       <ControlBoxContainer>
       <ControlBox>모빌</ControlBox>
       </ControlBoxContainer>
