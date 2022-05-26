@@ -7,7 +7,7 @@ const mobileUrl = create((set) => ({
   setResObj: (res) => {
     set((state) => ({
       resObj: res,
-      Murl: res.data
+      mUrl: res.data
     }));
   }
 }));

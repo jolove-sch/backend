@@ -7,6 +7,7 @@ import { FaBaby } from 'react-icons/fa';
 import { Link, useHistory } from 'react-router-dom';
 import { MdLogout } from 'react-icons/md';
 import axios from 'axios';
+import { Helmet } from 'react-helmet'
 import mobileOff_Img from '../../img/off.png'
 
 const Container1 = styled.div`
@@ -224,6 +225,7 @@ const MonitoringPage = ({user, mobile}) =>{
     mobile.mobileControl(false);
   }
 
+  console.log(mUrl);
   return (
       <Container1>
       <TopBar>
@@ -237,7 +239,10 @@ const MonitoringPage = ({user, mobile}) =>{
          </Title>
       </TopBar>
       <VideoBoxContainer>
-      <VideoBox src={mUrl} onError={errorHandler}/>
+        <Helmet>
+          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        </Helmet>
+        <VideoBox src={mUrl} onError={errorHandler}/>
       <ControlBoxContainer>
       <ControlBox>모빌</ControlBox>
       </ControlBoxContainer>
