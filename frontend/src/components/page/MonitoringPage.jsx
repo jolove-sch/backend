@@ -16,7 +16,7 @@ const Container1 = styled.div`
   height: 100vh;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(#0f0c29, #302b63, #24243e)
+  background: white;
 `;
 
 const TopBar = styled.nav`
@@ -242,7 +242,8 @@ const MonitoringPage = ({user, mobile}) =>{
         <Helmet>
           <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         </Helmet>
-        <VideoBox src={mUrl} onError={errorHandler}/>
+        {/* <VideoBox src={mUrl} onError={errorHandler}/> */}
+        <a href={mUrl}>비디오 보기</a>
       <ControlBoxContainer>
       <ControlBox>모빌</ControlBox>
       </ControlBoxContainer>
